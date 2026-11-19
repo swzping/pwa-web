@@ -1,0 +1,68 @@
+.root {
+    align-items: center;
+    display: grid;
+    gap: 0.75rem;
+    grid-auto-flow: column;
+    grid-template-columns: 60px 1fr;
+    margin-bottom: 16px;
+}
+
+.image {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.thumbnail {
+    height: 75px;
+    max-height: 75px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.name {
+    font-size: 12px;
+    word-break: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.priceWrapper {
+    display: flex;
+    gap: 4px;
+}
+
+.price {
+    composes: font-bold from global;
+    color: var(--color-primary);
+}
+
+.discountWrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    font-size: 10px;
+}
+
+.discountPrice {
+    color: #969696;
+    text-decoration: line-through;
+}
+
+.discountValue {
+    composes: rounded-sm from global;
+    composes: md_rounded from global;
+    color: #fff;
+    background-color: #E41305;
+    padding: 0 4px;
+}

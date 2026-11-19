@@ -1,0 +1,22 @@
+.radioRoot {
+    composes: gap-2xs from global;
+    composes: grid from global;
+}
+
+.radioLabel {
+    
+}
+
+.radioLabel span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.radioMessage {
+    composes: hidden from global;
+}
+
+.error {
+    composes: leading-normal from global;
+    composes: text-error from global;
+}

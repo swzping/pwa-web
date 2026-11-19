@@ -1,0 +1,97 @@
+image: node:18.20
+
+definitions:
+  caches:
+    yarn: ~/.yarn
+    npm: ~/.npm
+
+pipelines:
+  branches:
+    integration:
+      - step:
+          name: Build PWA Guarian Studio - Integration
+          caches:
+            - yarn
+            - npm
+          script:
+            - node --version # Verify Node version
+            - npm --version # Verify npm version
+            - chmod +x ./hooks/bin/build.sh
+            - ENVIRONMENT=integration ./hooks/bin/build.sh
+          artifacts:
+            - artifacts/**
+
+      - step:
+          name: Create Magento PR - Integration
+          script:
+            - apt-get update && apt-get install -y git curl
+            - export DEFAULT_REVIEWERS=$DEFAULT_REVIEWERS
+            - chmod +x ./hooks/bin/create-pr.sh
+            - ENVIRONMENT=integration ./hooks/bin/create-pr.sh
+
+    staging2:
+      - step:
+          name: Build PWA Guarian Studio - Staging 2
+          caches:
+            - yarn
+            - npm
+          script:
+            - node --version # Verify Node version
+            - npm --version # Verify npm version
+            - chmod +x ./hooks/bin/build.sh
+            - ENVIRONMENT=staging2 ./hooks/bin/build.sh
+          artifacts:
+            - artifacts/**
+
+      - step:
+          name: Create Magento PR - Staging 2
+          script:
+            - apt-get update && apt-get install -y git curl
+            - export DEFAULT_REVIEWERS=$DEFAULT_REVIEWERS
+            - chmod +x ./hooks/bin/create-pr.sh
+            - ENVIRONMENT=staging2 ./hooks/bin/create-pr.sh
+
+    staging:
+      - step:
+          name: Build PWA Guarian Studio - Staging
+          size: 4x
+          atlassian-ip-ranges: true
+          caches:
+            - yarn
+            - npm
+          script:
+            - node --version # Verify Node version
+            - npm --version # Verify npm version
+            - chmod +x ./hooks/bin/build.sh
+            - ENVIRONMENT=staging ./hooks/bin/build.sh
+          artifacts:
+            - artifacts/**
+
+      - step:
+          name: Create Magento PR - Staging
+          script:
+            - apt-get update && apt-get install -y git curl
+            - export DEFAULT_REVIEWERS=$DEFAULT_REVIEWERS
+            - chmod +x ./hooks/bin/create-pr.sh
+            - ENVIRONMENT=staging ./hooks/bin/create-pr.sh
+
+    production:
+      - step:
+          name: Build PWA Guarian Studio - Production
+          size: 4x
+          atlassian-ip-ranges: true
+          caches:
+            - yarn
+            - npm
+          script:
+            - chmod +x ./hooks/bin/build.sh
+            - ENVIRONMENT=production ./hooks/bin/build.sh
+          artifacts:
+            - artifacts/**
+
+      - step:
+          name: Create Magento PR - Production
+          script:
+            - export DEFAULT_REVIEWERS=$DEFAULT_REVIEWERS
+            - chmod +x ./hooks/bin/create-pr.sh
+            - ENVIRONMENT=production ./hooks/bin/create-pr.sh

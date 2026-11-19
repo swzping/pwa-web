@@ -1,0 +1,15 @@
+.input_rounded {
+    border-radius: 20px !important;
+    font-size: 14px;
+}
+
+@media (max-width: 767px) {
+    .input_rounded {
+        border-radius: 1.5625rem !important;
+    }
+}
+.input_rounded::placeholder {
+    font-weight: lighter;
+    color: #969696;
+    /* color: var(--color-primary); */
+}

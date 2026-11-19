@@ -1,0 +1,100 @@
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.card {
+    width: 319px;
+    max-width: 92%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkCircle {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1B1A19;
+    margin-bottom: 8px;
+}
+
+.description {
+    font-size: 14px;
+    font-weight: 500;
+    color: #757575;
+    line-height: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.pointsBox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #FFF8E8;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    justify-content: space-between;
+}
+
+.pointsLeft {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex: 1;
+}
+
+.coin {
+    width: 32px;
+    height: 32px;
+}
+
+.pointsText {
+    font-size: 12px;
+    color: #222;
+    text-align: left;
+}
+
+.pointsValue {
+    font-weight: 700;
+    color: #FF8200;
+}
+
+.view {
+    color: #9E9E9E;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.okButton {
+    width: 100%;
+    background: #FF8200;
+    color: #fff;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+

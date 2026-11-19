@@ -1,0 +1,1090 @@
+/* Free Gift Container */
+.freeGiftContainer {
+    /* border: 2px solid #FF6B6B; */
+    border-radius: 8px;
+    padding: 0;
+    background-color: #fff;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    width: 100%;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 16px 16px 0 0;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.detailedRulesButton {
+    background: none;
+    border: none;
+    color: #FF8200;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+}
+
+.detailedRulesButton:hover {
+    color: #e67400;
+}
+
+/* Progress Section */
+.progressSection {
+    margin-bottom: 16px;
+    padding: 0 16px 0 0;
+}
+
+.progressBarWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 12px;
+}
+
+.progressBar {
+    flex: 1;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background-color: #FF8200;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progressMessage {
+    background-color: #FFF5E6;
+    border-radius: 8px;
+    border: 1px solid #FFE4B5;
+    padding: 12px 8px 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #424242;
+    margin-bottom: 0;
+}
+
+.progressTextWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.giftIcon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -4px;
+}
+
+.giftIconFull {
+    background-color: #FF8200;
+}
+
+.progressText {
+    color: #424242;
+    font-weight: 400;
+    display: flex;
+    align-items:center;
+    gap: 8px;
+    flex-wrap: wrap;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.highlightAmount {
+    color: #FF8200;
+    font-weight: 600;
+}
+
+.recommendationButton {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.recommendationButton:hover {
+    color: #0056b3;
+}
+
+/* Gift Carousel */
+.giftCarousel {
+    position: relative;
+}
+
+.carouselHeader {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+}
+
+.viewAllLink {
+    color: #FF8200;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.viewAllLink:hover {
+    color: #e67400;
+}
+
+.carouselContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.carouselItem {
+    flex: 1;
+}
+
+/* Swiper Container for Web */
+.giftSwiperContainer {
+    width: 100%;
+    padding: 0;
+}
+
+.giftSwiperContainer :global(.swiper-wrapper) {
+    display: flex;
+    align-items: stretch;
+}
+
+.giftSwiperContainer :global(.swiper-slide) {
+    height: auto;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.giftSwiperContainer :global(.swiper-slide) .giftCard {
+    width: 100%;
+    height: 100%;
+}
+
+/* Single Gift */
+.singleGift {
+    width: 100%;
+}
+
+/* Gift Card Link Wrapper */
+.giftCardLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+}
+
+/* Gift Card */
+.giftCard {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 12px 12px 0 12px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: grid;
+    grid-template-areas: 
+        "image info"
+        "stock stock";
+    grid-template-columns: auto 1fr;
+    gap: 8px 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 移除整个卡片变灰的效果，只保留文字颜色变化 */
+
+.giftImageWrapper {
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.giftImage {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.giftImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.giftLabel {
+    background-color: #E41305 !important;
+    color: white !important;
+    font-size: 8px;
+    font-weight: 600;
+    padding: 3px 4px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.giftInfo {
+    grid-area: info;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5px;
+}
+
+.giftName {
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 4px 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: calc(1.4em * 2); /* 确保最小高度为2行 */
+    height: calc(1.4em * 2); /* 固定高度为2行 */
+}
+
+.giftPrice {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+}
+
+.currentPrice {
+    font-size: 13px;
+    font-weight: bold;
+    color: #FF4444;
+}
+
+.originalPrice {
+    font-size: 11px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.giftStockRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.stockText {
+    font-size: 11px;
+    color: #757575;
+    font-weight: 500;
+    white-space: nowrap;
+    padding-top: 1px;
+    text-align: center;
+    width: 100%;
+}
+
+.outOfStockText {
+    color: #E41305 !important;
+}
+
+.limitedStock {
+    font-size: 10px;
+    color: #757575;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+/* 右侧抽屉样式 */
+.drawerOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+.drawerContent {
+    width: 400px;
+    max-width: 90vw;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    animation: slideInFromRight 0.3s ease-out;
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.drawerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.drawerHeader h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.drawerProgressMessage {
+    padding: 16px 24px;
+    background-color: #FFF5E6;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.drawerGiftList {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    /* 自定义滚动条样式 */
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+
+/* WebKit浏览器滚动条样式 */
+.drawerGiftList::-webkit-scrollbar {
+    width: 6px;
+}
+
+.drawerGiftList::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.drawerGiftList::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+    border: none;
+}
+
+.drawerGiftList::-webkit-scrollbar-thumb:hover {
+    background-color: #999;
+}
+
+
+/* 抽屉商品卡片内部样式 - 重新设计以匹配UI图 */
+.drawerGiftCard {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+    border: 1px solid #E5E5E5;
+}
+
+.drawerGiftCard:last-child {
+    margin-bottom: 0;
+}
+
+.drawerGiftCard .giftImageWrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.drawerGiftCard .giftImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.drawerGiftCard .giftImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.drawerGiftCard .giftInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.drawerGiftCard .giftName {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.drawerGiftCard .giftPrice {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.drawerGiftCard .giftLabel {
+    background-color: #E41305 !important;
+    color: white !important;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.drawerGiftCard .giftStockRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.drawerGiftCard .stockText {
+    font-size: 12px;
+    color: #666;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.drawerGiftCard .limitedStock {
+    font-size: 12px;
+    color: #666;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.drawerGiftCard .outOfStockText {
+    color: #E41305 !important;
+}
+
+.drawerGiftCard .eventTime {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #E5E5E5;
+}
+
+.drawerGiftCard .eventTimeLabel {
+    font-size: 12px;
+    color: #666;
+    font-weight: 400;
+}
+
+/* 缺货商品样式 */
+.drawerGiftCard .outOfStockOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.drawerGiftCard .outOfStockLabel {
+    background-color: #666;
+    color: white;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* 移动端抽屉样式 */
+@media (max-width: 768px) {
+    .drawerOverlay {
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    .drawerContent {
+        width: 100%;
+        max-width: 100%;
+        max-height: 90vh;
+        border-radius: 12px;
+        animation: slideInFromBottom 0.3s ease-out;
+    }
+    
+    .drawerHeader {
+        padding: 16px 20px;
+        border-radius: 12px 12px 0 0;
+    }
+    
+    .drawerHeader h3 {
+        font-size: 16px;
+    }
+    
+    .drawerProgressMessage {
+        padding: 12px 20px;
+    }
+    
+    .drawerGiftList {
+        padding: 20px;
+        gap: 12px;
+        max-height: 60vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        /* 移动端滚动条样式 */
+        scrollbar-width: thin;
+        scrollbar-color: #ddd transparent;
+    }
+    
+    .drawerGiftList::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    .drawerGiftList::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    .drawerGiftList::-webkit-scrollbar-thumb {
+        background-color: #ddd;
+        border-radius: 2px;
+        border: none;
+    }
+    
+    .drawerGiftList::-webkit-scrollbar-thumb:hover {
+        background-color: #bbb;
+    }
+    
+    .drawerGiftCard {
+        padding: 12px;
+        grid-template-columns: 60px 1fr;
+        gap: 10px;
+    }
+    
+    .drawerGiftCard .giftImage {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .drawerGiftCard .giftName {
+        font-size: 12px;
+    }
+    
+    .drawerGiftCard .currentPrice {
+        font-size: 11px;
+    }
+    
+    .drawerGiftCard .originalPrice {
+        font-size: 10px;
+    }
+    
+    .drawerGiftCard .giftLabel {
+        font-size: 9px;
+        padding: 1px 4px;
+    }
+    
+    .drawerGiftCard .stockText {
+        font-size: 10px;
+    }
+    
+    .drawerGiftCard .limitedStock {
+        font-size: 9px;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.outOfStockMessage {
+    color: #dc3545;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.outOfStockOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 40px;
+    padding: 3px 0;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.outOfStockLabel {
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 0;
+    border-radius: 0;
+}
+
+/* Modal */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px 32px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 70vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.modalHeader h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+    font-weight: 700;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.closeButton:hover {
+    color: #333;
+}
+
+.modalMessage {
+    margin-bottom: 16px;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #666;
+}
+
+.modalGifts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.eventTime {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 12px;
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .freeGiftContainer {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+        width: 100%;
+        max-width: 667px;
+    }
+    
+    .carouselContainer {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+    
+    .modalGifts {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Tablet Styles */
+@media (max-width: 1023px) and (min-width: 769px) {
+    .freeGiftContainer {
+        margin: 16px 1.2rem;
+        padding: 16px;
+    }
+    
+    .carouselContainer {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .freeGiftContainer {
+        margin: 12px;
+        padding: 0 12px 0 0;
+    }
+    
+    /* H5横向滚动 */
+    .giftCarousel {
+        position: relative;
+        overflow: visible;
+    }
+
+    .carouselContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 8px;
+        margin: 0 -12px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .carouselContainer::-webkit-scrollbar {
+        height: 0;
+        display: none;
+    }
+
+    .carouselItem {
+        flex: 0 0 auto;
+        width: 280px;
+        scroll-snap-align: start;
+    }
+    
+    .modalGifts {
+        grid-template-columns: 1fr;
+    }
+    
+    .modalContent {
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 16px;
+    }
+    
+    .giftImage {
+        height: 100px;
+    }
+    
+    .giftName {
+        font-size: 11px;
+    }
+    
+    .currentPrice {
+        font-size: 13px;
+    }
+}
+
+/* Detailed Rules Modal Styles */
+.modalEventTime {
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.eventTimeLabel {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+}
+
+.eventTimeValue {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+}
+
+.modalRulesDetails {
+    text-align: left;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalRulesDetails h4 {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.rulesList {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+    margin: 0;
+}
+
+.rulesList p {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    font-weight: 400;
+}
+
+.rulesList p:last-child {
+    margin-bottom: 0;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Gift Card - 移动端保持横向布局 */
+    .giftCard {
+        display: grid;
+        grid-template-areas: 
+            "image info"
+            "stock stock";
+        grid-template-columns: auto 1fr;
+        gap: 8px 10px;
+        padding: 10px 10px 0 10px;
+        min-width: 280px;
+    }
+
+    /* 图片区域 */
+    .giftImageWrapper {
+        grid-area: image;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .giftImage {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* 商品信息区域 */
+    .giftInfo {
+        grid-area: info;
+        width: 100%;
+        gap: 4px;
+    }
+
+    .giftName {
+        font-size: 12px;
+        margin-bottom: 2px;
+        line-height: 1.3;
+    }
+
+    .giftPrice {
+        gap: 4px;
+    }
+
+    .currentPrice {
+        font-size: 13px;
+    }
+
+    .originalPrice {
+        font-size: 11px;
+    }
+
+    .giftLabel {
+        font-size: 9px;
+        padding: 2px 6px;
+    }
+
+    /* 库存信息 - 底部横跨 */
+    .giftStockRow {
+        grid-area: stock;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: nowrap;
+    }
+
+    .stockText {
+        font-size: 11px;
+        color: #666;
+    }
+
+    .limitedStock {
+        font-size: 10px;
+        color: #999;
+    }
+
+    /* Header */
+    .header {
+        padding: 12px 12px 0 px;
+        margin-bottom: 8px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .detailedRulesButton {
+        font-size: 12px;
+    }
+
+    /* Progress Section */
+    .progressSection {
+        margin-bottom: 12px;
+    }
+
+    .progressMessage {
+        padding: 8px 12px;
+        background-color: #FFF5E6;
+        border-radius: 8px;
+        border: 1px solid #FFE4B5;
+    }
+
+    .progressText {
+        font-size: 12px;
+        text-align: left;
+        white-space: normal;
+        word-wrap: break-word;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #424242;
+        flex-wrap: wrap;
+    }
+
+    /* Carousel - H5横向滑动 */
+    .carouselWrapper {
+        padding: 0 12px;
+        overflow: visible;
+    }
+
+    .swiperContainer {
+        overflow: visible;
+        padding-bottom: 8px;
+    }
+
+    .swiperSlide {
+        width: auto !important;
+    }
+
+    .viewAllLink {
+        font-size: 12px;
+        margin-top: 8px;
+        padding: 0 12px;
+    }
+
+    /* Modal */
+    .modalContent {
+        width: 95%;
+        max-width: none;
+        padding: 20px;
+    }
+
+    .modalHeader h3 {
+        font-size: 16px;
+    }
+
+    .modalEventTime {
+        font-size: 13px;
+    }
+
+    .rulesList p {
+        font-size: 13px;
+    }
+}

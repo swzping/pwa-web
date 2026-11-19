@@ -1,0 +1,86 @@
+.root {
+    padding: 0 0.5rem;
+}
+.root a {
+    text-decoration: none;
+}
+
+.error {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.centerMode {
+}
+
+.centerMode :global .slick-slide {
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.centerMode :global .slick-slide:hover {
+    opacity: 1;
+}
+
+.centerMode :global .slick-slide.slick-current {
+    opacity: 1;
+}
+
+.root :global .slick-track .slick-slide > div {
+    min-height: inherit;
+    margin: 0 0.25rem;
+    border-radius: 0.5rem;
+}
+
+.galleryItems {
+    composes: items from '~@magento/venia-ui/lib/components/Gallery/gallery.module.css';
+    grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 1199px) {
+    .galleryItems {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .galleryItems {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 767px) {
+    .galleryItems {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .carousel {
+        padding: 12px!important;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .centerModeSmall {
+    }
+
+    .centerModeSmall :global .slick-slide {
+        opacity: 0.5;
+        transition: 0.3s;
+    }
+
+    .centerModeSmall :global .slick-slide:hover {
+        opacity: 1;
+    }
+
+    .centerModeSmall :global .slick-slide.slick-current {
+        opacity: 1;
+    }
+}
+
+.carousel {
+    composes: root;
+    composes: root from '~@magento/pagebuilder/lib/ContentTypes/Slider/slider.module.css';
+    margin: 0!important;
+    padding-bottom: 18px;
+}

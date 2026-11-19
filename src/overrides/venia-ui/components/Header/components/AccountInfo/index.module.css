@@ -1,0 +1,489 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.homeTypeWrap {
+  /* padding: 0 60px; */
+  margin-top: 32px;
+  /* max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; */
+}
+
+.left {
+  padding: 16px;
+  padding-bottom: 20px;
+  border-radius: 12px;
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background: url('/venia-static-assets/images/accountBg.png') no-repeat center/cover;
+  /* background-color: linear-gradient(180deg, #FF6F00 0%, var(--color-brand-500, #FF8200) 50%, var(--color-brand-400, #FFA12E) 100%); */
+}
+
+.noLoginleft {
+  width: 100%;
+  padding: 12px 16px;
+  /* border-radius: 12px; */
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  background: url('/venia-static-assets/images/accountBg.png') no-repeat center center;
+  background-size: cover;
+}
+
+.noLoginText {
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.homeTypeleft {
+  flex: 1;
+  /* min-width: 0; */
+}
+
+.leftTitle {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 10px; */
+}
+.phoneNum {
+  margin-left: 8px!important;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.qrcode {
+  position: absolute;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 38px;
+  background-color: #FF8200;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.leftNum {
+  font-size: 32px;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  /* margin-top: 20px;
+  margin-bottom: 10px; */
+}
+
+.leftDate {
+  color: #fff;
+  font-size: 12px;
+  /* margin-bottom: 12px; */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* justify-content: space-between; */
+}
+.pointLink {
+  color: #fff;
+  font-size: 11px;
+  display: inline-block;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.memo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border-radius: 8px;
+  background: #FFE7BA;
+  font-size: 11px;
+  color: #212121;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.memo>div {
+  display: flex;
+}
+.benefits {
+  margin-left: 4px;
+  /* width: 260px; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.right {
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  background-color: #fff;
+  /* gap: 16px */
+}
+.right img {
+  width: 112px;
+  height: 112px;
+  object-fit: contain;
+}
+.homeTypeRight {
+  border: 1px solid #EEE;
+  border-radius: 12px;
+}
+.rightTitle {
+  color: #FF8200;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 13px;
+}
+.rightBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+  background-color: #FFE7BA;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FF8200;
+  cursor: pointer;
+}
+
+.infoWrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.leftInfo {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.myId {
+  width: 88px;
+  background-color: #FFD38B;
+  border-radius: 4px;
+  border: 1px solid #FFE7BA;
+  margin-left: 16px;
+}
+.myIdSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px
+}
+
+.myIdText {
+  color: #757575;
+  font-size: 11px;
+}
+
+.left {
+    min-width: 351px;
+    flex: 1;
+    position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.studentPassTag {
+    padding: 2px 8px 4px;
+    flex: 1;
+    min-width: 172px;
+    max-width: 230px;
+    top: 16px;
+    right: 16px;
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFD38B;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.studentPassTagInfo {
+    display: flex;
+    align-items: center;
+}
+
+.studentPassSchedule {
+    font-size: 6px;
+    color: #9E9E9E;
+}
+
+.studentPassIcon {
+    width: 12px;
+    height: 12px;
+    margin-right: 4.6px;
+}
+
+.healthReportInfo {
+
+}
+
+.rightWrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+    min-width: 172px;
+    max-width: 230px;
+}
+
+.healthReportContent {
+    max-height: 113px;
+    max-width: 230px;
+    min-width: 172px;
+    flex: 1;
+    padding: 16px 12px 16px 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 16px;
+    background-color: #FFF8E8;
+}
+
+.healthReportTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #FF8200;
+}
+
+.healthReportIcon {
+    width: 72px;
+    height: 71px;
+}
+
+.healthReportBtn {
+    width: 74px;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-block;
+    color: #FF8200;
+    border-radius: 999px;
+    margin-top: 16px;
+    padding: 4px 8px;
+    font-size: 10px;
+    border: 0.5px solid  #FF8200;
+}
+
+.somethingInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.studentPassText {
+    color: #000000;
+    font-size: 8px;
+}
+
+.studentPassTagTip {
+    display: none;
+}
+
+.studentPassTagContent {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.studentPassProgress {
+    width: 100%;
+    height: 5px;
+    background-color: #FFE7BA;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.studentPassProgressBar {
+    height: 100%;
+    background-color: #FF8200;
+    border-radius: 999px;
+    min-width: 0;
+    transition: width 0.2s ease;
+}
+
+.leftTitleLoginEd {
+  display: flex;
+  flex-direction: column;
+}
+
+.customerName {
+
+}
+
+.rightSomeIconWrap {
+    flex: 1;
+    display: flex;
+    margin-top: 16px;
+    justify-content: flex-end;
+    margin-bottom: 13px;
+}
+
+.rightSomeIconInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notificationCount {
+    position: absolute;
+    top: -4px;
+    left: 12px;
+    min-width: 15.75px;
+    height: 12.25px;
+    border-radius: 999px;
+    border-width: 0.88px;
+    opacity: 1;
+    padding-right: 3.5px;
+    padding-left: 3.5px;
+    background-color: #CC2B1E;
+    font-size: 7px;
+    color: #fff;
+    text-align: center;
+    border: 0.88px solid var(--border-on-dark, #FFFFFF)
+}
+
+.notificationCountLarge {
+    width: 27px;
+    border-radius: 32px;
+}
+
+.pointHistory {
+    cursor: pointer;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.healthReportWrap {
+    width: 138px;
+    margin-top: 8px;
+    padding: 8.5px 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #FFE7BA;
+    border-radius: 8px;
+}
+
+.healthReportBlackIcon {
+    width: 16px;
+    height: 16px;
+}
+
+.healthReportSmallTitle {
+    font-size: 11px;
+    color: #212121;
+}
+@media (max-width: 1200px) {
+  .leftDate {
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrap {
+    flex-direction: column;
+  }
+  .left {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .phoneNum {
+    margin-left: 0!important;
+  }
+  .leftNum {
+    /* font-size: 24px; */
+  }
+  .leftDate {
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4px;
+  }
+  .healthReportContent {
+    display: none;
+  }
+  .benefits {
+    /* width: 166px; */
+  }
+  .rightWrap {
+    display: flex;
+    justify-content: center;
+    padding: 16px 0;
+  }
+  .rightWrap>div {
+    display: flex;
+  }
+  .right {
+    padding: 12px;
+    border-radius: 12px;
+  }
+  .right img {
+    width: 40px;
+  }
+  .rightTitle {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .rightBtn {
+    display: flex;
+    padding: 4px 8px;
+    background-color: #FFE7BA;
+    border-radius: 8px;
+    font-size: 10px;
+    color: #FF8200;
+    cursor: pointer;
+  }
+  .studentPassTag {
+    position: relative;
+    width: 205px;
+    top: 0;
+    right: 0;
+    margin: 8px 0;
+  }
+  .studentPassTagTip {
+    margin-bottom: 16px;
+    display: block;
+    width: 259px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}

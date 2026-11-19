@@ -1,0 +1,61 @@
+.root {
+    display: grid;
+}
+
+.root [class^='payment-instructions'] {
+    margin: 0!important;
+}
+
+.root [class^='payment-root'] {
+    margin: 4px 0 0 30px;
+}
+
+.radio_group {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.accordion {
+    border: none;
+}
+
+.payment_group {
+    height: fit-content;
+    border: none;
+    border-bottom: 1px solid rgb(var(--venia-global-color-border));
+}
+
+.payment_group_title {
+    text-align: left;
+    font-size: 1.25rem;
+}
+
+.payment_method {
+    padding-bottom: 20px;
+}
+
+.radio_label {
+    font-weight: 400;
+    font-size: 14px;
+    justify-self: start;
+}
+
+.payment_errors {
+    display: grid;
+    gap: 0.5em;
+    color: rgb(var(--venia-global-color-error));
+}
+
+@media (max-width: 960px) {
+    .radio_group {
+        grid-template-columns: none;
+    }
+}
+
+@media (min-width: 961px) {
+    .root {
+        padding-left: 16px;
+    }
+}
+
+

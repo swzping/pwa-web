@@ -1,0 +1,68 @@
+.root {
+    display: grid;
+    grid-template-columns: minmax(auto, 512px);
+    justify-content: center;
+    row-gap: 2rem;
+    text-align: center;
+}
+
+.root [class^='textInput-input'] {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #000;
+}
+
+.root [class^='textInput-input']:focus {
+    box-shadow: none;
+}
+
+.root [class^='field-label'] {
+    color: #30383d;
+}
+
+.root_hidden {
+    composes: root;
+    display: none;
+}
+
+.header {
+    text-transform: uppercase;
+    color: #ff8200;
+    font-size: 40px;
+}
+
+.contentContainer {
+    padding-bottom: 2rem;
+}
+
+.linkBtn {
+    color: #ef7d00;
+    margin-top: 1rem;
+}
+
+@media (max-width: 960px) {
+    .contentContainer {
+        border: none;
+        padding: 0;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .signInRoot {
+        padding: 1rem 0;
+    }
+
+    .forgotPasswordRoot {
+        padding: 1rem 0;
+    }
+
+    .createAccountRoot {
+        padding: 1rem 0;
+    }
+
+    .linkBtn {
+        margin-top: 0rem;
+    }
+}

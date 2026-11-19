@@ -1,0 +1,82 @@
+.deliveryContainer {
+    grid-column: 1 / span 1;
+    position: relative;
+    padding-bottom: 24px;
+}
+.title {
+	font-weight: 700;
+	font-size: 16px;
+}
+.smallTitle {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.text {
+    font-weight: 400;
+    font-size: 14px;
+    color: #808080;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    column-gap: 12px;
+    justify-content: space-between;
+    padding-top: 12px;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.row [class^='method'] {
+    border: 1px solid #DEDEDE;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+}
+.row [class^='method active'] {
+    border-color: #FF8200;
+    color: #FF8200;
+}
+.row [class^='method active'] .text {
+    color: #FF8200;
+}
+
+.col6 {
+    flex-basis: 50%;
+    max-width: 50%;
+}
+.divPickup {
+    margin-top: 30px;
+}
+.divPickup [class^='info'] {
+    border: 1px solid #DEDEDE;
+    border-radius: 10px;
+    padding: 17px;
+}
+.divPickup [class^='info'] table tr {
+    vertical-align: top;
+}
+div[class*="dialog-dialog"] div[class^="dialog-header"] {
+	text-align: center;
+}
+div[class*="dialog-dialog"] div[class^="dialog-header"] > span {
+	font-size: 20px;
+	font-weight: 600;
+	color: #000000;
+}
+.information {
+    padding: 0 12px;
+}
+.inputInformation input {
+    border-radius: 10px;
+    border: 1px solid #000000;
+    padding: 5px 10px;
+}
+
+@media (max-width: 960px) {
+    .deliveryContainer {
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgb(var(--venia-global-color-border));
+    }
+}

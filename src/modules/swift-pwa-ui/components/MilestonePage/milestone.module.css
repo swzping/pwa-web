@@ -1,0 +1,523 @@
+.page {
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #FF6F00 0%, #FF8200 10%, #FFA12E 30%, #FFA12E 100%);
+    padding: 0px 12px 80px;
+}
+.backButton {
+    z-index: 1;
+    position: absolute;
+    top: 50px;
+}
+
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pointsBg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 800px;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+.title {
+    position: relative;
+    display: block;
+    margin: 0 auto 4px;
+    width: 247px;
+    padding-top: 40px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px;
+}
+
+.subtitle {
+    position: relative;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 31px;
+}
+
+.card {
+    position: relative;
+    /* background: rgba(255, 255, 255, 0.92); */
+    background: linear-gradient(180deg, #FFF8E8 0%, #FFFFFF 202.59%);
+
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+.cardInner {
+    padding: 24px 23px;
+}
+
+.progressCardHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.productThumbBox {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px;
+    background-color: #FFE7BA;
+
+}
+
+.productThumb {
+    flex: 1;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+}
+
+
+.productThumb img {
+    background-color: #fff;
+    width: auto;
+    height: 173px;
+    object-fit: contain;
+    border-radius: 8px;
+
+}
+
+.progressHeaderText {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.progressDesc {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.progressHeaderRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.progressLabel {
+    font-size: 16px;
+    color: #793200;
+
+}
+
+.progressPercent {
+    line-height: 20px;
+    font-size: 24px;
+    color: #793200;
+    font-weight: 700;
+}
+
+
+
+.stepRail {
+    position: relative;
+    margin-top: 28px;
+}
+
+.rail {
+    position: relative;
+    height: 8px;
+    border-radius: 999px;
+    background: #FFE7BA;
+    overflow: hidden;
+}
+
+.railFill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 999px;
+    /* background: linear-gradient(90deg, #FF8200 0%, #FFA12E 50%); */
+    background: #FFA12E;
+    width: 0%;
+    transition: width 0.2s ease;
+}
+
+.steps {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .step:first-child {
+    opacity: 0;
+} */
+
+.step:first-child > .stepText {
+    left: 0;
+}
+
+.step:last-child > .stepText {
+    right: 0;
+}
+
+.step:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #FFE7BA;
+    box-shadow: 0px 0px 12px 0px #FFBB5D;
+
+}
+
+.step:last-child:has(.stepDotDone) {
+    background: #FFA12E;
+    box-shadow: none;
+}
+
+.step:last-child > .stepDot {
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    background: url('/venia-static-assets/images/gift_icon.png') no-repeat center/cover;
+}
+
+.step:last-child > .stepDot::after {
+    display: none;
+}
+
+.stepDot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    /* background: #FFE7BA; */
+    background: rgb(255 248 232 / 0.9);
+    border: 4px solid #FFE7BA;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.stepDot::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ffffff;
+    opacity: 0.6;
+}
+
+.stepDotDone {
+    z-index: 1;
+    border-color: #FFA12E;
+    background: #FFA12E;
+}
+
+.stepDotDone::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #FFA12E;
+    border: 3px solid #FFA12E;
+}
+
+.step:last-child > .stepDotDone {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    background: url('/venia-static-assets/images/gift_white_icon.png') no-repeat center/cover;
+}
+
+/* .stepDotActive {
+    border-color: #ff8200;
+    background: #ffffff;
+} */
+
+/* .stepDotActive::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    margin: 3px auto 0;
+    border-radius: 50%;
+    background: #ff8200;
+} */
+
+.stepText {
+    position: absolute;
+    top: 100%;
+    transform: translateY(16px);
+    font-size: 10px;
+    color: #94A3B8;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+}
+.claimButtonBox {
+    margin-top: 4px;
+    display: flex;
+    justify-content: end;
+}
+
+
+.claimButton {
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    color: #fff;
+    padding: 5.5px;
+    border-radius: 8px;
+    border: none;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 75px;
+    height: 26px;
+    min-height: 26px !important;
+    cursor: pointer;
+    border: none;
+    line-height: 15px;
+}
+
+.claimButtonDisabled {
+    composes: claimButton;
+    background: #E0E0E0;
+    cursor: no-drop !important;
+    color: #757575;
+}
+
+.taskCard {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    height: auto; /* 允许自动高度，由父容器或 style.maxHeight 控制最大高度 */
+    background-image: url('/venia-static-assets/images/milestone_task_web_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden; /* 防止背景外溢 */}
+
+.taskCardInner {
+    width: 100%;
+    /* 当外层设置了 max-height 时，内部允许滚动 */
+    overflow: auto;
+    /* 保证内层在可用空间中正确伸缩 */
+    flex: 1 1 auto;
+}
+
+.taskCardTitle {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 107px;
+    height: 44px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #212121;
+}
+
+.taskList {
+    padding: 0px 28px 12px;
+    border-radius: 16px;
+    background: linear-gradient(179.61deg, #FFF8E8 10.05%, #FFFFFF 99.66%);
+}
+
+.taskRow {
+    margin-top: 8px;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.taskLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    flex: 1;
+}
+
+.taskIcon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #FFE7BA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    color: #ff8200;
+    font-weight: 800;
+    font-size: 12px;
+}
+.taskIcon img {
+    width: 24px;
+    height: 24px;
+}
+
+.taskTexts {
+    min-width: 0;
+}
+
+.taskName {
+    font-size: 14px;
+    font-weight: 700;
+    color: #212121;
+}
+
+.taskStatus {
+    font-size: 10px;
+    color: #9e9e9e;
+    margin-top: 2px;
+}
+
+.taskAction {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6.5px 14.5px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.taskActionGo {
+    background: #ff8200;
+    color: #ffffff;
+}
+
+.taskActionDone {
+    background: rgba(0, 0, 0, 0.08);
+    color: #9E9E9E;
+    cursor: default;
+}
+
+.noData {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    .page {
+        padding: 0px 16px 80px;
+    }
+    .title {
+        padding-top: 60px;
+    }
+    .pointsBg {
+        width: 100vw;
+    }
+    .card {
+        margin-top: 16px;
+    }
+    .title {
+        /* font-size: 34px; */
+    }
+    .subtitle {
+        width: 326px;
+        margin: 0 auto;
+        margin-top: 12px;
+        font-size: 13px;
+        color: #FFFFFF;
+        font-weight: 500;
+    }
+    .cardInner {
+        padding: 10px 12px 18px;
+    }
+    .progressCardHeader {
+        gap: 8px;
+    }
+    .progressHeaderRow {
+        font-size: 14px;
+
+    }
+    .productThumbBox {
+        padding: 0;
+    }
+    .claimButton {
+        border-radius: 8px;
+        min-width: 47px;
+        height: 22px;
+        font-size: 11px;
+    }
+    .productThumb {
+        padding: 7px 0;
+    }
+    .productThumb img {
+        height: 129px;
+    }
+    .stepRail {
+        margin-top: 12px;
+    }
+    .progressHeaderText {
+        flex-direction: column-reverse;
+    }
+    .progressLabel {
+        font-size: 11px;
+        font-weight: 600;
+    }
+    .progressPercent {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16px;
+    }
+    .taskCard {
+        background-size: 100%;
+        background-image: url('/venia-static-assets/images/milestone_task_h5_bg.png');
+    }
+    .taskCardTitle {
+        padding-left: 19px;
+        height: 50px;
+    }
+    .taskRow {
+        margin-top: 0;
+        gap: 48px;
+    }
+    .taskList {
+        padding: 12px;
+    }
+}

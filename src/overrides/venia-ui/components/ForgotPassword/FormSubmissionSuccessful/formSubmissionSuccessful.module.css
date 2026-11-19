@@ -1,0 +1,32 @@
+.root {
+    composes: grid from global;
+    composes: gap-sm from global;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    font-family: Noto Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 34px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #000000;
+    width: 376px;
+}
+
+.title {
+    font-family: Noto Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #BDBDBD;
+    margin-bottom: 0;
+}

@@ -1,0 +1,161 @@
+/* 移植自 App 端 cart_checkout/atoms/EventPreview/styles.js */
+
+.root {
+    position: fixed;
+    /* H5:导航栏(56px)下 12px,左右各 12px */
+    top: 126px;
+    left: 12px;
+    padding: 12px;
+    right: 12px;
+    width: 351px;
+    height: 127px;
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 20;
+    /* H5 背景图,web 端在下方媒体查询中覆盖 */
+    background: url('/venia-static-assets/images/offlineBooking/event_preview_background_h5.svg');
+}
+
+/* Web(桌面):固定在可视区域右下角 */
+@media (min-width: 768px) {
+    .root {
+        top: auto;
+        left: auto;
+        padding: 20px;
+        height: 164px;
+        width: 377px;
+        right: 32px;
+        bottom: 32px;
+        background-image: url('/venia-static-assets/images/offlineBooking/event_preview_background_web.svg');
+    }
+}
+
+.header {
+    position: relative;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.brand {
+    width: 113px;
+    height: 42px;
+    border-radius: 24px;
+    background-color: #fffdfc;
+    border: 1px solid #ff8c25;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.brandImage {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+}
+
+.copy {
+    flex: 1;
+    margin-left: 12px;
+    min-width: 0;
+}
+
+.title {
+    display: block;
+    color: #111827;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.subtitle {
+    display: block;
+    margin-top: 2px;
+    color: #6B7280;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.closeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.close {
+    color: #616161;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 29px;
+}
+
+.stats {
+    margin-top: 16px;
+    position: relative;
+    height: 68px;
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.stat {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    padding: 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fffdfc;
+    border-radius: 7px;
+    border: 1px solid #f0f0f0;
+    box-sizing: border-box;
+}
+
+.statLabel {
+    color: #212121;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.statValue {
+    margin-top: 4px;
+    color: #212121;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+
+    .title {
+        font-weight: 500;
+        font-size: 14px;
+    }
+    .subtitle {
+        margin-top: 0;
+    }
+    .stats {
+        margin-top: 10px;
+        height: 53px;
+    }
+    .statLabel {
+        font-weight: 400;
+    }
+    .statValue {
+        font-size: 14px;
+    }
+}

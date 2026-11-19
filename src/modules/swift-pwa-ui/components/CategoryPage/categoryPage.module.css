@@ -1,0 +1,158 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #fff;
+}
+
+.searchBar {
+    position: sticky;
+    top: 0;
+    composes: h-[4rem] from global;
+    padding: 0.75rem 0;
+    background-color: #fff;
+}
+
+.searchBar > * {
+    align-items: center;
+    justify-items: center;
+    max-width: var(--venia-global-maxWidth);
+    width: 100%;
+    display: grid;
+}
+
+.searchBar > * > div {
+    padding: 0;
+    max-width: unset;
+}
+
+.searchBar input {
+    font-size: 12px;
+    padding-left: 2.25rem;
+    border-color: #FF8200;
+    border-width: 1px;
+    height: 2.5rem;
+}
+
+.categoryContent {
+    display: flex;
+}
+
+.categoryContent a{
+    text-decoration: none;
+}
+
+.level1Column {
+    overflow-y: auto;
+    margin-bottom: 67px;
+    height: calc(100vh - 4rem);
+    background-color: #f5f5f5;
+}
+
+.levelLinkWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.level1Menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.level1Item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 108px;
+    height: 108px;
+    padding: 10px 20px;
+    color: #969696;
+    cursor: pointer;
+}
+
+.level1Item:hover,
+.level1Item.active {
+    color: var(--color-primary);
+    background-color: #fff;
+}
+
+.level1Link {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 8px;
+    width: 54px;
+    text-align: center;
+}
+
+.level1Link svg{
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.level2Column {
+    flex: 1;
+    background-color: #fff;
+    padding: 16px;
+    overflow-y: auto;
+    margin-bottom: 67px;
+    height: calc(100vh - 4rem);
+}
+
+.level2Menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.level2Item {
+    padding: 10px 0;
+}
+
+.level2LinkWrapper {
+    composes: levelLinkWrapper;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.level2Link {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    font-weight: 500;
+    font-size: 12px;
+    color: #000;
+    composes: h-10 from global;
+    composes: leading-10 from global;
+    cursor: pointer;
+}
+
+.chevronIcon {
+    composes: text-base	from global;
+    transition: transform 0.3s ease;
+}
+
+.expanded {
+    transform: rotate(180deg);
+}
+
+.level3Menu {
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.level3Item {
+    padding: 5px 0;
+}
+
+.level3Link {
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    composes: h-10 from global;
+    composes: leading-10 from global;
+}

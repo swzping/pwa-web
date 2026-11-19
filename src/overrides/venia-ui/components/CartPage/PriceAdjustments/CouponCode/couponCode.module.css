@@ -1,0 +1,254 @@
+/* Styles for "add" view. */
+.entryForm,
+.entryFormError {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-column-gap: 1.5rem;
+}
+
+.entryForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.entryForm  button {
+    margin-top: 14px;
+    border-radius: 8px;
+    min-width: 100px;
+    width: 100px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    background-color: var(--color-primary);
+    height: 40px;
+}
+
+.voucherList{
+     color:rgb(255, 130, 0) !important;
+     width: 200px !important; 
+     background-color: white !important;
+     border: 1px solid rgb(255, 130, 0) !important;
+     min-width: 200px !important;
+    
+}
+.voucherListOut{
+    /* flex: 1; */
+     margin: 0;
+     padding: 0;
+    
+}
+.entryForm  input {
+    border-color: #e5e5e5;
+    width: 100%;
+}
+
+.entryForm  [class^='field-root']:first-child {
+    width: 100%;
+}
+
+.entryFormError input {
+    border-color: rgb(var(--venia-global-color-red-400));
+}
+
+.entryFormError input:focus {
+    border-color: rgb(var(--venia-global-color-gray-600));
+}
+
+.entryFormError p {
+    color: rgb(var(--venia-global-color-error));
+    font-weight: var(--venia-global-fontWeight-semibold);
+}
+
+.errorContainer {
+    /* Duplicate the left/right/bottom padding on the accordion section */
+    padding-top: 1.5rem;
+    color: rgb(var(--venia-global-color-error));
+    line-height: var(--venia-global-lineHeight-300);
+}
+
+.appliedCouponWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.itemCouponWrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.itemCoupon {
+    margin: 0;
+    min-width: 100px;
+}
+
+/* on mobile... */
+@media (max-width: 960px) {
+    .entryForm,
+    .entryFormError {
+        /* switch to rows. */
+        grid-template-columns: unset;
+        grid-template-rows: 1fr 1fr;
+    }
+    .voucherList{
+     width: 100% !important; 
+     margin: 0 !important;
+     padding: 0 !important;
+    
+}
+}
+
+/* Styles for "removal" view. */
+.removeButton {
+    composes: root from '@magento/venia-ui/lib/components/LinkButton/linkButton.module.css';
+    margin-left: 1rem;
+}
+.errorInfo{
+    background-color: #FFEDEB;
+    width: 100%;
+    color: #E41305;
+    height: 48px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+}
+.errorInfo p{
+   padding: 0;
+   margin: 0;
+}
+
+.checkoutVoucherWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.checkoutVoucherRow {
+    align-items: center;
+    appearance: none;
+    background: #fff;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 56px;
+    padding: 12px 0px;
+    box-sizing: border-box;
+    min-width: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.checkoutVoucherTitle {
+    color: #000;
+    flex-shrink: 0;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.checkoutVoucherSummary {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    gap: 12px;
+    justify-content: flex-end;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.checkoutVoucherPill {
+    background: #fff2f1;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #d7342a;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    max-width: 280px;
+    min-width: 0;
+    overflow: hidden;
+    padding: 8px 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cashbackVoucherPill {
+    background: #ecfaec;
+    color: #46a147;
+}
+
+.checkoutVoucherPill.checkoutVoucherMore {
+    flex: 0 0 auto;
+}
+
+.checkoutVoucherArrow {
+    color: #ff8200;
+    flex: 0 0 auto;
+    font-size: 24px;
+    line-height: 1;
+}
+
+@media (max-width: 767px) {
+    .checkoutVoucherWrapper {
+        max-width: calc(100vw - 20px);
+        width: calc(100vw - 20px);
+    }
+
+    .checkoutVoucherRow {
+        display: block;
+        max-width: calc(100vw - 20px);
+        min-height: 52px;
+        padding: 12px 0;
+        position: relative;
+        text-align: left;
+        width: calc(100vw - 20px);
+    }
+
+    .checkoutVoucherTitle {
+        left: 0;
+        position: absolute;
+        text-align: left;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .checkoutVoucherSummary {
+        align-items: center;
+        gap: 12px;
+        justify-content: flex-end;
+        max-width: calc(100% - 128px);
+        min-width: 0;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .checkoutVoucherPill {
+        box-sizing: border-box;
+        flex: 0 1 auto;
+        font-size: 12px;
+        max-width: 100%;
+        min-width: 0;
+        padding: 7px 10px;
+    }
+
+    .checkoutVoucherArrow {
+        flex: 0 0 12px;
+    }
+}

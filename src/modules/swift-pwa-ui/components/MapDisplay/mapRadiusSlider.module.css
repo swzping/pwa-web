@@ -1,0 +1,10 @@
+.container {
+    width: 100%;
+}
+.container [class^="label"] {
+    font-size: 0.875rem;
+    line-height: 10px;
+}
+.container [class^="label--right"] {
+    float: right;
+}

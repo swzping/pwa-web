@@ -1,0 +1,193 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    pointer-events: auto;
+    background: #fff;
+}
+
+.card {
+    position: relative;
+    pointer-events: auto;
+    text-align: left;
+    width: 480px;
+    margin: 0 auto;
+}
+
+.closeButton {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    box-shadow: 0px 2px 12px 0px #0000000F;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 24px;
+}
+
+.headerTitle {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.subtitle {
+    margin-bottom: 16px;
+    font-size: 13px;
+    line-height: 1.25rem;
+    color: #373737;
+}
+
+.phoneText {
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.inputsWrap {
+    display: flex;
+    gap: 28.8px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.box {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    font-size: 14px;
+    font-weight: 700;
+    position: relative;
+    user-select: none;
+}
+
+.boxActive {
+    composes: box;
+    border-color: #F6831F;
+}
+
+.caret {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1B1A19;
+}
+
+.actionsWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.resend {
+    color: #9E9E9E;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.resendActive {
+    composes: resend;
+    color: #FF8200;
+}
+
+.confirmButton {
+    /* background: #ff8a00; */
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    width: 480px;
+    color: #fff;
+    padding: 13px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.confirmButtonDisabled {
+    composes: confirmButton;
+    background: #E0E0E0;
+    color: #757575;
+}
+
+.hintTextStyle {
+    font-size: 10px;
+    color: #9E9E9E;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .closeButton {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        box-shadow: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+    }
+    .header {
+        margin-left: -16px;
+        position: relative;
+        width: 100vw;
+        left: 0;
+        padding: 10px 0;
+        background-color: #fff;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #EEEEEE;
+    }
+    .card {
+        margin-top: -62px;
+        width: 100%;
+        padding: 0 16px;
+    }
+    .box {
+        width: 44px;
+        height: 44px;
+    }
+    .inputsWrap {
+        gap: 0;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .actionsWrap {
+        margin-top: 34px;
+    }
+    .confirmButton {
+        width: 100%;
+    }
+}

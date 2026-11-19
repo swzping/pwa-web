@@ -1,0 +1,32 @@
+.errorContainer {
+    padding-top: 1.5rem;
+    color: rgb(var(--venia-global-color-error));
+    line-height: var(--venia-global-lineHeight-300);
+}
+
+.storeCredit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.storeCreditText {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.storeCredit button {
+    border-radius: 8px;
+    min-width: 100px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.errorTitle {
+    color: rgb(var(--venia-global-color-error));
+}

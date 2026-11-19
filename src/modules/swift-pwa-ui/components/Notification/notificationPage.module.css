@@ -1,0 +1,20 @@
+.root {
+    padding: 2.5rem 3rem;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.loadingWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    padding: 2.5rem 3rem;
+}
+
+.loadingContent {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}

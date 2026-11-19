@@ -1,0 +1,7 @@
+.heading {
+    composes: py-[24px] from global;
+    composes: text-sm from global;
+    composes: text-subtle from global;
+    composes: font-bold from global;
+    margin: 0;
+}

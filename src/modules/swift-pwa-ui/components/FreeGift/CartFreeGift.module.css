@@ -1,0 +1,924 @@
+/* 页面容器 */
+.pageContainer {
+    min-height: 100vh;
+    background-color: white;
+    padding-bottom: 80px; /* 为底部导航留空间 */
+}
+
+/* 隐藏底部导航 */
+.pageContainer :global(.navigation),
+.pageContainer :global(.bottom-navigation),
+.pageContainer :global(.venia-navigation),
+.pageContainer :global(.root) .navigation {
+    display: none !important;
+}
+
+/* Header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.backButton {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.backButton:hover {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+/* 通知消息横幅 - 使用miss.png图片 */
+.notificationBannerContainer {
+    display: flex;
+    gap: 4px;
+    margin: 0 0 16px 0;
+    padding: 8px 12px;
+    cursor: pointer;
+    background: #FFEBD6;
+    border-radius: 4px;
+    flex-direction: column;
+}
+
+/* 满足条件时的背景色 */
+.notificationBannerContainerCompleted {
+    background: #ECFAEC;
+}
+
+.notificationBannerImage {
+    flex-shrink: 0;
+}
+
+.missImage {
+    width: 161px;
+    height: 22px;
+    display: block;
+}
+
+.notificationContent {
+    flex: 1;
+    display: flex;
+    gap: 2px;
+    margin-top: 4px;
+    justify-content: space-between
+}
+
+.notificationText {
+    font-size: 12px;
+    color: #424242;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.highlightText {
+    color: #FF8200;
+    font-weight: 600;
+}
+
+.limitedStockText {
+    font-size: 11px;
+    color: #757575;
+    margin: 0;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.arrowIcon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+/* 旧的notificationBanner样式保留作为备用 */
+.notificationBanner {
+    margin: 16px 20px;
+    padding: 12px 16px;
+}
+
+/* 礼物部分 */
+.giftSection {
+    background: white;
+    margin: 0 0 16px 0;
+    padding: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* 赠品标题 */
+.giftHeader {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    color: #757575;
+    margin-bottom: 16px;
+}
+
+.sectionTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+/* 推荐商品部分标题更突出 */
+.productSection .sectionTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FF8200;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.giftList {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 8px;
+}
+
+/* Checkout 页面赠品列表 - 一行显示 2 个 */
+.giftListCheckout {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    background: white;
+    border-radius: 8px;
+}
+
+/* Checkout 页面赠品卡片 - 适应宽度 */
+.giftListCheckout .giftCard {
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+}
+
+/* Checkout 页面 Show more/less 按钮 */
+.giftListCheckout + .showMoreButton {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 12px;
+}
+
+/* MiniCart 页面赠品列表 - 一行显示 1 个 */
+.giftListMiniCart {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    background: white;
+    border-radius: 8px;
+}
+
+/* MiniCart 页面赠品卡片 - 适应宽度 */
+.giftListMiniCart .giftCard {
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+    display: grid !important;
+    grid-template-areas: "image info" !important;
+    grid-template-columns: auto 1fr !important;
+    gap: 4px !important;
+    padding: 8px !important;
+    background: #F5F5F5 !important;
+    border-radius: 4px !important;
+}
+
+/* MiniCart 页面 giftInfo 自适应撑开 */
+.giftListMiniCart .giftInfo {
+    grid-area: info !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    min-width: 0 !important;
+    width: 100% !important;
+}
+
+/* MiniCart 页面 Show more/less 按钮 */
+.giftListMiniCart + .showMoreButton {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 12px;
+}
+
+/* H5 Checkout 页面 - 一行显示 1 个 */
+@media (max-width: 768px) {
+    .giftListCheckout {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .giftListCheckout .giftCard {
+        display: grid !important;
+        grid-template-areas: "image info" !important;
+        grid-template-columns: auto 1fr !important;
+        gap: 12px !important;
+        padding: 12px !important;
+        background: #F5F5F5 !important;
+        border-radius: 4px !important;
+    }
+    
+    .giftListCheckout .giftInfo {
+        grid-area: info !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        min-width: 0 !important;
+        width: 100% !important;
+    }
+}
+
+/* 订单页面 - 一行显示 3 个，宽度自适应 */
+.giftListOrder {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 8px !important;
+    background: white;
+    border-radius: 8px;
+}
+
+.giftListOrder .giftCard {
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+}
+
+/* 订单页面 Show more/less 按钮 */
+.giftListOrder + .showMoreButton {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 12px;
+}
+
+/* H5 订单页面 - 一行显示 1 个 */
+.giftListOrderMobile {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    background: white;
+    border-radius: 8px;
+}
+
+.giftListOrderMobile .giftCard {
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+    display: grid !important;
+    grid-template-areas: "image info" !important;
+    grid-template-columns: auto 1fr !important;
+    gap: 12px !important;
+    padding: 12px !important;
+    background: #F5F5F5 !important;
+    border-radius: 4px !important;
+}
+
+/* H5 订单页面 giftInfo 自适应撑开 */
+.giftListOrderMobile .giftInfo {
+    grid-area: info !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    min-width: 0 !important;
+    width: 100% !important;
+}
+
+/* H5 订单页面 Show more/less 按钮 */
+.giftListOrderMobile + .showMoreButton {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 12px;
+}
+
+.giftCardLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+}
+
+.giftCard {
+    display: grid;
+    grid-template-areas: 
+        "image info";
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    padding: 12px;
+    background: #F5F5F5;
+    border-radius: 4px;
+    position: relative;
+}
+
+.checkIconWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    border-radius: 0 6px 0 6px;
+    overflow: hidden;
+}
+
+.checkIconWrapper svg {
+    width: 100%;
+    height: 100%;
+}
+
+.giftImageWrapper {
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+.giftImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+    background-color: #f8f9fa;
+}
+
+.giftInfo {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.giftName {
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 2;
+    min-height: 36px; /* 确保两行高度 */
+}
+
+.giftLabel {
+    background-color: #E41305 !important;
+    color: white !important;
+    font-size: 8px;
+    font-weight: 600;
+    padding: 3px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 4px;
+}
+
+.giftStock {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4px;
+    font-size: 12px;
+}
+
+.stockText {
+    color: #757575;
+}
+
+.limitedStock {
+    color: #757575;
+    font-size: 11px;
+}
+
+.eventTimeDivider {
+    width: 100%;
+    height: 1px;
+    background-color: #E5E5E5;
+    margin: 8px 0;
+}
+
+.eventTime {
+    padding: 8px;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.eventTimeLabel {
+    font-size: 11px;
+    color: #757575;
+    font-weight: 500;
+}
+
+.eventTimeValue {
+    font-size: 11px;
+    color: #757575;
+}
+
+.showMoreButton {
+    background: none;
+    border: none;
+    color: #212121;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 8px auto 0;
+    width: 100%;
+}
+
+.showMoreButton:hover {
+    opacity: 0.8;
+}
+
+/* 缺货样式 */
+.outOfStockOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 40px;
+    padding: 3px 0;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.outOfStockText {
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/* 商品推荐部分 */
+.productSection {
+    background: white;
+    margin: 0 0 16px 0;
+    padding: 20px;
+    min-height: 400px; /* 确保有足够空间显示推荐商品 */
+}
+
+/* 使用项目现有的Gallery组件样式 */
+
+/* 全局加载状态 */
+.globalLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 40px 20px;
+}
+
+/* 加载状态 */
+.loadingText {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.noMoreText {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-size: 12px;
+}
+
+/* "Added to cart" 提示样式 */
+.addedToCartToast {
+    display: none; /* 默认隐藏，H5端不显示 */
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: #FAFFFA;
+    border: 2px solid #DAECDA;
+    color: #333;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.12);
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    margin: 0 20px;
+    animation: slideDown 0.3s ease-out;
+}
+
+.toastContent {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 100%;
+}
+
+.checkIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.toastMessage {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* 面包屑导航 */
+.breadcrumbContainer {
+    display: none; /* 默认隐藏，只在Web端显示 */
+}
+
+.breadcrumb {
+    font-size: 14px;
+    margin: 12px 0;
+    padding: 0 20px;
+    height: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.breadcrumbLink {
+    padding: 0.25rem;
+    text-decoration: none;
+}
+
+.breadcrumbSeparator {
+    padding: 0 8px;
+    color: #666;
+}
+
+.breadcrumbText {
+    padding: 0.25rem;
+    color: #333;
+}
+
+/* Web端适配 */
+@media (min-width: 769px) {
+    .pageContainer {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+    }
+    
+    .header {
+        display: none; /* Web端隐藏移动端header */
+    }
+    
+    .breadcrumbContainer {
+        display: block; /* Web端显示面包屑 */
+    }
+    
+    .addedToCartToast {
+        display: block; /* Web端显示toast */
+    }
+    
+    .breadcrumb {
+        max-width: 1200px;
+        margin: 12px auto;
+        padding: 0;
+    }
+    
+    .notificationBanner {
+        margin: 20px 0 0 0;
+        padding: 16px 0 0 0;
+        text-align: left;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .notificationText {
+        font-size: 14px;
+        color: #424242;
+    }
+    
+    .giftSection {
+        margin: 0 0 10px 0;
+        padding: 0px 0 20px 0;
+        border-bottom: 1px solid #e5e5e5;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .giftHeader {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        color: #757575;
+        margin-bottom: 16px;
+    }
+    
+    .sectionTitle {
+        font-size: 24px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .giftList {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .giftCard {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 8px 8px;
+        background: #F5F5F5;
+        border-radius: 8px;
+        text-align: left;
+        gap: 12px;
+    }
+    
+    .giftImageWrapper {
+        position: relative;
+        flex-shrink: 0;
+    }
+    
+    .giftImage {
+        width: 60px;
+        height: 60px;
+        border-radius: 6px;
+        object-fit: cover;
+        background-color: #f8f9fa;
+    }
+    
+    .giftInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        flex: 1;
+    }
+    
+    .giftName {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-height: 40px;
+        text-align: left;
+    }
+    
+    .giftLabel {
+        background-color: #E41305 !important;
+        color: white !important;
+        font-size: 8px;
+        font-weight: 600;
+        padding: 3px 5px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        display: inline-block;
+        width: fit-content;
+    }
+    
+    /* PC端缺货样式 */
+    .outOfStockOverlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 50px;
+        padding: 4px 0;
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.40);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .outOfStockText {
+        background-color: transparent;
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    
+    .showMoreButton {
+        margin: 20px auto 0;
+        padding: 12px 24px;
+        background: none;
+        border: none;
+        border-radius: 6px;
+        color: #666;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+        width: fit-content;
+    }
+    
+    .showMoreButton:hover {
+        background-color: transparent;
+    }
+    
+    .productSection {
+        margin: 0;
+        padding: 30px 0;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .productSection .sectionTitle {
+        font-size: 28px;
+        font-weight: 700;
+        color: #FF8200;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    /* 隐藏底部导航 */
+    .pageContainer :global(.navigation),
+    .pageContainer :global(.bottom-navigation),
+    .pageContainer :global(.venia-navigation),
+    .pageContainer :global(.root) .navigation {
+        display: none !important;
+    }
+}
+
+/* 响应式设计 - 移动端 */
+@media (max-width: 768px) {
+    .pageContainer {
+        padding-bottom: 60px;
+    }
+    
+    .header {
+        padding: 12px 16px;
+    }
+    
+    .title {
+        font-size: 16px;
+    }
+    
+    .notificationBanner {
+        margin: 12px 16px 0 16px;
+        padding: 10px 0px 0 0;
+    }
+    
+    /* 移动端通知横幅样式 */
+    .notificationBannerContainer {
+        padding: 8px 12px;
+        gap: 4px;
+    }
+    
+    .missImage {
+        width: 130px;
+        height: 18px;
+    }
+    
+    .notificationContent {
+        margin-top: 4px;
+        gap: 2px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .notificationText {
+        font-size: 11px;
+    }
+    
+    .limitedStockText {
+        font-size: 10px;
+        margin:5px 0;
+        margin-top: -10px;
+    }
+    
+    .giftSection,
+    .productSection {
+        margin: 0 0 12px 0;
+        padding: 16px 4px;
+        margin-top: -15px;
+    }
+    
+    .sectionTitle {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    
+    .giftCard {
+        padding: 10px;
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+    
+    .giftImage {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .giftName {
+        font-size: 12px;
+        min-height: 32px;
+    }
+}
+
+/* 成功提示样式 */
+.successMessage {
+    margin-bottom: 24px;
+    padding: 16px 20px;
+}
+
+.successContent {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.successText {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    line-height: 1.4;
+}
+
+/* H5端成功提示样式 */
+@media (max-width: 768px) {
+    .successMessage {
+        margin-bottom: 16px;
+        padding: 12px 16px;
+    }
+    
+    .successText {
+        font-size: 14px;
+    }
+}

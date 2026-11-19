@@ -1,0 +1,33 @@
+.installAppWrapper {
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff2d2;
+}
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+.title {
+    margin: 0 0 3px;
+    font: normal normal bold 12px/18px Poppins;
+    letter-spacing: 0.6px;
+    color: #30383d;
+}
+.guardianLogo {
+    width: auto;
+    height: 35px;
+    margin-right: 5px;
+}
+.playStoreLogo, .appStoreLogo {
+    width: auto;
+    height: 33px;
+}
+.closePopup {
+    cursor: pointer;
+    padding: 5px 10px;
+}

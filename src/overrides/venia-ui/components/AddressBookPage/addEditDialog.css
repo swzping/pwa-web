@@ -1,0 +1,28 @@
+.root {
+    display: grid;
+    gap: 0.5rem 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+.map {
+    padding-bottom: 1rem;
+}
+
+/*
+ *  Desktop-specific styles.
+ */
+@media (min-width: 961px) {
+    .root {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .fullWidthField {
+        grid-column-end: span 2;
+    }
+
+    .lastname,
+    .telephone,
+    .default_address_check {
+        composes: fullWidthField;
+    }
+}

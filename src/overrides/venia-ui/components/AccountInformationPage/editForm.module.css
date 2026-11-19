@@ -1,0 +1,89 @@
+.root {
+    display: grid;
+    gap: 0.5rem 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+.root [class^='textInput-input'] {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #000;
+    padding-left: 0;
+    padding-bottom: 14px;
+    font-size: 14px;
+    color: #30383D;
+}
+
+.root [class^='textInput-input']:focus {
+    box-shadow: none;
+}
+
+.root [class^='field-label'] {
+    color: #30383d;
+    padding-bottom: 0;
+    padding-top: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.field {
+    grid-column-end: span 2;
+}
+
+.email,
+.passwordLabel {
+    composes: field;
+}
+
+.buttons {
+    composes: field;
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: column;
+    justify-self: center;
+    padding: 1rem;
+}
+
+.changePasswordButtonContainer {
+    margin-top: 20px;
+    border: 1px solid #707070;
+    border-radius: 20px;
+    padding: 8px 14px;
+    text-align: center;
+    max-width: 190px
+}
+
+.changePasswordButton {
+    color: #000000;
+    text-decoration: none;
+}
+
+.firstname,
+.lastname,
+.password,
+.email,
+.newPassword {
+    grid-column: 1 / span 2;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 960px) {
+    .firstname,
+    .lastname,
+    .password,
+    .email,
+    .newPassword {
+        grid-column: 1 / span 2;
+        margin-bottom: 0;
+    }
+
+    .changePasswordButton {
+        font-size: 12px;
+    }
+
+    .changePasswordButtonContainer {
+        width: 146px;
+    }
+
+}

@@ -1,0 +1,47 @@
+.root {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+.popupDesktop {
+    height: 56px;
+    background: #fff2d2 0% 0% no-repeat padding-box;
+    display: flex;
+    padding-left: 25px;
+    align-items: center;
+}
+
+.buttonClose {
+    margin-right: 25px;
+    color: #a4a4a4;
+}
+
+.logo {
+    width: 37px;
+    height: 37px;
+    margin-right: 10px;
+}
+
+.textTop {
+    margin: 0;
+    font: normal normal bold 12px/18px Poppins;
+    letter-spacing: 0.6px;
+    color: #30383d;
+}
+
+.textBottom {
+    margin: 0;
+    font: normal normal normal 10px/16px Poppins;
+    letter-spacing: 0.5px;
+    color: #30383d;
+}
+
+.btnInstall {
+    margin-left: 30px;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 10px;
+    width: 69px;
+    height: 21px;
+    font-size: 12px;
+}

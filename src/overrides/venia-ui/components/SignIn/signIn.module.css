@@ -1,0 +1,158 @@
+.root {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* gap: 1.5rem; */
+    justify-items: stretch;
+}
+
+/* .root [class^='textInput-input'] {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #000;
+} */
+
+/* .root [class^='textInput-input']:focus {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+
+} */
+
+.label {
+    align-items: center;
+    display: flex;
+    font-size: 1rem;
+    font-weight: var(--venia-global-fontWeight-semibold);
+    justify-content: start;
+    line-height: 1rem;
+    padding: 0.5625rem 0.125rem;
+    min-height: 2.125rem;
+}
+
+.root [class^='field-label'] {
+    color: #30383d;
+}
+
+.header {
+    margin-bottom: 1.5rem;
+}
+
+.headerText {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 32px;
+    text-align: center;
+    color: #212121;
+}
+
+.headerTipText {
+    margin-top: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #757575;
+}
+
+.headerTipTextPadding {
+    padding: 0 40px;
+}
+
+.forgotPassword {
+    display: block;
+    text-decoration: underline;
+    color: rgb(var(--venia-global-color-error));
+    font-size: 0.8rem;
+}
+
+.form {
+    display: grid;
+    row-gap: 0.4375rem;
+    text-align: left;
+}
+
+.modal {
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(var(--venia-global-color-gray));
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.modal_active {
+    visibility: visible;
+    composes: modal;
+    opacity: 0.9;
+}
+
+.buttonsContainer {
+    display: grid;
+    grid-auto-flow: row;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.buttonsSignIn {
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    font-size: 16px;
+    font-weight: 500;
+    padding: 13px 0;
+    border-radius: 8px;
+    text-transform: none;
+    width: 100%;
+}
+
+.buttonWrapper {
+    text-align: center;
+}
+
+.buttonsCreateAccount {
+    composes: root_lowPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    border-color: var(--color-primary);
+    color: #ff8200;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 13px 0;
+    border: 1px solid #ff8200;
+    border-radius: 8px;
+    text-transform: none;
+    width: 100%;
+}
+
+.forgotPasswordButtonContainer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0.75rem;
+}
+
+.forgotPasswordButton {
+    composes: root from '~@magento/venia-ui/lib/components/LinkButton/linkButton.module.css';
+    padding: 0;
+    color: #ff8200 !important;
+    font-weight: 500 !important;
+}
+
+.labelText {
+    color: #30383d;
+    text-align: center;
+}
+
+.buttonWrapper {
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .headerText {
+        text-align: left;
+    }
+    .headerTipText {
+        text-align: left;
+    }
+    .headerTipTextPadding {
+        padding: 0;
+    }
+}

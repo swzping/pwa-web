@@ -1,0 +1,14 @@
+.root {
+    display: grid;
+    gap: 0.5rem 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+/*
+ *  Desktop-specific styles.
+ */
+@media (min-width: 961px) {
+    .root {
+        grid-template-columns: 1fr 1fr;
+    }
+}

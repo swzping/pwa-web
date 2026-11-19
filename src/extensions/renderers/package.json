@@ -1,0 +1,25 @@
+{
+    "name": "@icube/renderers",
+    "version": "0.0.1",
+    "description": "PageBuilder for PWA Studio.",
+    "author": "Deni Andreawan <deni.andreawan@sirclo.com>",
+    "license": "MIT",
+    "main": "intercept.js",
+    "scripts": {
+        "clean": " "
+    },
+    "peerDependencies": {
+        "@magento/peregrine": "*",
+        "@magento/pwa-buildpack": "*",
+        "@magento/pagebuilder": "*",
+        "@magento/venia-ui": "*",
+        "react": "*",
+        "react-intl": "*",
+        "react-router-dom": "*"
+    },
+    "pwa-studio": {
+        "targets": {
+            "intercept": "./intercept.js"
+        }
+    }
+}

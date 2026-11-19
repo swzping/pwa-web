@@ -1,0 +1,16 @@
+.checkout_select {
+    width: 100%;
+}
+
+.checkout_select .css-t3ipsp-control {
+    border-color: #ff8200!important;
+    box-shadow: none!important;
+}
+
+.checkout_select .css-1xc3v61-indicatorContainer {
+    color: #ff8200!important;
+}
+
+.checkout_select .css-1u9des2-indicatorSeparator {
+    display: none;
+}

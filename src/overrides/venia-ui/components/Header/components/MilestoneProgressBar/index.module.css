@@ -1,0 +1,253 @@
+.progressBarContent {
+    border-radius: 8px;
+    margin-top: 32px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #FFF8E8 0%, #FFFFFF 202.59%);
+
+}
+
+.progressHeader {
+    display: flex;
+    justify-content: space-between;
+}
+.milestoneText {
+    width: 112px;
+    height: 20px;
+}
+
+.description {
+    margin-top: 6px;
+    font-size: 8px;
+    color: #FFFFFF;
+}
+.progressText {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212121;
+
+}
+
+.viewTasksRow {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.viewTasksText {
+    font-weight: 700;
+    font-size: 14px;
+    color: #FF8200;
+}
+
+.stepRail {
+    position: relative;
+    margin-top: 28px;
+}
+
+.rail {
+    position: relative;
+    height: 8px;
+    border-radius: 999px;
+    background: #FFE7BA;
+    overflow: hidden;
+}
+
+.railFill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 999px;
+    /* background: linear-gradient(90deg, #FF8200 0%, #FFA12E 50%); */
+    background: #FFA12E;
+    width: 0%;
+    transition: width 0.2s ease;
+}
+
+.steps {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*
+.step:first-child {
+    opacity: 0;
+} */
+
+.step:first-child > .stepText {
+    left: 0;
+}
+
+.step:last-child > .stepText {
+    right: 0;
+}
+
+.step:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #FFE7BA;
+    box-shadow: 0px 0px 12px 0px #FFBB5D;
+
+}
+
+.step:last-child:has(.stepDotDone) {
+    background: #FFA12E;
+    box-shadow: none;
+}
+
+.step:last-child > .stepDot {
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    background: url('/venia-static-assets/images/gift_icon.png') no-repeat center/cover;
+}
+
+.step:last-child > .stepDot::after {
+    display: none;
+}
+
+.stepDot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    /* background: #FFE7BA; */
+    background: rgb(255 248 232 / 0.9);
+    border: 4px solid #FFE7BA;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.stepDot::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ffffff;
+    opacity: 0.6;
+}
+
+.stepDotDone {
+    z-index: 1;
+    border-color: #FFA12E;
+    background: #FFA12E;
+}
+
+.stepDotDone::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #FFA12E;
+    border: 3px solid #FFA12E;
+}
+
+.step:last-child > .stepDotDone {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    background: url('/venia-static-assets/images/gift_white_icon.png') no-repeat center/cover;
+}
+.stepText {
+    position: absolute;
+    top: 100%;
+    transform: translateY(16px);
+    font-size: 10px;
+    color: #94A3B8;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+}
+
+.progressDesc {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.progressLabel {
+    font-weight: 600;
+    font-size: 11px;
+    color: #793200;
+
+}
+
+.progressPercent {
+    line-height: 16px;
+    font-size: 14px;
+    color: #793200;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .progressBarContent {
+        padding-top: 16px;
+        position: relative;
+        box-sizing: border-box;
+        margin: 12px 16px 0;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-image: url('/venia-static-assets/images/milestone_task_progress_bg.png');
+    }
+    .progressHeader {
+        flex-direction: column;
+        align-items: center;
+    }
+    .viewTasksRow {
+        position: absolute;
+        top: 4px;
+        right: 8px;
+        gap: 2px;
+    }
+    .viewTasksText {
+        font-size: 10px;
+        color: #FFFFFF;
+    }
+    .stepRail {
+        margin: 0 28px;
+        margin-top: 13px;
+    }
+    .stepDot {
+        width: 12px;
+        height: 12px;
+    }
+    .step:last-child {
+        width: 17px;
+        height: 17px;
+    }
+
+    .step:last-child > .stepDot {
+        width: 11px;
+        height: 11px;
+    }
+    .step:last-child > .stepDotDone {
+        width: 11px;
+        height: 11px;
+    }
+    .rail {
+        height: 4px;
+    }
+}

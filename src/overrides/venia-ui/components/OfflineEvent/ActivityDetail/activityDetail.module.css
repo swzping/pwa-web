@@ -1,0 +1,334 @@
+.root {
+    display: grid;
+    grid-template-areas: 'stackBg';
+    min-height: 100vh;
+    width: 100vw;
+}
+.pageBannerWrapper {
+    grid-area: stackBg;
+    width: 100%;
+    height: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    pointer-events: none;
+}
+.pageContainer {
+    grid-area: stackBg;
+    position: relative;
+    min-height: 100vh;
+    font-family: Gilroy;
+    z-index: 10;
+}
+.pageTitle {
+    padding-top: 46px;
+    color: #ff8200;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+}
+.pageWrapper {
+    padding: 16px;
+}
+.registerWrapperBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 98%;
+}
+
+.registerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(166, 75, 0, 0.4);
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+.codeWrapper {
+    display: flex;
+    align-items: center;
+}
+.codeInput {
+    flex: 1;
+    width: 134px;
+    border-radius: 5px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 6px;
+    font-size: 14px;
+    font-family: 'SF Pro';
+    font-weight: 600;
+    color: #333;
+    margin-right: 12px;
+    word-break: break-all;
+}
+.copyBtn {
+    position: relative;
+    height: 40px;
+    padding: 9px 20px;
+    border-radius: 8px;
+    background: #ff8500;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+}
+.codeTip {
+    margin-top: 6px;
+    color: #ff8200;
+    font-size: 12px;
+    font-weight: 500;
+}
+.codeTip .tipIcon {
+    margin-right: 9px;
+}
+
+.copyBtn .copiedTooltip {
+    position: absolute;
+    background: #939393;
+    color: #fff;
+    right: 39%;
+    top: 22%;
+    transform: translate(40%, 122%);
+    font-size: 11px;
+    padding: 6px 6px;
+    border-radius: 4px;
+    opacity: 0.9;
+    white-space: nowrap;
+    z-index: 1;
+}
+.registerButtonBox {
+    display: flex;
+    margin-top: 10px;
+}
+.registerButton {
+    position: relative;
+    width: 220px;
+    height: 40px;
+    border-radius: 8px;
+    background: #fff8e8;
+    box-shadow: -3px -4px 3.3px 0 rgba(255, 255, 255, 0.7) inset, 4px 3px 8px 0 #ffc78e inset;
+    color: #212121;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.registerRightIcon {
+    margin-left: 4px;
+}
+.registerTipBox {
+    margin-top: 8px;
+    width: 100%;
+}
+.registerTipIcon {
+    margin-right: 6px !important;
+}
+.registerTips {
+    color: #fff8e8;
+    font-family: Gilroy;
+    font-size: 12px;
+    font-weight: 500;
+}
+.quotaContainer {
+    display: flex;
+    column-gap: 8px;
+}
+
+.quotaCard {
+    flex: 1;
+    max-width: 33%;
+    background: #fff;
+    padding: 6px 8px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #ffa12e;
+}
+
+.quotaLabel {
+    color: #ff8200;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.quotaValue {
+    font-size: 16px;
+    font-family: Gilroy;
+    color: #ff8200;
+    font-weight: 700;
+}
+
+.quotaSingleContainer {
+    margin: 0 auto;
+    width: fit-content;
+}
+.quotaSingleCard {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    border: 2px solid #ff8200;
+    background: #ff8200;
+    padding: 3px 21px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
+.quotaSingleLabel {
+    margin-right: 14px;
+}
+.quotaSingleValue {
+    font-size: 16px;
+}
+.categoryButtonBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 109%;
+}
+.categoryButton {
+    position: relative;
+    width: 180px;
+    height: 40px;
+    border-radius: 8px;
+    background: #fff8e8;
+    box-shadow: 2px 2px 4px 0 rgba(255, 255, 255, 0.7) inset, -2px -2px 4px 0 #fdb inset;
+    color: #212121;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.rightIcon {
+    margin-left: 4px;
+}
+
+.infoContainer {
+    display: flex;
+    margin-top: 87px;
+    background: #fde8d5;
+    padding: 15px 12px;
+    border-radius: 16px;
+    column-gap: 8px;
+}
+
+.infoCard {
+    flex: 1;
+    padding: 4px 0;
+    text-align: center;
+    color: #212121;
+    border-radius: 8px;
+    background: #fff8e8;
+}
+
+.infoTitle {
+    font-weight: 700;
+    color: #212121;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.infoValue {
+    font-size: 10px;
+    font-weight: 500;
+    color: #616161;
+}
+
+.infoSubtitle {
+    font-size: 10px;
+    margin: 0 0 6px -16px;
+    color: #616161;
+}
+.richContentWrapper {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .pageWrapper {
+        padding-bottom: 100px;
+    }
+    .quotaCard {
+        border-radius: 8px;
+    }
+    .prizeCard {
+        flex-direction: column;
+    }
+    .prizeImage {
+        width: 100%;
+        min-height: 180px;
+    }
+}
+
+@media (min-width: 769px) {
+    .pageBannerWrapper {
+        width: 800px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .pageContainer {
+        width: 800px;
+        margin: 0 auto;
+    }
+    .pageWrapper {
+        width: 800px;
+        margin: 0 auto;
+    }
+    .quotaContainer {
+        column-gap: 71px;
+        padding: 0 50px;
+    }
+    .infoContainer {
+        padding: 15px 12px;
+        margin: 87px 126px 0 126px;
+        border-radius: 8px;
+    }
+    .quotaCard {
+        border-radius: 6px;
+    }
+    .infoTitle {
+        font-size: 22px;
+    }
+    .infoValue,
+    .infoSubtitle {
+        font-size: 16px;
+    }
+    .quotaSingleCard {
+        padding: 10px 41px;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 12px;
+        margin-top: 34px;
+    }
+    .codeInput {
+        width: 160px;
+    }
+    .quotaLabel {
+        font-size: 18px;
+    }
+    .pageTitle {
+        font-weight: 900;
+    }
+
+    .registerWrapper {
+        width: 100%;
+        margin: auto 126px;
+        padding: 16px;
+    }
+    .codeWrapper,
+    .registerButtonBox {
+        width: 100%;
+    }
+    .registerButtonBox {
+        margin-top: 16px;
+    }
+    .registerWrapperBox {
+        margin-top: 105%;
+    }
+    .registerButton {
+        width: 100%;
+    }
+}

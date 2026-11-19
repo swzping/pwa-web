@@ -1,0 +1,38 @@
+.root {
+    /* border-color: rgb(var(--venia-global-color-border)); */
+    position: relative;
+    display: grid;
+}
+
+.root:not(:last-child):after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: calc(100% + 12px);
+    height: 1px;
+    background-color: #E5E5E5;
+}
+
+.header {
+    align-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr auto;
+    min-height: 2.6875rem;
+}
+
+.name {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--color-text);
+}
+
+.list {
+}
+
+.list:empty {
+    display: none;
+}

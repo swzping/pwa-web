@@ -1,0 +1,148 @@
+.offlineTicketListPage {
+    position: relative;
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 100vw;
+    height: 100%;
+    font-family: Gilroy;
+    background: linear-gradient(117deg, #ffd38b 1.26%, #ffa12e 85.76%);
+}
+.pageWrapper {
+    position: relative;
+    padding: 24px 16px 30px 16px;
+    margin: 0 auto;
+    z-index: 10;
+}
+.ticketListWrapper {
+    width: 100%;
+    min-height: 603px;
+    border-radius: 12px;
+    background: #fff;
+    padding: 20px 16px;
+    box-sizing: border-box;
+}
+.ticketListWrapper .comTitle {
+    color: #ff8200;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ticketList {
+    color: #ff8200;
+}
+.ticketList .itemTicket {
+    padding: 7px 24px;
+    margin-top: 16px;
+    background: url('/venia-static-assets/images/offlineBooking/event_ticket_bg.png')
+        no-repeat center/cover;
+}
+
+.ticketList .itemTop {
+    position: relative;
+    padding: 6px;
+    border-radius: 4px;
+    background: #fff8e8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.itemTop .leftBox {
+    width: calc(100% - 90px);
+    font-size: 16px;
+    font-weight: 700;
+}
+.leftBox .eventName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.leftBox .eventTime {
+    font-size: 10px;
+    font-weight: 500;
+    color: #bdbdbd;
+}
+
+.itemTop .rightBox {
+    text-align: right;
+}
+
+.rightBox .guardianRun {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 100%;
+    max-width: 43px;
+    max-height: 40px;
+}
+
+.itemTicket .footCode {
+    margin-top: 5px;
+    padding-top: 1px;
+    border-top: 1px dashed #e0e0e0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #bdbdbd;
+    text-align: right;
+}
+
+.footCode .code {
+    color: #ff8200;
+    font-weight: 700;
+    margin-left: 4px;
+}
+.ticketItem:first-child {
+    margin-top: 13px;
+}
+.noTicketData {
+    margin-top: 35px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: #ff8200;
+}
+@media (max-width: 768px) {
+    .offlineTicketListPage {
+        padding-bottom: 80px;
+    }
+    .ticketList .itemTicket {
+        max-height: 85px;
+    }
+}
+
+@media (min-width: 768px) {
+    .offlineTicketListPage {
+        min-height: 90vh;
+    }
+    .pageWrapper {
+        width: 800px;
+    }
+    .ticketList .itemTicket {
+        padding: 12px 24px;
+        height: 113px;
+        background: url('/venia-static-assets/images/offlineBooking/event_ticket_list_pc.png')
+            no-repeat center/cover;
+    }
+    .ticketList .itemTop {
+        padding: 8px 14px;
+    }
+    .ticketListWrapper .comTitle {
+        font-size: 20px;
+        font-weight: 900;
+    }
+    .leftBox .eventTime {
+        margin-top: 8px;
+    }
+    .noTicketData {
+        font-size: 24px;
+        text-align: center;
+    }
+    .rightBox .guardianRun {
+        min-width: 66px;
+        max-width: 78px;
+        max-height: 56px;
+    }
+    .itemTicket .footCode {
+        padding-top: 5px;
+    }
+}

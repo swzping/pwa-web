@@ -1,0 +1,72 @@
+.root {
+    padding: 0;
+    max-width: var(--venia-global-maxWidth);
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.heading {
+    font-family: var(--venia-global-fontFamily-serif);
+    font-weight: var(--venia-global-fontWeight-bold);
+    line-height: 1.25em;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.content {
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: minmax(6rem, max-content);
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid #DEDEDE;
+    padding-bottom: 30px;
+}
+
+.addButton {
+    /* composes: root_lowPriority from '~@magento/venia-ui/lib/components/Button/button.module.css'; */
+    border: 1px solid #707070;
+    font-weight: var(--venia-global-fontWeight-bold);
+    font-size: 14px;
+    border-radius: 20px;
+    margin: 28px 0;
+    /* width: 250px; */
+    padding: 5px 15px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.addButton:focus {
+    outline: none;
+    /* box-shadow: -6px 6px rgb(var(--venia-global-color-blue-700) / 0.3); */
+    /* box-shadow: -3px 3px var(--color-primary); */
+}
+
+.addButton:hover {
+    border-color: #707070;
+}
+
+@media (max-width: 1024px) {
+    .root {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* .content {
+        grid-template-columns: 1fr 1fr;
+    } */
+}
+
+@media (max-width: 640px) {
+    .addButton {
+        font-size: 12px;
+        width: 146px;
+        padding: 0;
+        margin-left: 2.5rem;
+    }
+}

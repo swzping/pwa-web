@@ -1,0 +1,16 @@
+.remark {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding: 16px;
+    border-radius: 0 0 10px 10px;
+    background: rgba(0, 0, 0, 0.51);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.12);
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
+}
+.remarkText {
+    margin-left: 8px!important;
+}

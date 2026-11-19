@@ -1,0 +1,53 @@
+.items {
+    /* composes: gap-3 from global; */
+    composes: grid from global;
+    composes: pb-md from global;
+    grid-template-columns: 100%;
+}
+
+.item {
+    composes: flex from global;
+    composes: items-center from global;
+    composes: h-12 from global;
+}
+
+.showMoreLessItem {
+    composes: pl-1 from global;
+}
+
+.showMoreLessButton {
+    composes: text-sm from global;
+    composes: text-brand-dark from global;
+    composes: w-full from global;
+    composes: h-10 from global;
+    composes: leading-10 from global;
+}
+
+.expanded {
+    position: relative;
+}
+
+.expanded .icon {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.collapsed {
+    position: relative;
+    height: 304px;
+    overflow: hidden;
+    grid-template-rows: repeat(6, 48px);
+}
+
+.collapsed li:last-child{
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+}
+
+.icon {
+    font-size: 16px;
+    margin-left: 4px;
+}

@@ -1,0 +1,110 @@
+.btnRegister {
+    display: block;
+    text-align: center;
+    background-color: #FF8200;
+    color: #FFFFFF;
+    border: 0;
+	border-radius: 10px;
+	padding: 10px 16px;
+}
+.title {
+	text-align: center;
+	margin-top: 38px;
+}
+.title h3 {
+	font-weight: 700;
+	font-size: 22px;
+}
+.iconCustom {
+    display: inline-block;
+    color: var(--color-primary);
+}
+.containerMedical {
+	text-align: center;
+	background-color: var(--color-primary);
+	color: #FFFFFF;
+	padding: 20px;
+	padding-top: 120px;
+	height: 100%;
+}
+.containerMedical[class*="_results"] {
+	padding-top: 67px;
+	height: auto;
+	min-height: unset;
+}
+.containerMedical [class*="title"] h3 {
+	font-weight: 600;
+	margin-bottom: 0;
+	font-size: 21px;
+}
+.titleSmall {
+	margin-top: 14px;
+}
+.titleSmall span {
+	display: block;
+	font-size: 12px;
+}
+.btnCms {
+	margin-top: 31px;
+}
+.btnCms[class*="_results"] {
+	margin-top: 11px;
+}
+.btnCms button{
+	background-color: unset;
+	border: 1px solid #FFFFFF;
+	border-radius: 10px;
+}
+.btnCms button > span {
+	font-size: 12px;
+	font-weight: normal;
+	text-transform: none;
+}
+.containerTest {
+	padding: 22px;
+	padding-bottom: 100px;
+}
+.containerTest [class^="no-info"] {
+	border: 1px solid #CCCCCC;
+	border-radius: 10px;
+	padding: 36px;
+	text-align: center;
+}
+.containerTest [class^="no-info"] > span {
+	font-size: 10px;
+	font-style: italic;
+}
+.containerTest [class^="all-info"] {
+	border: 1px solid #CCCCCC;
+	border-radius: 10px;
+}
+.containerTest [class^="all-info"] span {
+	font-size: 12px;
+}
+.gridRow {
+	padding: 17px;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	border-bottom: 1px solid #CCCCCC;
+}
+.gridRow[class*="last-child"] {
+	border-bottom: 0;
+}
+
+.notFound {
+	margin: 0 auto;
+    text-align: center;
+    padding-top: 220px;
+}
+@media (min-width: 768px) {
+	.containerMedical {
+		min-height: 30rem;
+	}
+}
+
+@media (max-width: 767px) {
+	.containerMedical [class^='main-page'] {
+		min-height: 0;
+		height: 100vh;
+	}
+}

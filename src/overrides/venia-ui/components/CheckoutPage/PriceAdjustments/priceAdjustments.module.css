@@ -1,0 +1,43 @@
+.rewardpoint {
+    padding-bottom: 16px;
+}
+
+.rewardpointTitle {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.priceWrapper {
+    background-color: #fff;
+    padding: 0 10px 16px 10px;
+}
+
+.couponWrapper {
+    background-color: #fff;
+    padding: 16px 10px 0 10px;
+    padding-top: 0;
+}
+
+@media (max-width: 960px) {
+    .root,
+    .couponWrapper {
+        box-sizing: border-box;
+        min-width: 0;
+        overflow: hidden;
+        width: 100%;
+    }
+}
+
+@media (min-width: 961px) {
+    .couponWrapper {
+        margin-bottom: 16px;
+        border-radius: 12px;
+        padding: 16px 10px 0 10px;
+        padding-top: 0;
+    }
+    .priceWrapper {
+        padding: 16px 10px;
+        border-radius: 12px;
+    }
+}

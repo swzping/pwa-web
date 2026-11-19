@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SVG 图标预览</title>
+        <style>
+            body {
+                background-color: #f6f8fa;
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .controls {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+                padding: 16px 0;
+                gap: 20px;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                background-color: #f6f8fa;
+            }
+
+            .control-group {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .control-group label {
+                display: flex;
+                align-items: center;
+            }
+
+            .button-group {
+                position: relative;
+                display: flex;
+                align-items: stretch;
+                justify-items: flex-start;
+                width: 100%;
+                border-radius: 8px;
+            }
+
+            .button {
+                padding: 10px 20px;
+                margin-right: 8px;
+                border: none;
+                cursor: pointer;
+                font-size: 14px;
+                color: #007bff;
+                background-color: #f6f8fa;
+                border-radius: 4px;
+                transition: all 0.3s;
+            }
+
+            .button.active {
+                background-color: #007bff;
+                color: #fff;
+            }
+
+            .search-input {
+                flex: 1;
+                padding: 0 8px;
+                padding-left: 20px;
+                font-size: inherit;
+                height: 40px;
+                line-height: 1;
+                color: inherit;
+                background-color: #fff;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+                border: 0;
+                outline: 0;
+                border-radius: 6px;
+            }
+
+            #icon-list {
+                display: grid;
+                grid-gap: 16px;
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                padding: 0;
+                list-style: none;
+            }
+
+            .icon-container {
+                display: flex;
+                flex-direction: column;
+                margin: 10px;
+                height: 180px;
+                padding-bottom: 16px;
+                background-color: #fff;
+                cursor: pointer;
+                border-radius: 6px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            }
+
+            .icon-content {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .icon-name {
+                font-size: 14px;
+                padding: 16px;
+                text-align: center;
+                word-break: break-word;
+            }
+
+            .icon-container svg {
+                transition: width 0.3s, height 0.3s, color 0.3s;
+            }
+
+            .toast {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background-color: #4caf50;
+                color: #fff;
+                padding: 12px 24px;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                font-size: 14px;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s, top 0.3s, visibility 0s 0.3s;
+                z-index: 1000;
+            }
+
+            .toast.show {
+                opacity: 1;
+                top: 40px;
+                visibility: visible;
+                transition: opacity 0.3s, top 0.3s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="controls">
+                <div class="control-group">
+                    <div class="button-group">
+                        <button class="button active" data-theme="outlined">线框风格</button>
+                        <button class="button" data-theme="filled">实底风格</button>
+                    </div>
+                </div>
+
+                <input
+                    type="text"
+                    id="search-input"
+                    class="search-input"
+                    placeholder="在此搜索图标，点击图标可复制代码"
+                />
+
+                <div class="control-group">
+                    <label>
+                        大小:
+                        <input type="range" id="size-slider" min="12" max="100" value="50" />
+                        <span id="size-value">50px</span>
+                    </label>
+                    <label>
+                        颜色:
+                        <input type="color" id="color-picker" value="#000000" />
+                    </label>
+                </div>
+            </div>
+
+            <div id="icon-list"></div>
+        </div>
+
+        <div id="toast" class="toast">复制成功 🎉</div>
+
+        <script>
+            const themes = ['filled', 'outlined'];
+            const iconListContainer = document.getElementById('icon-list');
+            const buttons = document.querySelectorAll('.button');
+            const sizeSlider = document.getElementById('size-slider');
+            const sizeValue = document.getElementById('size-value');
+            const colorPicker = document.getElementById('color-picker');
+            const searchInput = document.getElementById('search-input');
+            const toast = document.getElementById('toast');
+            let currentIcons = [];
+
+            function updateIconStyles() {
+                const color = colorPicker.value;
+                const size = sizeSlider.value + 'px';
+
+                document.querySelectorAll('.icon-container svg').forEach(svg => {
+                    svg.style.color = color;
+                    svg.style.width = size;
+                    svg.style.height = size;
+                });
+                sizeValue.textContent = size;
+            }
+
+            function showToast(message) {
+                toast.textContent = message;
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 2000);
+            }
+
+            function copyToClipboard(text) {
+                navigator.clipboard
+                    .writeText(text)
+                    .then(() => {
+                        showToast(`${text} 已复制`);
+                    })
+                    .catch(err => console.error('复制失败:', err));
+            }
+
+            function toPascalCase(name) {
+                return name.replace(/(^\w|-\w)/g, match => match.replace('-', '').toUpperCase());
+            }
+
+            async function fetchSvgContent(url) {
+                const response = await fetch(url);
+                return response.text();
+            }
+
+            async function loadIcons(theme) {
+                try {
+                    iconListContainer.innerHTML = '';
+                    currentIcons = [];
+
+                    const response = await fetch(`./${theme}`);
+                    if (response.ok) {
+                        const text = await response.text();
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(text, 'text/html');
+                        const svgLinks = Array.from(doc.querySelectorAll('a'))
+                            .map(a => a.href)
+                            .filter(href => href.endsWith('.svg'));
+
+                        for (const svgUrl of svgLinks) {
+                            const svgContent = await fetchSvgContent(svgUrl);
+                            const iconName = svgUrl
+                                .split('/')
+                                .pop()
+                                .replace('.svg', '');
+                            const pascalName = toPascalCase(`${iconName}-${theme}`);
+                            currentIcons.push({ name: pascalName, svgContent });
+                            const iconContainer = document.createElement('div');
+                            iconContainer.className = 'icon-container';
+                            iconContainer.innerHTML = `
+                                <div class="icon-content">${svgContent}</div>
+                                <div class="icon-name">${iconName}</div>
+                            `;
+                            iconContainer.addEventListener('click', () => {
+                                copyToClipboard(`<${pascalName} />`);
+                            });
+                            iconListContainer.appendChild(iconContainer);
+                        }
+                    }
+                    updateIconStyles();
+                } catch (error) {
+                    console.error('无法获取图标:', error);
+                }
+            }
+
+            function filterIcons(query) {
+                const filteredIcons = currentIcons.filter(icon =>
+                    icon.name.toLowerCase().includes(query.toLowerCase())
+                );
+
+                iconListContainer.innerHTML = '';
+                filteredIcons.forEach(({ name, svgContent }) => {
+                    const iconContainer = document.createElement('div');
+                    iconContainer.className = 'icon-container';
+                    iconContainer.innerHTML = `<div class="icon-content">${svgContent}</div><div class="icon-name">${name}</div>`;
+                    iconContainer.addEventListener('click', () => {
+                        copyToClipboard(`<${name} />`);
+                    });
+                    iconListContainer.appendChild(iconContainer);
+                });
+
+                updateIconStyles();
+            }
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    button.classList.add('active');
+                    loadIcons(button.getAttribute('data-theme'));
+                });
+            });
+
+            colorPicker.addEventListener('input', updateIconStyles);
+            sizeSlider.addEventListener('input', updateIconStyles);
+            searchInput.addEventListener('input', e => filterIcons(e.target.value));
+
+            loadIcons('outlined');
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+.root {
+    display: grid;
+    margin-bottom: 18px;
+}
+
+.heading {
+    font-weight: var(--venia-global-fontWeight-bold);
+    /* padding-bottom: 0.375rem; */
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    line-height: 18px;
+    font-size: 12px;
+}
+
+.name, .streetRow {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.additionalAddress {
+    font-size: 12px;
+    line-height: 18px;
+}

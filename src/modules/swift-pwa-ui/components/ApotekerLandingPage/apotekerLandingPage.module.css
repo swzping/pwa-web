@@ -1,0 +1,85 @@
+.containerApoteker {
+	max-width: 360px;
+	margin: 0 auto;
+	padding: 20px;
+	padding-top: 55px;
+}
+.containerApoteker.completed {
+	margin-top: 70px;
+	text-align: center;
+}
+.title {
+	text-align: center;
+}
+.title h3 {
+	font-weight: 700;
+	font-size: 22px;
+}
+.divPass {
+	margin-top: 92px;
+}
+.divPass [class^="field-root"] {
+    margin-bottom: 24px;
+	position: relative;
+}
+.divPass[class*="_customer"] {
+	margin-top: 44px;
+}
+.divPass label {
+	text-transform: uppercase;
+	font-size: 12px;
+}
+.divPass span > input{
+	border: 0;
+	border-bottom: 1px solid #000000;
+	border-radius: 0;
+	padding-bottom: 20px;
+	padding-left: 0;
+}
+.inputForm{
+	border: 0;
+	border-bottom: 1px solid #000000;
+	border-radius: 0;
+	padding-bottom: 10px;
+	padding-left: 0;
+	outline: none;
+}
+.inputForm[type="date"]::-webkit-calendar-picker-indicator {
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+}
+.smallNote {
+	font-size: 14px;
+	color: gray;
+}
+.smallInfo {
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+}
+.action_container {
+	margin-top: 150px;
+	margin-bottom: 100px;
+}
+.action_container[class*="_save"] {
+	margin-top: 65px;
+}
+.action_container button {
+	width: 100%;
+	border-radius: 10px;
+	padding: 14px 0;
+}
+.action_container button span {
+	font-size: 18px;
+	letter-spacing: 0.9px;
+	text-transform: capitalize;
+	font-weight: 400;
+}
+.iconCheck {
+	margin-bottom: 20px;
+}
+.iconCheck i {
+	font-size: 55px;
+	color: #489A20;
+}

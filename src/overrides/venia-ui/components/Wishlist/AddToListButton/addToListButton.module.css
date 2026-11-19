@@ -1,0 +1,28 @@
+.root {
+    column-gap: 0.5rem;
+    display: inline-flex;
+    --fill: #bfbfbf;
+    --stroke: #bfbfbf;
+    align-items: center;
+}
+
+.root_selected {
+    composes: root;
+    --selectedColor: rgb(var(--venia-global-color-red-400));
+    --fill: var(--selectedColor);
+    --stroke: var(--selectedColor);
+
+    text-decoration: none;
+}
+
+.addText {
+    color: #000000;
+    font-size: 12px;
+    /* text-decoration: underline; */
+}
+
+@media (max-width: 1024px) {
+    .addText {
+        font-size: 14px;
+    }
+}

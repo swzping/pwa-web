@@ -1,0 +1,337 @@
+:root {
+  --primary-orange: #ff7f00;
+  --light-gray: #f0f0f0;
+  --dark-gray: #333;
+  --medium-gray: #666;
+  --border-gray: #ccc;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+/* 覆盖整个屏幕的弹出层 */
+.popup-overlay-voucher {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white; /* 设置背景为白色，以覆盖下方内容 */
+  z-index: 800;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 弹出框容器，撑满 overlay */
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/* 顶部导航栏样式 */
+.popup-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: white;
+  flex-shrink: 0;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 12px;
+}
+
+.header-title {
+  width: 80%;
+  text-align: center;
+  margin: 0;
+  color: var(--dark-gray);
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* 主内容区 */
+.popup-main-content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #F5F5F5
+}
+
+/* 优惠券卡片样式 */
+.mycoupon-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.coupon-disabled-select {
+  display: flex;
+  flex-direction: column;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.coupon-main-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 12px 10px;
+}
+
+.coupon-details-row {
+  flex: 1;
+}
+.mycoupon-details-text {
+  color: var(--color-text-brand, #FF8200);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px; /* 125% */
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+.mycoupon-title {
+  color: var(--primary-orange);
+  margin: 0 0 2px;
+  font-family: "Noto Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 19px;
+  width: 90%;
+}
+
+.myproduct-desc {
+ margin-bottom: 8px;
+ color: var(--Dark-Grey, #373737);
+ text-overflow: ellipsis;
+ font-family: "Noto Sans";
+ font-size: 12px;
+ width: 90%;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 150%;
+ letter-spacing: -1.9%;
+}
+
+.mycoupon-code-row {
+  display: flex;
+  gap: 8px;
+  font-size: 0.85rem;
+  justify-content: space-between;
+}
+.mycoupon-code-row-code{
+  /* min-width: 142px; */
+  /* max-width: 142px; */
+  display: flex;
+  height: 20px;
+  padding: 0 12px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  border-radius: 9px;
+  background: #F9F9F8;
+}
+.mycoupon-code {
+  color: var(--Mannings-Orange, #FF8300);
+  font-family: "Noto Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.228px;
+  overflow: hidden;
+}
+
+.copy-icon-container {
+  cursor: pointer;
+}
+
+.coupon-radio {
+  transform: scale(1.2);
+  cursor: pointer;
+  margin: 0;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--border-gray);
+  margin: 12px 0;
+}
+
+.valid-date {
+  margin: 0;
+  padding: 8px 25px;
+  font-family: Noto Sans;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 100%;
+  letter-spacing: -0.5%;
+  color: rgba(102, 102, 102, 1);
+}
+
+.popup-footer {
+  padding: 16px;
+  background-color: white;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+.apply-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-orange);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.apply-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.myselect-btn {
+  background: #fff;
+  border: 2px solid #c1c0c0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: absolute;
+  right: 1px;
+  top: 0px;
+}
+
+.two-line-ellipsis {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.one-line-ellipsis {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.mybutton-div{
+  position: relative;
+}
+.myselect-btn.selected {
+  border: 6px solid #ff7f00;
+  width: 20px;
+  height: 20px;
+}
+
+.mycopied-tooltip {
+  position: relative;
+  background: #939393;
+  transform: translate(-65%,100%);
+  color: #fff;
+  /* left: 150px;; */
+  top: 10px;
+  font-size: 11px;
+  padding: 6px 6px;
+  border-radius: 4px;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.mytooltip-arrow {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #939393;
+}
+.one-line-ellipsis-mydeatil {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+.myclyle-left{
+  height: 10px;
+  width: 10px;
+  margin-left: -5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  background-color: #f5f5f5;
+}
+.myrowLineStyle{
+  width: 100%;
+  height: 1px;
+  align-self: center;
+  background-image: linear-gradient(
+    to right,
+    rgb(213, 213, 213) 50%,
+    transparent 50%
+  );
+  background-size: 8px 100%;
+  background-repeat: repeat-x;
+  background-color: white;
+}
+.myclyle-right{
+  height: 10px;
+  width: 10px;
+  margin-right: -5px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: #f5f5f5;
+}
+.myline{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+.no-more-coupons{
+  width: 100%;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+}

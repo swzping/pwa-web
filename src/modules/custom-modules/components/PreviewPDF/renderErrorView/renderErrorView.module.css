@@ -1,0 +1,84 @@
+.root {
+    background: var(--backroundImageUrl);
+    background-size: cover;
+    padding-top: 89px;
+    padding-bottom: 98px;
+
+    display: grid;
+    grid-template: 'content';
+    align-content: center;
+}
+
+.content {
+    grid-area: content;
+    display: grid;
+    text-align: center;
+    color: white;
+}
+
+.header {
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: 80px;
+    margin-bottom: 21px;
+}
+
+.pageNotFound {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.message {
+    line-height: var(--venia-global-lineHeight-200);
+    color: #000;
+    font-size: 14px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.actionsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonRefresh {
+    width: 192px;
+    composes: root_normalPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: capitalize;
+    padding: 11px 20px;
+    margin-top: 56px;
+    font-weight: 600;
+}
+
+.buttonToHome {
+    width: 192px;
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: capitalize;
+    padding: 11px 20px;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    .root {
+        background-image: var(--mobileBackgroundImageUrl);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            'content';
+    }
+
+    .content {
+        align-content: start;
+    }
+
+    .message {}
+}

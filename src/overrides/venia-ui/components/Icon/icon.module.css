@@ -1,0 +1,19 @@
+.root {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    touch-action: manipulation;
+}
+
+.icon {
+    /* fill: var(--fill, none); */
+    /* stroke: var(--stroke, rgb(var(--venia-global-color-text))); */
+    stroke: var(--stroke, #D5D5D5);
+}
+
+@media (min-width: 641px) {
+    .icon_desktop {
+        width: 28px;
+        height: 28px;
+    }
+}

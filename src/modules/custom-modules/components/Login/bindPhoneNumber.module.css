@@ -1,0 +1,135 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* z-index: 10; */
+    pointer-events: auto;
+    background: #fff;
+}
+
+.card {
+    position: relative;
+    pointer-events: auto;
+    text-align: left;
+    width: 480px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 16px;
+}
+
+.closeButton {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    box-shadow: 0px 2px 12px 0px #0000000F;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    z-index: 1;
+}
+
+.headerTitle {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.headerTitlePhone {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 4px;
+}
+
+.description {
+    font-size: 14px;
+    color: #757575;
+    margin-bottom: 16px;
+}
+
+.phoneRow {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.countrySelectWrapper {
+    min-width: 92px;
+    background-color: #FAFAFA;
+}
+
+.phoneInputWrapper {
+    flex: 1;
+    margin-left: 8px;
+}
+
+.phoneInput {
+    height: 44px;
+}
+
+.fullWidthButtonWrapper {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .closeButton {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        box-shadow: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+    }
+    .headerTitle {
+        opacity: 0;
+    }
+    .header {
+        margin-left: -24px;
+        position: relative;
+        width: 100vw;
+        left: 0;
+        padding: 10px 0;
+        background-color: #fff;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #EEEEEE;
+    }
+    .card {
+        margin-top: -62px;
+        width: 100%;
+        padding: 0 24px;
+    }
+    .box {
+        width: 44px;
+        height: 44px;
+    }
+    .inputsWrap {
+        gap: 0;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .actionsWrap {
+        margin-top: 34px;
+    }
+    .confirmButton {
+        width: 100%;
+    }
+}
+
+

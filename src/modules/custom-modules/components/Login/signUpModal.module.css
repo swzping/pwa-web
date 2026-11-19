@@ -1,0 +1,295 @@
+.containerStyle {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    /* z-index: 11; */
+    background: #fff;
+}
+
+.closeButtonStyle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    box-shadow: 0px 2px 12px 0px #0000000F;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.header {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 24px;
+}
+
+.headerTitle {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.cardStyle {
+    position: relative;
+    pointer-events: auto;
+    text-align: left;
+    width: 480px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.formInfo{}
+
+.inputStyle {
+    width: 100%;
+    height: 44px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1.3px solid #F0EFED;
+    font-size: 14px;
+}
+
+.inputErrorStyle {
+    border: 1.3px solid #f87171 !important;
+}
+.dateInputWrapperStyle {
+    position: relative;
+    width: 100%;
+}
+
+.dateInputStyle {
+    composes: inputStyle;
+    padding-right: 48px;
+    cursor: pointer;
+    background: #FAFAFA;
+    border: 1.3px solid #CCCAC6;
+}
+
+.dateInputDisabledStyle {
+    composes: inputStyle;
+    background: #F0F0F0;
+    border: none;
+    color: #BDBDBD;
+
+}
+
+.calendarIconStyle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+}
+
+.infoBannerStyle {
+    background: #FFE7BA;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.infoIconStyle {
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+}
+
+.infoTextStyle {
+    font-size: 11px;
+    color: #212121;
+    flex: 1;
+}
+
+.hintTextStyle {
+    font-size: 10px;
+    color: #9E9E9E;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.errorText {
+    font-size: 0.875rem;
+}
+
+.emailWrapperStyle {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.verifyButtonStyle {
+    position: absolute;
+    right: 14px;
+    top: 13px;
+    color: #FF8200;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.checkboxWrapperStyle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.checkboxStyle {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: #e47717;
+}
+
+.linkStyle {
+    font-size: 12px;
+    font-weight: 500;
+    color: #ff8a00;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.nextButtonStyle {
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    margin-top: 24px;
+    width: 100%;
+    color: #fff;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.nextButtonDisabledStyle {
+    composes: nextButtonStyle;
+    background: #E0E0E0;
+    color: #757575;
+    cursor: 'not-allowed';
+}
+
+/* Add Address：Save 下方的次级按钮，web / H5 通用 */
+.addAddressButtonStyle {
+    composes: root_normalPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    margin-top: 8px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    cursor: pointer;
+    color: var(--color-primary, #FF8200);
+    background: #fff;
+    border: 1.3px solid var(--color-primary, #FF8200);
+}
+
+.inputWithChevron {
+    padding: 12px 14px;
+    border-radius: 6px;
+    border: 1.3px solid #CCCAC6;
+    background-color: #FAFAFA;
+    position: relative;
+    font-size: 14px;
+    color: #757575;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.hobbiesEditBtn {
+    composes: root from '~@magento/venia-ui/lib/components/LinkButton/linkButton.module.css';
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 34px;
+    font-size: 11px;
+    color: #FF8200;
+}
+
+.relative {
+    position: relative;
+}
+
+.hobbyItem {
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #212121;
+    border-radius: 999px;
+    background-color: #fff;
+}
+
+.chevronRightArrow {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.disabledColor {
+    color: #BDBDBD;
+}
+
+
+@media (max-width: 768px) {
+    .containerStyle {
+        /* padding: 0 24px; */
+    }
+    .closeButtonStyle {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        box-shadow: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        background-color: #fff;
+        z-index: 2;
+    }
+    .header {
+        margin-left: -24px;
+        margin-bottom: 16px;
+        position: relative;
+        width: 100vw;
+        left: 0;
+        padding: 10px 0;
+        background-color: #fff;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #EEEEEE;
+    }
+    .cardStyle {
+        box-sizing: border-box;
+        margin-top: -62px;
+        width: 100%;
+        /* padding: 0 24px; */
+    }
+    .checkboxWrapperStyle {
+        align-items: flex-start;
+    }
+}
+

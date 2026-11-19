@@ -1,0 +1,79 @@
+.dialog {
+	background-color: rgb(var(--venia-global-color-background));
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgb(var(--venia-global-color-gray-darker));
+    height: 100%;
+    max-height: 90vh;
+    min-height: 360px;
+    width: 77vw;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    pointer-events: auto;
+    z-index: 4;
+}
+div[class*="modalMedical-dialog"] div[class^="dialog-header"] {
+	text-align: center;
+}
+div[class*="modalMedical-dialog"] div[class^="dialog-header"] > span {
+	font-size: 20px;
+	font-weight: 600;
+	color: #000000;
+}
+.term p {
+	color: #000000;
+}
+.divCheck {
+	margin-bottom: 20px;
+}
+.checkedTerm {
+	width: 22px;
+	height: 22px;
+	vertical-align: middle;
+	appearance: none;
+	position: relative;
+	border: 2px solid #999;
+	border-radius: 2px;
+	margin-right: 10px;
+  }
+.checkedTerm:checked {
+	background-color: #FF8200;
+}
+.checkedTerm:checked::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 6px;
+	width: 7px;
+	height: 16px;
+	border: solid #fff;
+	border-width: 0 3px 3px 0;
+	transform: rotate(45deg);
+  }
+.btnRegis {
+	display: block;
+    text-align: center;
+    background-color: #FF8200;
+    color: #FFFFFF;
+    border: 0;
+	border-radius: 10px;
+	padding: 10px 16px;
+}
+.btnRegis:disabled {
+	cursor: not-allowed;
+	background-color: gray;
+	opacity: 0.5;
+}
+
+@media (max-width: 767px) {
+    .dialog {
+        width: 90vw;
+		margin: 10px;
+    }
+	.term p {
+		font-size: 14px;
+	}
+	.btnRegis {
+		width: 100%;
+	}
+}

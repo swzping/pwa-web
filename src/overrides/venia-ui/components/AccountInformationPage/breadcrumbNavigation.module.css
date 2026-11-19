@@ -1,0 +1,49 @@
+.root {
+    font-size: 14px;
+    margin: 20px 0 20px 15px;
+    padding: 0;
+    color: var(--text-default-grey, #969696);
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.link {
+    color: var(--text-default-grey, #969696);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.link:hover {
+    color: #e67300;
+}
+
+.text {
+    color: var(--text-default-grey, #969696);
+}
+
+.current {
+    color: var(--color-icon-primary, #212121);
+}
+
+.separator {
+    margin: 0 8px !important;
+    color: var(--text-default-grey, #969696);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .root {
+        margin: 15px 0 15px 10px;
+        font-size: 13px;
+        display: none;
+    }
+    
+    .separator {
+        margin: 0 6px !important;
+    }
+}

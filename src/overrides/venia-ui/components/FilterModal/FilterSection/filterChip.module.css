@@ -1,0 +1,24 @@
+.root {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 18px;
+    margin: 0 8px 8px 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #212121;
+    background-color: #F5F5F5;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.root:active {
+    opacity: 0.8;
+}
+
+.selected {
+    background-color: #FFE7BA;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 500;
+}

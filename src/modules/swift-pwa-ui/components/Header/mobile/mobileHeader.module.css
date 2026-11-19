@@ -1,0 +1,23 @@
+.root {
+    padding: 10px 1.25rem;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    /* box-shadow: 0px 3px 6px #00000040; */
+}
+
+.border_bottom {
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.iconWrapper {
+    min-width: 32px;
+}

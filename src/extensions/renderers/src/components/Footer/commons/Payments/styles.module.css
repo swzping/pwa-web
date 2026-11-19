@@ -1,0 +1,19 @@
+.root {
+    display: inline-block;
+    padding: 2px !important;
+}
+
+.root ol,
+ul,
+li {
+    padding: 0px !important;
+}
+
+.rectangle {
+    /* width: 56px; */
+    height: 36px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

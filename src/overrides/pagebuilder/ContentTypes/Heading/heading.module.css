@@ -1,0 +1,108 @@
+.root {
+    composes: relative from global;
+}
+
+.head {
+    composes: px-1 md_px-2 from global;
+    composes: py-2 md_py-[12.5px] from global;
+    composes: min-h-10 md_min-h-[50px] from global;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    border-radius: 12px;
+    text-align: inherit;
+    min-height: 60px;
+}
+
+.text {
+    /* composes: px-1 md_px-2 from global; */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    max-width: 100%;
+    white-space: normal;
+}
+
+
+.root h1{
+    font-size: 24px;
+    font-weight: bold;
+}
+.root h2{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.whiteText {
+    color: white;
+}
+
+.moreButton {
+    composes: absolute from global;
+    composes: right-2 from global;
+    top: 50%;
+    transform: translateY(-50%);
+    composes: flex from global;
+    composes: justify-center from global;
+    composes: items-center from global;
+    composes: h-6 from global;
+    composes: md_h-8 from global;
+    composes: px-[8px] from global;
+    composes: md_px-[12px] from global;
+    border-radius: 999px;
+    text-decoration: none !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5vw;
+    padding: 1.3vw 1.1vw !important;
+    background: #fff;
+    color: orange;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.hasBackground .head{
+    color: #fff;
+    padding: 0 80px!important;
+}
+
+.hasBackground .moreButton {
+    right: 80px;
+}
+
+.smallContainerButton .buttonText{
+    display: none;
+}
+
+.buttonText {
+    color: #FF8200;
+}
+
+.arrowWrapper {
+    background-color: #FF8200;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+}
+
+.root [class^='rounded-b-none'] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .root h1, .root h2{
+        font-size: 16px;
+    }
+}

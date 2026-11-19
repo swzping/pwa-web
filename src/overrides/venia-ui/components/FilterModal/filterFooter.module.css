@@ -1,0 +1,33 @@
+.root {
+    align-items: center;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 8px;
+    padding: 0.75rem;
+}
+
+.root button{
+    flex: 1;
+    height: 44px;
+    line-height: 44px;
+    padding: 0;
+    border-radius: 8px;
+    text-transform: unset;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* app parity: white bg + brand border + brand text */
+.buttonClear {
+    background-color: var(--bs-white);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.buttonFilter {
+    background-color: var(--color-primary);
+    color: var(--bs-white);
+}

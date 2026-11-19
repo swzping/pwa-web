@@ -1,0 +1,66 @@
+.videoThumbnailWrapper {
+    position: relative;
+    height: 100%;
+}
+
+.videoIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.videoThumbnailWrapper :global img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+}
+
+.videoThumbnailWrapper :global video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+}
+
+.loadingSpinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+}
+
+@media screen and (min-width: 768px) {
+    .loadingSpinner {
+        width: 68px; /* PC 端尺寸 */
+        height: 68px;
+    }
+}
+
+.spinner {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid #ff6b00;
+    border-right: 2px solid #ff6b00;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 12;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

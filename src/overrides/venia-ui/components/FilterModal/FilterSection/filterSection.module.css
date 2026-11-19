@@ -1,0 +1,53 @@
+.root {
+    padding: 0 0!important;
+    list-style: none;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.last {
+    border-bottom: none;
+}
+
+.headerButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 14px 12px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.headerButton label {
+    pointer-events: none;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+
+.chevron {
+    display: flex;
+    align-items: center;
+    color: #212121;
+}
+
+.chevron svg {
+    width: 24px;
+    height: 24px;
+}
+
+.body {
+    padding: 16px 12px;
+    padding-top: 0;
+}
+
+@media (max-width: 768px) {
+    .body {
+        padding-top: 16px;
+    }
+}

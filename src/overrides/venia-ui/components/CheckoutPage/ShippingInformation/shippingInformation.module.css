@@ -1,0 +1,91 @@
+.root {
+    /* border-bottom: 1px solid rgb(var(--venia-global-color-border)); */
+}
+
+.root_editMode {
+    composes: root;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid rgb(var(--venia-global-color-border));
+    padding: 0;
+}
+
+.root_updated {
+    composes: root;
+    animation: flash var(--venia-global-anim-bounce) 640ms 2;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardTitle {
+    font-weight: 700;
+    line-height: 1.5rem;
+    font-size: 16px;
+    margin-right: 16px;
+}
+
+/* .editButton {
+    padding: 1rem;
+    margin: -1rem;
+    color: rgb(var(--venia-brand-color-1-700));
+} */
+
+.editButton {
+    color: #FF8200;
+    border: 1px solid #FF8200;
+    padding: 6.5px 23px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.editWrapper {
+    display: grid;
+    padding: 0 0 1.5rem;
+    row-gap: 0.5rem;
+}
+
+.editTitle {
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.editTextSubtitle {
+    font-size: 1rem;
+    color: #858585;
+}
+
+.editIcon {
+    stroke: rgb(var(--venia-brand-color-1-700));
+}
+
+.loading {
+    composes: root from '~@magento/venia-ui/lib/components/LoadingIndicator/indicator.module.css';
+    text-align: center;
+}
+
+@media (max-width: 960px) {
+    .editText {
+        display: none;
+    }
+    .cardTitle {
+        margin-right: 0;
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,33 @@
+.root {
+    position: relative;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 1.5rem 0;
+}
+
+.dividerLine {
+    flex: 1;
+    height: 1px;
+    background: #e6e6e6;
+}
+
+.dividerText {
+    color: #373737;
+    font-size: 14px;
+}
+
+.passwordField {
+    color: #373737;
+}
+
+@media (max-width: 768px) {
+    .root {
+        box-sizing: border-box;
+        width: 100vw;
+        padding: 0 24px;
+    }
+}

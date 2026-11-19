@@ -1,0 +1,40 @@
+.root {
+    align-items: center;
+    display: none;
+    justify-items: center;
+    max-width: var(--venia-global-maxWidth);
+    width: 100%;
+}
+
+.root_open {
+    composes: root;
+    display: grid;
+}
+
+.form {
+    align-items: center;
+    display: grid;
+    justify-items: stretch;
+    width: 100%;
+}
+
+.container {
+    padding-bottom: 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.search {
+    display: grid;
+    position: relative;
+}
+
+.autocomplete {
+    display: grid;
+    position: relative;
+}
+
+span[class*='z-foreground']
+ {
+    z-index: 0;
+ }

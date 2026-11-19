@@ -1,0 +1,160 @@
+.root {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto auto auto auto 1fr;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    font-size: var(--venia-global-fontSize-100);
+    opacity: 1;
+    transition-delay: 64ms;
+    transition-duration: 384ms;
+    transition-property: opacity;
+    transition-timing-function: var(--venia-global-anim-standard);
+}
+
+.removeLoader {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(242,240,237,.85);
+}
+
+.loader {
+    display: inline-block;
+    border: 3px solid rgba(0,0,0,.25);
+    border-radius: 50%;
+    border-top: 3px solid rgba(0,0,0,.45);
+    width: 15px;
+    height: 15px;
+    margin-right: 5px !important;
+    -webkit-animation: spin 1.5s linear infinite; /* Safari */
+    animation: spin 1.5s linear infinite;
+}
+
+.loaderText {
+    opacity: 0.7;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.thumbnailContainer {
+    position: relative;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 6;
+}
+
+.thumbnail {
+    aspect-ratio: 1 / 1;
+}
+
+.name {
+    font-weight: 600;
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    /* margin-bottom: 0.5rem; */
+    text-decoration: none;
+}
+
+.options {
+    display: grid;
+    gap: 0.5rem;
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 2;
+}
+
+.quantity {
+    grid-column: 2 / span 1;
+    /* grid-row: 4 / span 1; */
+}
+
+.price {
+    grid-column: 2 / span 1;
+    /* grid-row: 5 / span 1; */
+}
+
+.priceWrapper {
+    font-weight: 700;
+}
+
+.specialPrice {
+    color: #000;
+}
+
+.discountWrapper {
+    color: #000;
+    font-size: 12px;
+}
+
+.discountPrice {
+    font-weight: 500;
+    color: #969696;
+    text-decoration: line-through;
+}
+
+.stockStatus, .qtyStatus {
+    color: rgb(var(--venia-global-color-error));
+    font-weight: var(--venia-global-fontWeight-semibold);
+    grid-column: 2;
+    grid-row: 4;
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+}
+.stockStatus > svg,
+.qtyStatus > svg {
+    margin-right: 4px !important;
+}
+
+.deleteButton {
+    align-self: flex-start;
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+    color: #808080;
+}
+
+.deleteButton i {
+    display: inline-block;
+}
+
+.customizable {
+    display: flex;
+    flex-direction: column;
+}
+
+.customizableTitle {
+    font-weight: 600;
+}
+
+.productPromo {
+    position: absolute;
+    bottom: 0;
+    background-color: #E41305;
+    color: #ffffff;
+    padding: 4px 6px 4px 4px;
+    font-size: 11px;
+    text-align: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 85px;
+    line-height: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+

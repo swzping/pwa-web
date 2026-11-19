@@ -1,0 +1,66 @@
+.wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(169deg, #FFF 2.26%, #FFE7BA 63.99%, #FFBB5D 99.1%);
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+.qrCodeWrap {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  padding-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+}
+
+.qrCode {
+  width: 160px;
+  height: 160px;
+  padding: 6px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #FFF3EA -22.13%, #FDE4CE 123.77%);
+  margin-top: 20px;
+}
+
+.close {
+  padding: 10px 24px;
+  border: 1px solid #E5E5E3;
+  background-color: #FAFAFA;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FF8200;
+  margin-left: 24px;
+}
+
+.timerText {
+  color: #757575 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  margin-bottom: 16px !important;
+  margin-top: 6px !important;
+}
+
+.refreshMask {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,129 @@
+.root {
+    position: relative;
+}
+
+.hideWhenSignUpOpen {
+    display: none;
+}
+
+.closeButton {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    box-shadow: 0px 2px 12px 0px #0000000F;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    z-index: 1;
+}
+
+.phoneRow {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.countrySelectWrapper {
+    min-width: 92px;
+    background-color: #FAFAFA;
+}
+
+.phoneInputWrapper {
+    flex: 1;
+    margin-left: 8px;
+}
+
+.phoneNumberText {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212121;
+}
+
+.phoneNumberValue {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212121;
+}
+
+.phoneInput {
+    height: 44px;
+}
+
+.fullWidthButtonWrapper {
+    width: 100%;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 1.5rem 0;
+}
+
+.dividerLine {
+    flex: 1;
+    height: 1px;
+    background: #e6e6e6;
+}
+
+.dividerText {
+    color: #373737;
+    font-size: 14px;
+}
+
+.emailBlock {
+    text-align: center;
+}
+
+.emailText {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.emailButtonWrapper {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.emailButton {
+    width: 100%;
+}
+
+.hintTextStyle {
+    font-size: 10px;
+    color: #9E9E9E;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.errorText {
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .root {
+        box-sizing: border-box;
+        width: 100vw;
+        padding: 0 24px;
+    }
+    .closeButton {
+        top: -62px;
+        left: 0;
+        box-shadow: none;
+        width: 30px;
+        height: 30px;
+        margin-left: 16px;
+        padding: 8px 0;
+        border-radius: 0;
+    }
+}

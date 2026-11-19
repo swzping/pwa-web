@@ -1,0 +1,22 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+    padding: 1rem 1.5rem;
+}
+
+.buttonsContainer {
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-flow: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.title {
+    font-size: var(--venia-global-fontSize-400);
+    padding-top: 0.5rem;
+    text-transform: capitalize;
+}

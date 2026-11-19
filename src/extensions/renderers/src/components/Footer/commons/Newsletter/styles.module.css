@@ -1,0 +1,39 @@
+/* .root {
+    padding-bottom: 20px;
+} */
+
+.root [class^='textInput-input'] {
+    border: none;
+    border-radius: 0;
+    color: #30383d;
+    font-weight: 500;
+    height: 3rem;
+    box-shadow: none;
+    padding: 14px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.root [class^='textInput-input']:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.formFooter {
+    display: flex;
+    width: 340px;
+}
+
+.btnFooter {
+    background: #ff8200;
+    font-weight: 600;
+    border: none;
+    box-shadow: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.titleBtn {
+    color: #fff !important;
+}

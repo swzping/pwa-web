@@ -1,0 +1,181 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.502);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.card {
+    position: relative;
+    width: 344px;
+    max-width: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cardVisible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 彩条背景图 - 居中在内容背面，占满整屏宽度，弹出时从小到大的缩放 */
+.colourBg {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 100vw;
+    height: 100vh;
+    margin-left: -50vw;
+    margin-top: -50vh;
+    pointer-events: none;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(0.3);
+    opacity: 0.8;
+    transition: transform 0.6s ease;
+    z-index: -1;
+    background-image: url('/venia-static-assets/images/milestone_award_colour_web_icon.png');
+}
+
+.colourBgScale {
+    transform: scale(1);
+}
+
+/* 内容区域 - milestone_award_bg 背景 */
+.content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 301px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 16px;
+    padding: 90px 30px 19px;
+    box-sizing: border-box;
+    background-image: url('/venia-static-assets/images/milestone_award_web_bg.png');
+
+}
+
+.banner {
+    position: relative;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: end;
+}
+
+.bannerText {
+    display: inline-block;
+    font-style: italic;
+    padding-right: 13px;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 28px;
+    color: #FFF5CC;
+}
+
+.mainContent {
+    text-align: center;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #EF840A;
+    margin: 0 0 24px;
+    line-height: 1.2;
+}
+
+.messageRow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 27px;
+}
+
+.messageIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.message {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFA12E;
+}
+
+.ctaButton {
+    display: block;
+    width: 100%;
+    max-width: 283px;
+    margin: 0 auto;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 999px;
+    background: #F8801C;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.ctaButton:hover {
+    background: #E67315;
+}
+.ctaButton:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+    .colourBg {
+        top: -8%;
+        background-image: url('/venia-static-assets/images/milestone_award_colour_h5_icon.png');
+
+    }
+    .card {
+        width: 234px;
+    }
+    .content {
+        min-height: 271px;
+        padding-top: 100px;
+        padding: 86px 15px 21px;
+        background-image: url('/venia-static-assets/images/milestone_award_h5_bg.png');
+    }
+    .banner {
+        margin-bottom: 23px;
+    }
+    .bannerText {
+        letter-spacing: -1px;
+        line-height: 32px;
+        padding: 0;
+        font-size: 20px;
+    }
+    .title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    .messageIcon {
+        width: 18px;
+        height: 18px;
+    }
+    .messageRow {
+        margin-bottom: 16px;
+        gap: 7px;
+    }
+    .message {
+        font-size: 14px;
+    }
+}

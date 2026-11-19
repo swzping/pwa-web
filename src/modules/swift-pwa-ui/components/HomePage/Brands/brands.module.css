@@ -1,0 +1,126 @@
+.root :global .swiper-container {
+    padding: 0 3%;
+}
+
+.root :global .swiper-wrapper {
+    align-items: center;
+}
+
+.root :global img{
+    margin: 24px 0 32px 0;
+}
+
+.root :global .swiper-button-next::after {
+    content: url('/venia-static-assets/icons/home/arrow-right.svg');
+}
+
+.root :global .swiper-button-prev::after {
+    content: url('/venia-static-assets/icons/home/arrow-left.svg');
+}
+
+.root :global .swiper-button-prev::after {
+    content: url('/venia-static-assets/icons/home/arrow-left.svg');
+}
+
+.root :global .swiper-button-prev.swiper-button-disabled {
+    opacity: 0.5;
+}
+
+.root :global .swiper-button-next.swiper-button-disabled {
+    opacity: 0.5;
+}
+
+.root :global .swiper-button-next {
+    right: 4px;
+}
+
+.root :global .swiper-button-prev {
+    left: 4px;
+}
+
+.root :global .swiper-pagination {
+    display: flex;
+    justify-content: space-between;
+    width: 96px !important;
+    height: 8px !important;
+    left: 50% !important;
+    bottom: 0 !important;
+    transform: translateX(-48px);
+    border-radius: 4px;
+    background-color: #E5E5E5;
+}
+
+.root :global .swiper-pagination-bullet-active {
+    background-color: #ff8200 !important;
+    border-radius: 4px !important;
+}
+
+.root :global .swiper-pagination-bullet {
+    flex: 1;
+    height: 100%;
+    border-radius: unset;
+    background: unset;
+    opacity: unset;
+}
+
+.root :global .slick-prev {
+    left: 1.6rem;
+}
+.root :global .slick-prev:before {
+    content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' width='32px' height='32px' viewBox='0 0 24 24' fill='none' stroke='black' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'><line x1='19' y1='12' x2='5' y2='12' /><polyline points='12 19 5 12 12 5' /></svg>");
+}
+
+.root :global .slick-next {
+    right: 1.6rem;
+}
+.root :global .slick-next:before {
+    content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' width='32px' height='32px' viewBox='0 0 24 24' fill='none' stroke='black' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'><line x1='5' y1='12' x2='19' y2='12' /><polyline points='12 5 19 12 12 19' /></svg>");
+}
+
+.shimmer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.shimmerItem {
+    padding: 0 5px;
+}
+
+.featuredBrandText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.featuredBrandPage {
+    composes: featuredBrandText;
+    min-height: 65px;
+}
+
+.featuredBrandHome {
+    composes: featuredBrandText;
+    min-height: 97px;
+}
+
+@media (max-width: 768px) {
+
+    .root :global img{
+        margin: 0.75rem 0 1rem 0;
+    }
+
+    .root :global .swiper-pagination {
+        width: 48px !important;
+        height: 4px !important;
+        transform: translateX(-24px);
+        border-radius: 2px;
+    }
+
+    .root :global .swiper-pagination-bullet-active {
+        border-radius: 2px !important;
+    }
+}

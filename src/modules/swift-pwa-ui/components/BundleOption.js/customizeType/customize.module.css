@@ -1,0 +1,14 @@
+.checkedInput:checked {
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+}
+
+.checkedInput:focus {
+    /* box-shadow: 0 0 0 0.25rem rgba(253, 137, 13, 0.25); */
+    box-shadow: none;
+}
+
+.labelOption {
+    font-size: 12px;
+    margin-left: 12px;
+}

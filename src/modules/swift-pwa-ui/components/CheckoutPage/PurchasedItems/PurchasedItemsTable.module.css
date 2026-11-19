@@ -1,0 +1,381 @@
+.freeGift {
+    padding-left: 0 !important;
+}
+
+.freeGift td:first-child {
+    padding-left: 0 !important;
+}
+
+.freeGift td:last-child {
+    padding-right: 0 !important;
+}
+
+.imageContainer {
+    position: relative;
+    grid-area: image;
+}
+
+.imageRoot {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.image {
+    border-radius: 2px;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.productPromo {
+    position: absolute;
+    bottom: 0;
+    background-color: #E41305;
+    color: #ffffff;
+    padding: 4px 6px 4px 4px;
+    font-size: 11px;
+    text-align: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 85px;
+    line-height: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.outOfStock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-44px, -12px);
+    border-radius: 26px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    width: 87px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tableData {
+    position: relative;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.tableData td {
+    padding-bottom: 7px;
+    padding-left: 0;
+    padding-top: 7px;
+    font-size: 14px;
+}
+
+.tableImageCell {
+    max-width: 150px;
+}
+
+.tableDataName {
+    max-width: 160px;
+    padding-right: 16px;
+}
+
+.nameLink {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Noto Sans;
+}
+
+.optionText {
+    color: #757575;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 4px;
+}
+
+.tableEdit {
+    min-width: 100px;
+}
+
+.editWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loaderWrapper {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    display: inline-block;
+    border: 3px solid rgba(0,0,0,.25);
+    border-radius: 50%;
+    border-top: 3px solid rgba(0,0,0,.45);
+    width: 15px;
+    height: 15px;
+    margin-right: 5px !important;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loaderText {
+    opacity: 0.7;
+}
+
+.removeLoader {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,.85);
+}
+
+.removeLoader .loader {
+    border: 3px solid rgba(0,0,0,.3);
+    border-top: 3px solid rgba(0,0,0,.7);
+}
+
+.removeLoader .loaderText {
+    opacity: 1;
+}
+
+.stockStatus, .qtyStatus {
+    color: rgb(var(--venia-global-color-error));
+    font-weight: var(--venia-global-fontWeight-semibold);
+    margin-top: 8px;
+    line-height: 1.2;
+}
+
+.stockStatus > svg,
+.qtyStatus > svg {
+    margin-right: 4px !important;
+}
+
+.customizableTitle {
+    font-weight: 600;
+}
+
+.priceWrapper {
+    font-weight: 500;
+}
+
+.specialPrice {
+    font-weight: 700;
+    color: #000;
+}
+
+.discountWrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #000;
+    font-size: 12px;
+}
+
+.discountPrice {
+    font-weight: 500;
+    color: #969696;
+    text-decoration: line-through;
+}
+
+.discountValue {
+    composes: rounded-sm from global;
+    composes: md_rounded from global;
+    font-size: 10px;
+    color: #fff;
+    background-color: #E41305;
+    padding: 0 4px;
+}
+
+.endsStyle {
+    position: absolute;
+    bottom: 10px;
+    font-size: 14px;
+    color: #FF8200;
+}
+
+.tableDataTotalPrice {
+    composes: font-bold from global;
+    color: var(--color-primary);
+}
+
+.totalPriceValue {
+    display: contents;
+    white-space: nowrap;
+}
+
+.customizable {
+}
+
+/* Matches original cart page table header styling */
+.tableHeader {
+    text-transform: capitalize;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.tableHeader th {
+    padding-bottom: 7px;
+    padding-top: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    text-align: left;
+}
+
+.tableHeader th:last-child {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .tableHeader {
+        display: none;
+    }
+
+    .tableData {
+        display: grid;
+        grid-template-columns: 112px minmax(0, 1fr);
+        column-gap: 14px;
+        padding: 12px 0 18px;
+        border-bottom: 1px solid #E5E5E5;
+    }
+
+    .tableData.freeGift {
+        /* column-gap: 8px; */
+    }
+
+    .tableData td {
+        display: block;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .tableImageCell {
+        grid-column: 1;
+        grid-row: 1 / 6;
+        max-width: none;
+    }
+
+    .imageContainer,
+    .imageRoot,
+    .image {
+        display: block;
+        width: 112px;
+        height: 112px;
+    }
+
+    .imageContainer {
+        background: #F7F7F7;
+    }
+
+    .image {
+        object-fit: contain;
+    }
+
+    .tableDataName,
+    .tablePriceCell,
+    .tableQuantityCell,
+    .tableDataTotalPrice {
+        grid-column: 2;
+        min-width: 0;
+        max-width: none;
+    }
+
+    .tableDataName {
+        grid-row: 1;
+        padding-right: 0;
+        margin-bottom: 8px;
+    }
+
+    .nameLink {
+        display: block;
+        color: #20262C;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
+        text-decoration: none;
+        font-family: Noto Sans;
+    }
+
+    .tablePriceCell {
+        grid-row: 2;
+        margin-top: 12px;
+    }
+
+    .tableQuantityCell {
+        grid-row: 3;
+        margin-top: 12px;
+        color: #20262C;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .tableData td.tableDataTotalPrice {
+        grid-row: 4;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        width: 100%;
+        align-items: center;
+        column-gap: 12px;
+        margin-top: 16px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .tableDataTotalPrice::before {
+        content: 'Item Total';
+        color: #20262C;
+        font-weight: 400;
+        min-width: 0;
+    }
+
+    .tableDataTotalPrice .totalPriceValue {
+        display: inline-block;
+        grid-column: 2;
+        justify-self: end;
+        color: var(--color-primary);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+    }
+
+    .freeGift .tablePriceCell {
+        display: none;
+    }
+
+    .freeGift .tableQuantityCell {
+        margin-top: 20px;
+    }
+
+    .freeGift td.tableDataTotalPrice {
+        grid-row: 4;
+        display: grid;
+        margin-top: 8px;
+    }
+
+    .freeGift .tableDataTotalPrice::before {
+        content: 'Free Gift';
+        color: #20262C;
+    }
+}

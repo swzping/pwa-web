@@ -1,0 +1,175 @@
+.root {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(117deg, #ffd38b 1.26%, #ffa12e 85.76%);
+}
+
+.pageWrapper {
+    position: relative;
+    padding: 24px 34px;
+    font-family: Gilroy;
+    z-index: 2;
+}
+
+.subQuota {
+    color: #a64b00;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Gilroy;
+}
+
+.statsRow {
+    display: flex;
+    column-gap: 8px;
+    margin-top: 16px;
+    font-family: Gilroy;
+}
+
+.statCard {
+    flex: 1;
+    background: #ff8500;
+    color: #fff;
+    border-radius: 12px;
+    padding: 6px 8px;
+    text-align: center;
+}
+.statCardDisabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.statTitle {
+    color: #ffe7ba;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.statValue {
+    font-size: 16px;
+    color: #fafafa;
+    font-family: Gilroy;
+    font-weight: 700;
+}
+
+.bannerImgCard {
+    width: 100%;
+    margin: 30px 0 4px 0;
+    border-radius: 16px;
+}
+.subTitle {
+    color: #ff8200;
+    font-size: 14px;
+    padding: 0 10px 0 0;
+    font-weight: 700;
+    font-family: Gilroy;
+}
+.categoryCard {
+    padding: 20px 19px 32px 19px;
+    margin-top: 24px;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.runWrapper {
+    margin-bottom: 20px;
+}
+
+.runWrapper:last-child {
+    margin-bottom: 0;
+}
+
+.runButton {
+    width: 100%;
+    border-radius: 8px;
+    background: #ff8500;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 9px 0;
+    font-family: Gilroy;
+}
+.runButtonDisabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .root {
+        padding-bottom: 80px;
+    }
+}
+
+@media (min-width: 768px) {
+    .root {
+        padding-bottom: 60px;
+    }
+    .pageWrapper {
+        width: 800px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .subTitle {
+        text-align: left;
+        margin: 12px 0 32px 20px;
+        color: #ff8200;
+        font-size: 24px;
+    }
+
+    .statValue {
+        font-size: 20px;
+    }
+    .statsRow {
+        column-gap: 96px;
+    }
+    .runWrapperBox {
+        display: flex;
+        align-items: flex-start;
+        column-gap: 22px;
+    }
+    .runWrapper {
+        flex: 1;
+        display: flex;
+        padding: 22px;
+        flex-direction: column;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 1.402px 4.207px 0 rgba(0, 0, 0, 0.1), 0 1.402px 2.805px -1.402px rgba(0, 0, 0, 0.1);
+        margin-bottom: 0;
+        height: auto !important;
+    }
+    .runButtonBox {
+        text-align: center;
+    }
+    .runLabel {
+        color: #ff8200;
+        font-family: Gilroy;
+        font-size: 28px;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+    .runButton {
+        display: flex;
+        padding: 12px 22px;
+        font-size: 22px;
+        font-weight: 900;
+        border-radius: 100px;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    .subQuota {
+        font-size: 24px;
+        margin: 24px 0 32px 0;
+        font-weight: 700;
+    }
+    .statValue {
+        font-size: 22px;
+    }
+    .statTitle {
+        font-size: 24px;
+    }
+}

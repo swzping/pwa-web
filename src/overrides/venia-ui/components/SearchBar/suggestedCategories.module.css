@@ -1,0 +1,11 @@
+.root {
+    composes: border-t from global;
+    composes: border-solid from global;
+    composes: border-subtle from global;
+    composes: grid from global;
+}
+
+/* TODO @TW: cannot compose */
+.root:empty {
+    display: none;
+}

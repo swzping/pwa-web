@@ -1,0 +1,34 @@
+.root {
+    padding: 2.5rem 3rem;
+    max-width: 1080px;
+    margin: 0 auto;
+    min-height: 30rem;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+.info {
+    margin-bottom: 30px;
+}
+
+.rules ul li {
+    list-style-type: square;
+}
+
+.inputWrapper {
+    margin-top: 30px;
+}
+
+.input {
+    padding: calc(0.5rem + 1px) 1.5rem calc(0.5rem - 1px);
+    border-radius: 10rem;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+    .input {
+        width: 100%;
+    }
+}

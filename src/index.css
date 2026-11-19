@@ -1,0 +1,91 @@
+/* @tailwind base; */
+/* @tailwind components; */
+@tailwind utilities;
+
+.customerAccountFooter {
+    background-color: #f8eae5;
+}
+
+.customerAccountFooter .footer-pwa .footer-contain {
+    flex-direction: column !important;
+}
+
+.customerAccountFooter .footer-pwa h1 {
+    text-align: center;
+}
+
+.customerAccountFooter .footer-contain {
+    flex-direction: column;
+    text-align: center;
+}
+
+.customerAccountFooter .footer-contain .col,
+.customerAccountFooter .footer-contain .col-payment {
+    width: 100%;
+}
+
+.customerAccountFooter .footer-pwa .col-newsletter {
+    width: 100%;
+    margin: 0;
+}
+
+.customerAccountFooter .footer-pwa .footer-share {
+    margin-bottom: 3rem;
+}
+
+.customerAccountFooter .footer-pwa .col-newsletter form {
+    margin: 0 auto;
+}
+
+.customerAccountFooter .footer-pwa .col-newsletter .footer-formWrapper {
+    display: none;
+}
+
+.customerAccountFooter .footer-pwa .col-payment {
+    display: none;
+}
+
+.customerAccountFooter .info-footer {
+    display: none;
+}
+
+.customerAccountFooter .end-footer {
+    display: none;
+}
+
+.payment-info-custom .form-check-input:checked {
+    background-color: white;
+    border-color: rgba(0, 0, 0, .25);
+}
+
+.pagebuilder-slider.venia-home-slider .slick-prev,
+.pagebuilder-slider.venia-home-slider .slick-next {
+    opacity: 0;
+}
+
+.px-3 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+}
+
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
+/**TODO: 兼容处理，后续可删除后台下发的class\style*/
+/* [class^="row-contained-"] + div{
+    margin: 0 !important;
+    padding-top: 0 !important;
+} */
+
+@media (min-width: 1400px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1440px !important;
+    }
+}

@@ -1,0 +1,277 @@
+.root {
+    align-content: start;
+    display: grid;
+    row-gap: 0.2rem;
+
+    /* border: 2px solid red; */
+    border-radius: 8px;
+    composes: rounded-lg from global;
+    composes: md_rounded-xl from global;
+    transition: 0.3s ease-out;
+    composes: bg-white from global;
+    /* border: 0.03125rem solid #E5E5E5; */
+}
+
+.root:hover {
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+.itemShimmer {
+    align-content: start;
+    display: grid;
+    row-gap: 0.2rem;
+
+    /* border: 2px solid red; */
+    border-radius: 10px;
+    transition: 0.3s ease-out;
+    padding: 13px;
+}
+
+.itemShimmer:hover {
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+.quickviewActionContainer {
+    align-items: center;
+    justify-content: center;
+    display: none;
+    left: 0px;
+    position: absolute;
+    /* top: 0px; */
+    top: 50%;
+    /* height: 100%; */
+    width: 100%;
+    z-index: 2;
+    transform: translateY(-50%);
+}
+
+.images {
+    display: grid;
+    grid-template-areas: 'main';
+    position: relative;
+}
+.images:hover .quickviewActionContainer {
+    display: flex;
+}
+.imageContainer {
+    grid-area: main;
+    aspect-ratio: 1 / 1;
+}
+
+.imageContainer img {
+    margin: 0;
+    border-radius: 8px;
+}
+
+.image {
+    display: block;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 512ms ease-out;
+    width: 100%;
+}
+
+.imageLoaded {
+    composes: loaded from '@magento/venia-ui/lib/components/Image/image.module.css';
+    opacity: 1;
+}
+
+.imageNotLoaded {
+    composes: notLoaded from '@magento/venia-ui/lib/components/Image/image.module.css';
+    opacity: 0;
+}
+
+.imagePlaceholder {
+    composes: image;
+    background-color: rgb(var(--venia-global-color-gray));
+}
+
+.actionsContainer {
+    column-gap: 1rem;
+    display: flex;
+    padding-right: 0.5rem;
+}
+
+.actionsContainer:empty {
+    display: none;
+}
+
+.itemContent {
+    composes: flex from global;
+    composes: flex-col from global;
+    composes: p-[8px] from global;
+    composes: md_p-[12px] from global;
+    composes: min-h-[160px] from global;
+    composes: md_min-h-[169px] from global;
+}
+
+.name {
+    font-weight: var(--venia-global-fontWeight-semibold);
+    line-height: 16px;
+    composes: mb-[4px] from global;
+    composes: md_mb-[8px] from global;
+}
+
+.name,
+.price {
+    composes: text-xs from global;
+    composes: md_text-sm from global;
+    min-height: 1rem;
+}
+
+.discountWrapper {
+    display: flex;
+    column-gap: 4px;
+    min-height: 1rem;
+    composes: mb-[4px] from global;
+    composes: md_mb-[8px] from global;
+}
+
+.discountPrice {
+    color: #969696;
+    text-decoration: line-through;
+}
+
+.discountValue {
+    composes: rounded-sm from global;
+    composes: md_rounded from global;
+    color: #fff;
+    background-color: #E41305;
+    padding: 0 4px;
+}
+
+.ratingWrapper {
+    font-weight: 500;
+    height: 0.875rem;
+    composes: mb-[8px] from global;
+    composes: md_mb-[12px] from global;
+}
+
+.discountWrapper, .ratingWrapper {
+    composes: text-[10px] from global;
+    composes: md_text-xs from global;
+}
+
+.unavailableContainer {
+    align-items: center;
+    background-color: rgb(var(--venia-global-color-gray));
+    color: rgb(var(--venia-global-color-gray-700));
+    column-gap: 0.5rem;
+    display: grid;
+    font-style: italic;
+    grid-auto-flow: column;
+    justify-content: start;
+    padding: 0.75rem;
+    width: 100%;
+    font-size: var(--venia-global-fontSize-100);
+}
+
+.labelPromoWrapper {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: 50%;
+    z-index: 1;
+    color: var(--bs-white);
+}
+
+.labelPromoWrapper2 {
+    composes: h-[22px] from global;
+    composes: md_h-8 from global;
+    composes: leading-[22px] from global;
+    composes: md_leading-8 from global;
+    composes: text-[10px] from global;
+    composes: md_text-[12px] from global;
+    composes: rounded-r-[11px] from global;
+    composes: md_rounded-r-2xl from global;
+    width: 75%;
+    background-color: #E41305;
+    position: absolute;
+    bottom: 4px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    color: var(--bs-white);
+}
+
+.labelPromoWrapper2 span {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    padding: 0 6px 0 4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.oosTitle {
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 56px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    width: 87px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 576px) {
+    .oosTitle {
+        top: 68px;
+    }
+}
+
+@media (max-width: 767px) {
+    .itemShimmer {
+        padding: 0;
+    }
+}
+
+.endsInWrap {
+    position: relative;
+    width: 100%;
+    height: 16px;
+    background-color: #FDB27F;
+}
+.endsIn {
+    position: absolute;
+    width: 70%;
+    height: 16px;
+    border-radius: 0 8px 8px 0;
+    background: #FC6500;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.outOfStock {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translate(-70px);
+    border-radius: 56px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    width: 140px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,8 @@
+.root {
+    display: grid;
+    justify-content: center;
+    padding: 2.5rem 0;
+    text-align: center;
+    grid-template-columns: minmax(auto, 512px);
+    row-gap: 2rem;
+}

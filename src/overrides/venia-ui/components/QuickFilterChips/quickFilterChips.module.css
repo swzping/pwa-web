@@ -1,0 +1,35 @@
+.root {
+    width: 100%;
+    scrollbar-width: none;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 8px 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.chip {
+    flex-shrink: 0;
+    border: 1px solid #E5E5E5;
+    background: #fff;
+    border-radius: 18px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: #000;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.chipSelected {
+    border-color: var(--color-primary);
+    background: #FFE7BA;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+@media (min-width: 768px) {
+    .root {
+        display: none;
+    }
+}

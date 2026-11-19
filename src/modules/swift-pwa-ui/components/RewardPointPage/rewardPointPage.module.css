@@ -1,0 +1,141 @@
+.root {
+    padding: 2.5rem 2.5rem;
+    margin: 0 auto;
+}
+
+.table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 100%;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
+}
+
+.table thead tr {
+    /* background-color: #009879; */
+    color: #4D4D4D;
+    text-align: left;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+/* .table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+} */
+
+.tableHeader {
+    border: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #30383D;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+/* .tableRowData {
+    font-size: 14px;
+    color: #000;
+} */
+
+.mobileRoot {
+    display: none;
+    padding-bottom: 80px;
+}
+
+.mobileMainWrapper {
+    background-color: #F8EAE5;
+    text-align: center;
+    padding-top: 21px;
+    padding-bottom: 26px;
+}
+
+.mobileCurrentBalanceText {
+    color: #30383D;
+    margin: 0;
+    font-size: 12px;
+    text-transform: capitalize;
+    line-height: 18px;
+    letter-spacing: 0.6px;
+}
+
+.mobileMainBalancePrice {
+    line-height: 35px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #FF8200;
+    margin: 0;
+}
+
+.mobileWrapper {
+    /* border: 1px solid red; */
+    border-bottom: 1px solid #DEDEDE;
+}
+
+.mobileContent {
+    padding: 17px 18px;
+}
+
+.mobileSingleWrapper {
+    /* text-align: center; */
+    margin-bottom: 16px;
+}
+
+.mobileInfoWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 16px;
+}
+
+.infoMobileTitle {
+    color: #30383D;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+}
+
+.infoMobileText {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+    letter-spacing: 0.6px;
+}
+
+.mobileNoData {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 16px;
+    letter-spacing: 0.6px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .root {
+        width: 100%;
+        /* overflow: scroll; */
+        padding: 0;
+    }
+
+    .mobileRoot{
+        display: block;
+    }
+
+    .titleBalance,
+    .titleCurrency,
+    .table {
+        display: none;
+    }
+}

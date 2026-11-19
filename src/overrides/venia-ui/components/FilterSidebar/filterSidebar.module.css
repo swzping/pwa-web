@@ -1,0 +1,106 @@
+.root {
+    --borderColor: var(--venia-global-color-border);
+    background-color: white;
+    bottom: 0;
+    display: none;
+    grid-template-rows: 1fr 7rem;
+    max-width: 360px;
+    width: 100%;
+    z-index: 3;
+}
+
+.body {
+    overflow: auto;
+    border-radius: 8px;
+    border: 1px solid #E5E5E5;
+    padding-bottom: 12px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 12px;
+    height: 43px;
+}
+
+.headerTitle {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+}
+
+.action button {
+    font-size: var(--venia-typography-body-S-fontSize);
+    text-decoration: none;
+    color: var(--color-primary) !important;
+    font-weight: normal;
+}
+
+.clearAllButton {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--color-primary);
+}
+
+.clearAllButton:disabled {
+    color: #c1c1c1;
+    cursor: default;
+}
+
+.blocks {
+    border-top: 1px solid #E5E5E5;
+    margin: 0;
+}
+
+.filterWrapper {
+    position: relative;
+    padding: 0px 12px;
+}
+/* .filterWrapper [class^='currentFilters-root']::after {
+    position: absolute;
+    bottom: -12px;
+    content: '';
+    width: calc(100% - 12px);
+    height: 1px;
+    background-color: #;
+} */
+
+.filterTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    height: 43px;
+    line-height: 43px;
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
+
+.booleanList {
+    list-style: none;
+    margin: 0;
+    padding: 0 12px;
+    border-top: 1px solid #E5E5E5;
+}
+
+.booleanList li {
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .root {
+        display: grid;
+    }
+}

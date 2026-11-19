@@ -1,0 +1,46 @@
+.root {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.input {
+    position: absolute;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    pointer-events: none;
+}
+
+.box,
+.boxChecked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px !important;
+    border: 1px solid #969696;
+    border-radius: 2px;
+    background-color: transparent;
+}
+
+.boxChecked {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+}
+
+.box svg,
+.boxChecked svg {
+    width: 14px;
+    height: 14px;
+    color: #fff;
+}
+
+.label {
+    font-size: 14px;
+    color: #000;
+    overflow-wrap: anywhere;
+}

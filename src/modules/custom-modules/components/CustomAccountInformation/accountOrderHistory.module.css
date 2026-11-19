@@ -1,0 +1,705 @@
+.root {
+    /* border: 1px solid red; */
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.cartFreeGiftContainer {
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.emptyHistoryMessage{
+    font-size: 12px;
+    text-align: center;
+}
+
+.tableHeader {
+    border: none;
+    font-size: 12px;
+    color: #30383D;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+.tableHeader th {
+    padding-bottom: 8px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.tableRowData {
+    font-size: 14px;
+    color: #000;
+}
+
+.tableRowData td {
+    text-align: center;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #DEDEDE;
+}
+.orderTabsWrapper{
+    position: relative;
+    margin-bottom: 20px;
+}
+.offlineSortWrapper{
+    margin: 20px 0 40px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.orderStoreName {
+    color: #000;
+    font-size: 14px;
+}
+.tableOrderNumber {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.tableStatus {
+    text-transform: lowercase;
+}
+
+.orderStatusContent {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.paymentDeadlineBanner {
+    padding: 8px 12px;
+    background-color: #FFF0EF;
+    color: #CC2B1E;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+.paymentCountdown {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background-color: #fdf1ef;
+    color: #CC2B1E;
+    font-size: 12px;
+    line-height: 18px;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.paymentCountdownIcon {
+    position: relative;
+    display: inline-flex;
+}
+
+.paymentCountdownIcon > span {
+    position: absolute;
+    top: 4px;
+    left: 7px;
+    width: 4px;
+    height: 5px;
+    border-left: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+}
+
+.loadMoreData {
+    padding: 10px;
+    height: 36px;
+    color: #757575;
+    text-align: center;
+    font-size: 16px;
+}
+
+.orderDetailHeader {
+    padding: 0 10px;
+    background-color: #fff;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.orderDetailTopRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.orderDetailMeta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    min-width: 0;
+}
+
+.orderDetailNumber,
+.orderDetailDate {
+    font-size: 12px;
+    font-weight: 400;
+    color: #858585;
+    margin: 0;
+}
+
+.orderDetailStatus {
+    font-size: 14px;
+    text-transform: capitalize;
+    margin: 0;
+    font-weight: 700;
+    color: #757575;
+}
+
+.shippingInfoWrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    gap: 48px;
+    padding: 24px 10px 32px 10px;
+}
+
+.shippingContent {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.shippingTitle {
+    font-weight: 500;
+    font-size: 13px;
+    color: #757575;
+    margin: 0 0 12px;
+}
+
+.shippingText {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #212121;
+}
+
+@media (max-width: 767px) {
+    .orderDetailTopRow {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .orderDetailMeta {
+        gap: 12px;
+    }
+
+    .shippingInfoWrapper {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+}
+
+.vaPaymentHint {
+    /* Icon 的 stroke: var(--stroke, #D5D5D5)，自定义属性继承进 svg 即可覆盖；
+       currentColor 使图标跟随下方 color（文字色） */
+    --stroke: currentColor;
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 12px;
+    color: #757575;
+}
+
+/* 防止容器（shippingContent 最大 226px）放长文案时把图标挤扁 */
+.vaPaymentHint svg {
+    flex-shrink: 0;
+}
+
+/* 覆盖 PaymentMethod 的 root（margin 17px → 10px）。
+   useStyle 是整键替换而非追加，需带上原 root 的全部样式 */
+.paymentMethodRootCompact {
+    display: grid;
+    margin-bottom: 4px;
+}
+
+.orderQtyItem {
+    font-size: 10px;
+    margin-bottom: 15px;
+    color: #858585;
+}
+
+.tableDetailItems {
+    width: 100%;
+    padding-bottom: 19px;
+}
+
+.tableRowDetail {
+    font-size: 14px;
+}
+
+.tableImage {
+    max-width: 104px;
+}
+
+.imageWrapper {
+    width: 104px;
+    height: 104px;
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tableName {
+    font-weight: bold;
+    max-width: 337px;
+}
+
+.priceSummaryWrapper {
+    border-top: 1px solid #DEDEDE;
+    margin-top: 19px;
+    padding-top: 17px;
+}
+
+.backButton {
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: var(--color-primary);
+    font-size: 12px;
+}
+
+.reorderButton {
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    flex: 1;
+    background-color: var(--color-primary);
+    font-weight: normal;
+    border-radius: 10px;
+    text-transform: capitalize;
+    color: var(--bs-white);
+    padding: 18px;
+}
+
+.orderActionGroup {
+    position: relative;
+    display: flex;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.secondaryOrderActionButton {
+    composes: root_lowPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    flex: 1;
+    background-color: var(--bs-white);
+    border: 1px solid var(--color-primary);
+    border-radius: 10px;
+    color: var(--color-primary);
+    font-weight: normal;
+    padding: 18px;
+    text-transform: capitalize;
+}
+
+@media (max-width: 767px) {
+    .orderActionGroup {
+        flex-direction: column;
+    }
+}
+
+.priceSummary {
+    font-size: 14px;
+}
+
+.priceRed {
+    color: red;
+}
+
+.priceTotal {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.buttonLoading {
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    /* width: 100%; */
+    margin: 0 auto;
+    display: block;
+    background-color: var(--color-primary);
+    font-weight: normal;
+    border-radius: 10px;
+    text-transform: capitalize;
+    color: var(--bs-white);
+    padding: 6px 12px;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.productLink {
+    text-decoration: none;
+    display: block;
+}
+
+/* comments */
+.commentContainer {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.commentTitle {
+    color: #555555;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.commentWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    margin-bottom: 1.2rem;
+    border-color: rgb(var(--venia-global-color-border));
+    border-style: solid;
+    border-width: 0 0 1px;
+}
+
+.commentText {
+    font-size: 12px;
+    color: #30383D;
+    margin: 0;
+    flex: 1;
+}
+
+.commentDate {
+    font-size: 12px;
+    margin: 0;
+    width: 200px;
+}
+
+/* Delivery Details Styles */
+.deliveryDetailsContainer {
+    margin-bottom: 15px;
+}
+
+.deliveryDetailsHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.deliveryDetailsTitle {
+    color: var(--color-text-secondary, #757575);
+    font-family: var(--Noto-Sans, "Noto Sans");
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.deliveryDetailsArrow {
+    font-size: 18px;
+    color: #666;
+    font-weight: 500;
+}
+
+.deliveryDetailsHeader:hover .deliveryDetailsArrow {
+    color: var(--color-primary, #ff6600);
+}
+
+/* Shipping Address Styles */
+.shippingAddressContainer {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+.shippingAddressHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.shippingAddressIcon {
+    font-size: 14px;
+    margin-right: 12px !important;
+    color: #666;
+}
+
+.shippingAddressTitle {
+    overflow: hidden;
+    color: var(--Neutral-Color-100, #1B1A19);
+    text-overflow: ellipsis;
+    /* Body/Bold 12 */
+    font-family: var(--Noto-Sans, "Noto Sans");
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.shippingAddressContent {
+    padding-left: 22px; /* 与图标对齐 */
+}
+
+.shippingAddressText {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.addressLine {
+    margin-bottom: 2px;
+    color:  #757575 !important;
+    font-family: var(--Noto-Sans, "Noto Sans");
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 150% */
+}
+
+.addressLine:first-child {
+    font-weight: 500;
+    color: #333;
+}
+
+.addressLine:last-child {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Download Button Styles */
+.downloadButton {
+    background-color: #FF8200;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0 24px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    min-width: 170px;
+    min-height: 38px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-family: inherit;
+    line-height: normal;
+}
+
+.downloadButton:disabled {
+    background-color: #9e9e9e;
+    color: #fff;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.discountTag {
+    justify-self: start;
+    padding: 2px 8px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 16px;
+    border-radius: 38px;
+    text-align: center;
+    color: rgba(246, 131, 31, 1);
+    background: rgba(254, 241, 230, 1);
+}
+
+.discountTagPrice {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: right;
+    color: rgba(246, 131, 31, 1);
+}
+
+.earnPointsText {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px; /* 150% */
+    color: #FF8200;
+}
+.earnPointsWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    color: #FF8200;
+}
+
+.orderStatusColor[data-order-status] {
+    color: #757575;
+}
+
+.orderStatusColor[data-order-status='pending'],
+.orderStatusColor[data-order-status='pending_payment'] {
+    color: #CC2B1E;
+}
+
+.orderStatusColor[data-order-status='paid'],
+.orderStatusColor[data-order-status='picking'],
+.orderStatusColor[data-order-status='in_transit'] {
+    color: #FF8200;
+}
+
+.orderStatusColor[data-order-status='completed'] {
+    color: #46A147;
+}
+
+.orderStatusColor[data-order-status='canceled'],
+.orderStatusColor[data-order-status='cancelled'],
+.orderStatusColor[data-order-status^='refund_'],
+.orderStatusColor[data-order-status^='return_'] {
+    color: #9E9E9E;
+}
+
+.orderActionGroup > button {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 100%;
+    padding: 14px 8px;
+}
+
+.secondaryOrderActionButton:disabled {
+    background-color: #e5e5e5;
+    border-color: #e5e5e5;
+    color: #9e9e9e;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.returnShippingInfo {
+    grid-template-columns: minmax(360px, 1.4fr) repeat(3, minmax(0, 1fr));
+    gap: 32px;
+    align-items: start;
+}
+
+.returnSummaryCard {
+    min-width: 0;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212121;
+}
+
+.returnSummaryHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 10px 14px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #eee;
+}
+
+.returnSummaryTitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.returnSummaryTitle svg {
+    flex-shrink: 0;
+}
+
+.returnApprovalBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #FF8200;
+    font-size: 12px;
+    line-height: 18px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.returnApprovalBadge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+.returnApprovalBadge[data-approval='Approved'] {
+    color: #46A147;
+}
+
+.returnApprovalBadge[data-approval='Rejected'] {
+    color: #CC2B1E;
+}
+
+.returnSummaryBody {
+    padding: 12px 14px;
+    overflow-wrap: anywhere;
+}
+
+.returnReasonLabel {
+    margin-bottom: 4px;
+    color: #757575;
+    font-size: 13px;
+}
+
+@media (max-width: 1023px) {
+    .returnSummaryCard {
+        grid-column: 1 / -1;
+    }
+
+    .returnShippingInfo {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+}
+
+@media (max-width: 479px) {
+    .returnShippingInfo {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.cancelSuccessToast {
+    position: absolute;
+    bottom: calc(100% + 16px);
+    right: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px;
+    border-radius: 6px;
+    background-color: #424242;
+    color: #fff;
+    box-shadow: 0 4px 16px #0002;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.cancelSuccessIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #65c66c;
+    color: #276b30;
+}

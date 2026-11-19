@@ -1,0 +1,22 @@
+.root {
+}
+
+.errorMessage {
+    color: #CE383B;
+    background-color: #F8EAE5;
+    font-size: var(--venia-typography-body-S-fontSize);
+    font-weight: var(--venia-global-fontWeight-semibold);
+    line-height: var(--venia-global-lineHeight-300);
+    /* background-color: #FFFF00; */
+    padding: 10px;
+}
+
+.successMessage {
+    color: #598a21;
+    background-color: #eff8e5;
+    font-size: var(--venia-typography-body-S-fontSize);
+    font-weight: var(--venia-global-fontWeight-semibold);
+    line-height: var(--venia-global-lineHeight-300);
+    /* background-color: #FFFF00; */
+    padding: 10px;
+}

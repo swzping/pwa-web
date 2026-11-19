@@ -1,0 +1,19 @@
+.root {
+    height: 100%;
+    width: 100%;
+}
+.container {
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.icon {
+    width: 96px;
+    height: 96px;
+}
+.title {
+    margin-top: 8px;
+    color: #757575;
+}

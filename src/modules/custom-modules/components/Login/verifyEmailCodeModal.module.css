@@ -1,0 +1,135 @@
+.container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    pointer-events: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.card {
+    position: relative;
+    pointer-events: auto;
+    text-align: left;
+    width: 344px;
+    max-width: 92%;
+    border-radius: 14px;
+    background: #fff;
+    padding: 20px;
+    padding-top: 24px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: #757575;
+    text-align: center;
+}
+
+.inputsWrap {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.box {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    font-size: 14px;
+    font-weight: 700;
+    position: relative;
+    user-select: none;
+}
+
+.boxActive {
+    composes: box;
+    border-color: #F6831F;
+}
+
+.caret {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1B1A19;
+}
+
+.actionsWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.resend {
+    color: #9E9E9E;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.resendActive {
+    composes: resend;
+    color: #FF8200;
+}
+
+.confirmButton {
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    width: 304px;
+    /* background: #ff8a00; */
+    color: #fff;
+    padding: 13px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.confirmButtonDisabled {
+    composes: confirmButton;
+    background: #E0E0E0;
+    color: #757575;
+}
+
+.closeButton {
+    composes: confirmButton;
+    background-color: #fff;
+    color: #FF8200 !important;
+    border: 1px solid  #FF8200;
+}
+
+.hintTextStyle {
+    font-size: 10px;
+    color: #9E9E9E;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+

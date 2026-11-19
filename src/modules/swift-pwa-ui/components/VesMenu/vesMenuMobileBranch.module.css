@@ -1,0 +1,11 @@
+.root {
+    composes: root from '@magento/venia-ui/lib/components/CategoryTree/categoryLeaf.module.css';
+}
+
+.target {
+    composes: target from '@magento/venia-ui/lib/components/CategoryTree/categoryLeaf.module.css';
+}
+
+.text {
+    composes: text from '@magento/venia-ui/lib/components/CategoryTree/categoryLeaf.module.css';
+}

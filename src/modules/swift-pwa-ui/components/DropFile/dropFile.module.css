@@ -1,0 +1,10 @@
+.dropfile_message {
+    font-size: var(--venia-typography-detail-M-fontSize);
+}
+.error {
+    color: var(--bs-red);
+}
+.dropped_file_item {
+    font-size: var(--venia-typography-detail-M-fontSize);
+    list-style-type: disc;
+}

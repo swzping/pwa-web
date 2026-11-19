@@ -1,0 +1,21 @@
+.root {
+    padding: 10px 0;
+}
+.breadcrumbWrapper {
+    display: flex;
+}
+
+.breadcrumbWrapper .link {
+    color: var(--text-default-grey, #bdbdbd);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumbWrapper .linkItem:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+.breadcrumbWrapper .current {
+    color: var(--color-icon-primary, #000);
+}

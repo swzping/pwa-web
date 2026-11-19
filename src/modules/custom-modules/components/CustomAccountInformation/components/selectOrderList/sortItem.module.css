@@ -1,0 +1,31 @@
+.root {
+    composes: flex from global;
+    composes: items-center from global;
+    composes: w-full from global;
+    padding: 0 12px;
+}
+
+.content {
+    composes: items-center from global;
+    composes: grid from global;
+    composes: grid-cols-[1fr] from global;
+    composes: grid-flow-col from global;
+    composes: gap-3 from global;
+    composes: h-[2.5rem] from global;
+    composes: py-0 from global;
+    composes: w-full from global;
+}
+
+.content {
+    font-size: 24px;
+}
+
+.text {
+    composes: text-left from global;
+    composes: whitespace-nowrap from global;
+    composes: text-sm from global;
+}
+
+.active {
+    composes: text-brand-dark from global;
+}

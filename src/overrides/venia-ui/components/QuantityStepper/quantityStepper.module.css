@@ -1,0 +1,84 @@
+.root {
+    position: relative;
+    --stroke: var(255, 255, 255);
+    composes: text-center from global;
+}
+
+.wrap {
+    composes: flex from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+}
+
+/* TODO @TW: cannot compose */
+.label:not(:focus):not(:active) {
+    /* composes: sr-only from global; */
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    white-space: nowrap;
+}
+
+.button {
+    composes: h-[2rem] from global;
+    composes: inline-flex from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+    composes: w-8 from global;
+    stroke: rgb(var(--stroke));
+
+    composes: disabled_cursor-not-allowed from global;
+}
+
+/* .button:hover {
+    --stroke: rgb(var(--venia-global-color-gray-900));
+    border-color: rgb(var(--stroke));
+} */
+
+/* TODO @TW: cannot compose */
+.button:disabled,
+.button:disabled:hover {
+    /* --stroke: rgb(var(--venia-global-color-gray-400)); */
+    /* composes: border-subtle from global; */
+    /* border-color: rgb(var(--venia-global-color-gray-400)); */
+}
+
+.button_decrement {
+    composes: button;
+    position: absolute;
+    left: 0;
+    border-right: 1px solid #E5E5E5;
+}
+
+.button_increment {
+    composes: button;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #E5E5E5;
+}
+
+.icon {
+    composes: items-center from global;
+    composes: inline-flex from global;
+    composes: justify-center from global;
+    touch-action: manipulation;
+    --venia-global-color-text: 255, 255, 255;
+    --stroke: var(--color-primary);
+}
+
+.input {
+    composes: input from '@magento/venia-ui/lib/components/TextInput/textInput.module.css';
+    composes: text-center from global;
+    font-weight: 500;
+    font-size: 12px;
+    height: 32px;
+    border: 1px solid #E5E5E5;
+}
+
+button + span{
+    height: auto !important;
+}

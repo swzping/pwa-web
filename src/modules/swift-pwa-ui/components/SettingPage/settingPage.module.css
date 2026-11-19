@@ -1,0 +1,23 @@
+.root {
+    padding: 5rem 3rem 2.5rem 3rem;
+}
+
+.signoutButton {
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 20px;
+    font-weight: 14px;
+    border: 1px solid #000;
+}
+
+@media (max-width: 767px) {
+    .root {
+        padding: 0;
+        padding-top: 20px;
+    }
+
+    .signoutButton {
+        margin-left: 30px;
+    }
+}

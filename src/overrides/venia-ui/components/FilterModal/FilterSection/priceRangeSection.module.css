@@ -1,0 +1,94 @@
+.inputsRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 12px;
+}
+
+.inputBox {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+
+/* .input:focus-within {
+    border-color: var(--color-primary);
+} */
+
+.currency {
+    display: none;
+    font-size: 12px;
+    font-weight: 500;
+    color: #212121;
+    flex-shrink: 0;
+}
+
+.currencyText {
+    font-size: 12px;
+    font-weight: 500;
+    color: #212121;
+    flex-shrink: 0;
+}
+
+.input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0px 4px;
+    font-size: 14px;
+    color: #616161;
+    min-width: 0;
+    outline: none;
+}
+
+.to {
+    font-size: 14px;
+    color: #000;
+    flex-shrink: 0;
+}
+
+.slider {
+    padding: 0 4px 4px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.actions button {
+    min-width: 64px;
+    height: 34px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.resetButton {
+    background: none;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.goButton {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    .currency {
+        display: block;
+        font-size: 14px;
+    }
+    .currencyText {
+        display: none;
+    }
+}

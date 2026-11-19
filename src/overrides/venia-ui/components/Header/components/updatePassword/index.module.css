@@ -1,0 +1,52 @@
+.pointWrap {
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  margin: 10px;
+  margin-top: 0;
+  position: relative;
+}
+
+.title {
+  width: 100%;
+  font-size: 20px;
+  color: #212121;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.formContainer {
+    width: 480px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.buttonsContainer {
+    display: grid;
+    grid-auto-flow: row;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.buttonsSignIn {
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    font-size: 16px;
+    font-weight: 500;
+    padding: 13px 0;
+    border-radius: 8px;
+    text-transform: none;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .formContainer {
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,321 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-account {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -216px -119px;
+  width: 32px;
+  height: 32px;
+}
+.icon-address {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -254px -85px;
+  width: 17px;
+  height: 20px;
+}
+.icon-bags {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -254px -64px;
+  width: 19px;
+  height: 21px;
+}
+.icon-big_account {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: 0px -193px;
+  width: 39px;
+  height: 40px;
+}
+.icon-big_address {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -216px -79px;
+  width: 34px;
+  height: 40px;
+}
+.icon-big_setting {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -171px -110px;
+  width: 40px;
+  height: 42px;
+}
+.icon-big_shopping {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -216px 0px;
+  width: 38px;
+  height: 42px;
+}
+.icon-big_whitecart {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -216px -42px;
+  width: 37px;
+  height: 37px;
+}
+.icon-big_wishlish {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: 0px -155px;
+  width: 44px;
+  height: 38px;
+}
+.icon-blog_facebook {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -39px -193px;
+  width: 29px;
+  height: 29px;
+}
+.icon-blog_google {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -68px -193px;
+  width: 29px;
+  height: 29px;
+}
+.icon-blog_linkedin {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -97px -193px;
+  width: 29px;
+  height: 29px;
+}
+.icon-blog_pinterest {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -126px -193px;
+  width: 29px;
+  height: 29px;
+}
+.icon-blog_twitter {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -155px -193px;
+  width: 29px;
+  height: 29px;
+}
+.icon-cart {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -184px -193px;
+  width: 28px;
+  height: 28px;
+}
+.icon-close {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -176px -155px;
+  width: 21px;
+  height: 21px;
+}
+.icon-filter_icon {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -76px -155px;
+  width: 34px;
+  height: 26px;
+}
+.icon-icon-account {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -50px -105px;
+  width: 48px;
+  height: 50px;
+}
+.icon-icon-active-account {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -98px -105px;
+  width: 48px;
+  height: 50px;
+}
+.icon-icon-active-categories {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -118px -49px;
+  width: 50px;
+  height: 50px;
+}
+.icon-icon-active-cs {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: 0px -54px;
+  width: 54px;
+  height: 51px;
+}
+.icon-icon-active-home {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: 0px 0px;
+  width: 59px;
+  height: 54px;
+}
+.icon-icon-active-location {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -171px 0px;
+  width: 45px;
+  height: 55px;
+}
+.icon-icon-categories {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: 0px -105px;
+  width: 50px;
+  height: 50px;
+}
+.icon-icon-cs {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -54px -54px;
+  width: 54px;
+  height: 51px;
+}
+.icon-icon-health-white {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -118px 0px;
+  width: 53px;
+  height: 49px;
+}
+.icon-icon-health {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -21px -233px;
+  width: 21px;
+  height: 20px;
+}
+.icon-icon-home {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -59px 0px;
+  width: 59px;
+  height: 54px;
+}
+.icon-icon-location {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -171px -55px;
+  width: 45px;
+  height: 55px;
+}
+.icon-indonesia_icon {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: 0px -233px;
+  width: 21px;
+  height: 21px;
+}
+.icon-newsletter {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -146px -105px;
+  width: 22px;
+  height: 22px;
+}
+.icon-next-link {
+  background-image: url(/venia-static-assets/css/next.png?v=1723515028);
+  width: 16px;
+  height: 16px;
+}
+.icon-orange_love {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -42px -233px;
+  width: 22px;
+  height: 19px;
+}
+.icon-orange_notifition {
+  background-image: url(/venia-static-assets/css/notifition-icon.png?v=1723515028);
+  width: 22px;
+  height: 21px;
+}
+.icon-orange_health {
+  background-image: url(/venia-static-assets/css/health-icon.png?v=1723515028);
+  width: 19px;
+  height: 21px;
+}
+.icon-pencil_white {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -254px -157px;
+  width: 14px;
+  height: 14px;
+}
+.icon-product-review {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -146px -127px;
+  width: 22px;
+  height: 22px;
+}
+.icon-raf {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -110px -155px;
+  width: 22px;
+  height: 22px;
+}
+.icon-reward-point {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -132px -155px;
+  width: 22px;
+  height: 22px;
+}
+.icon-store-credit {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -254px -24px;
+  width: 20px;
+  height: 20px;
+}
+.icon-store-o {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -216px -151px;
+  width: 32px;
+  height: 32px;
+}
+.icon-store {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -254px 0px;
+  width: 20px;
+  height: 24px;
+}
+.icon-tracking-order {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -154px -155px;
+  width: 22px;
+  height: 22px;
+}
+.icon-trash_cart {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -254px -121px;
+  width: 15px;
+  height: 17px;
+}
+.icon-trash_white {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -254px -171px;
+  width: 12px;
+  height: 14px;
+}
+.icon-trash {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -254px -185px;
+  width: 12px;
+  height: 14px;
+}
+.icon-user {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -254px -44px;
+  width: 20px;
+  height: 20px;
+}
+.icon-whistlist-o {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -44px -155px;
+  width: 32px;
+  height: 32px;
+}
+.icon-whistlist {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -212px -193px;
+  width: 28px;
+  height: 28px;
+}
+.icon-white_cart {
+  background-image: url(/venia-static-assets/css/sprites-1.0.9.png?v=1723515028);
+  background-position: -254px -105px;
+  width: 17px;
+  height: 16px;
+}
+.icon-orange_coupon {
+  background-image: url(/venia-static-assets/css/coupon-icon.png?v=1723515028);
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+}

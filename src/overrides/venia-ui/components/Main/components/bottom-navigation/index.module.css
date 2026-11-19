@@ -1,0 +1,79 @@
+.root [class^='navbar'] {
+    z-index: 12 !important;
+    justify-content: space-around;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top: 1px solid #F2F2F2;
+}
+
+.icon {
+    font-size: 32px;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #969696;
+}
+
+.box button {
+    color: #969696;
+}
+
+.box i {
+    display: inline-flex;
+    zoom: 50%;
+    -moz-transform:scale(50%);
+    -moz-transform-origin: 0 0;
+}
+
+.box p {
+    font-size: 10px;
+    font-family: 'Poppins';
+    white-space: nowrap;
+    margin: 0;
+}
+
+.box a {
+    text-decoration: none;
+}
+
+.active {
+    color: var(--color-primary) !important;
+}
+
+.counter {
+    top: 0;
+    position: absolute;
+    left: 1.5rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding: 0 0.25rem;
+    background-color: rgb(var(--venia-brand-color-1-700));
+    border-radius: 100px;
+    color: rgb(var(--venia-global-color-background));
+    line-height: 1.25rem;
+    min-width: 1.25rem;
+    font-size: 0.8125rem;
+    background-color: var(--bs-red);
+}
+
+.root [class^='custom-home'] {
+    zoom: 47%;
+    -moz-transform:scale(47%);
+}
+
+.root [class^='custom-store'] {
+    zoom: 46%;
+    -moz-transform:scale(46%);
+}
+
+.root [class^='custom-cs'] {
+    zoom: 48%;
+    -moz-transform:scale(48%);
+}

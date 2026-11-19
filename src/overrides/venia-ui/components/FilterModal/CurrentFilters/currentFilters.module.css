@@ -1,0 +1,14 @@
+.root {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 12px 0;
+    gap: 8px;
+}
+
+.root:empty {
+    display: none;
+}
+
+.root li {
+
+}

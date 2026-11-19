@@ -1,0 +1,862 @@
+/*
+ * Target all rows.
+ */
+:global(.venia-row),
+:global(.venia-row-2) {
+    --brightBlue: 233 100% 056%;
+    color: hsl(205 024% 012%);
+    max-width: 2560px !important;
+    width: 100%;
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    :global(.venia-row-2) {
+        padding-right: 0rem !important;
+        padding-left: 0rem !important;
+    }
+     :global(.Voucher-Rows){
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+     }
+}
+
+/*
+  * Target all buttons.
+  */
+:global(.venia-row a) {
+    text-decoration: none !important;
+    /* display: flex;
+     flex-direction: column;
+     align-items: center; */
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+}
+
+:global(.venia-row a:hover) {
+    /* box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.15),
+         0 17px 50px 0 rgba(0, 0, 0, 0.1); */
+    box-shadow: none;
+    outline: none;
+}
+
+@media (max-width: 425px) {
+    :global(.venia-row a) {
+        padding: 0.5rem 0;
+    }
+
+    :global(.venia-row a:hover) {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+/*
+  * Target the wrapper within the first row.
+  */
+:global(.venia-row > div) {
+    background: none !important;
+    display: grid !important;
+    grid-template-columns: 100%;
+    padding: 0 !important;
+}
+
+:global(.venia-row-2 > div) {
+    background: none !important;
+    display: grid !important;
+    grid-template-columns: 100%;
+    padding: 0 !important;
+}
+
+/*
+  * Target all column groups after the slider.
+  */
+
+/* :global(.venia-home-slider) {
+    padding: 24px 0;
+} */
+
+:global(.venia-home-slider ~ div) {
+    display: grid !important;
+    gap: 0;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 1rem;
+    z-index: 1;
+}
+
+/**
+ * override footer style
+ */
+
+:global(.footer) {
+    background-color: #FDEEDF;
+}
+
+:global(.footer > div > div) {
+    max-width: var(--venia-global-maxWidth);
+    margin: 0 auto;
+    background-color: #FDEEDF;
+}
+
+:global(.footer-pwa) {
+    background-color: #FDEEDF !important;
+}
+
+:global(.info-footer) {
+    background-color: #FDEEDF !important;
+    border-top: 1px solid #EADFC9 !important;
+}
+
+:global(.end-footer) {
+    background-color: #FDEEDF !important;
+    border-top: 1px solid #EADFC9 !important;
+}
+
+@media (max-width: 960px) {
+    :global(.venia-home-slider ~ div) {
+        grid-auto-flow: row;
+        grid-template-columns: 100%;
+        text-align: center;
+    }
+}
+
+/*
+  * Target the callout containers below the slider.
+  */
+:global(.venia-home-slider + div) {
+    gap: 2rem;
+    margin-top: -2rem;
+}
+
+/*
+  * Target the slider.
+  */
+:global(.venia-home-slider .slick-slider) {
+    /* min-height: 235px !important; */
+    /* max-width: 2560px; */
+    width: 100%;
+}
+
+/*
+  * Target the slider track.
+  */
+:global(.venia-home-slider .slick-slider .slick-track) {
+    display: grid;
+    grid-auto-flow: column;
+}
+:global(.venia-home-slider .slick-slider .slick-track::before),
+:global(.venia-home-slider .slick-slider .slick-track::after) {
+    content: none;
+}
+
+/*
+  * Target each slide.
+  */
+:global(.venia-home-slider .slick-slider .slick-slide) {
+    float: none;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/*
+  * Target the banner wrapper within a slide.
+  */
+:global(.venia-home-slider .slick-slide > div > div > div) {
+    align-items: center;
+    background-position: center !important;
+    background-size: cover !important;
+    display: grid !important;
+    grid-auto-flow: column;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    padding: 0 0 6rem !important;
+}
+
+@media (min-width: 500px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 310px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 310px !important;
+    }
+}
+
+@media (min-width: 600px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 380px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 380px !important;
+    }
+}
+
+@media (min-width: 700px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 450px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 450px !important;
+    }
+}
+
+@media (min-width: 800px) {
+    /* :global(.slider-bannerWrapper-NnX) {
+         background-size: contain !important;
+     } */
+
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 310px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 310px !important;
+    }
+}
+
+@media (min-width: 1000px) {
+    /* :global(.slider-bannerWrapper-NnX) {
+         background-size: contain !important;
+     } */
+
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 350px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 350px !important;
+    }
+}
+
+@media (min-width: 1100px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 382px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 382px !important;
+    }
+}
+
+@media (min-width: 1140px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 400px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 400px !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 440px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 440px !important;
+    }
+}
+
+@media (min-width: 1320px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 470px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 470px !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 500px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 500px !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 550px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 550px !important;
+    }
+}
+
+@media (min-width: 1680px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 600px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 600px !important;
+    }
+}
+
+@media (min-width: 1800px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 518px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 518px !important;
+    }
+}
+
+@media (min-width: 2000px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 700px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 700px !important;
+    }
+}
+
+@media (min-width: 2100px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 750px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 750px !important;
+    }
+}
+
+@media (min-width: 2300px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 800px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 800px !important;
+    }
+}
+
+@media (min-width: 2400px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 850px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 850px !important;
+    }
+}
+
+@media (min-width: 2560px) {
+    :global(.venia-home-slider .slick-slider) {
+        min-height: 900px !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        min-height: 900px !important;
+    }
+}
+
+:global(.venia-home-slider .slick-slide > div > div > div > div) {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/*
+  * Target the content of a slide.
+  */
+:global(.venia-home-slider .slick-slide h2) {
+    font-family: 'Poppins';
+    font-size: 40px !important;
+    font-weight: 600 !important;
+}
+
+:global(.venia-home-slider .slick-slide a) {
+    background-color: hsl(var(--brightBlue));
+    border-radius: 0.75rem;
+    color: white;
+}
+
+
+/*
+  * Target each item within the slide selection controls.
+  */
+/* :global(.venia-home-slider .slick-slider .slick-dots li) {
+    height: auto;
+    margin: 0;
+    width: auto;
+}
+
+:global(.venia-home-slider .slick-slider .slick-dots li.slick-active > button) {
+    background: #fff;
+    outline: 0;
+} */
+
+/*
+  * Target each button within the slide selection controls.
+  */
+/* :global(.venia-home-slider .slick-slider .slick-dots li > button) {
+    background-clip: content-box !important;
+    border-color: transparent;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 0.5rem;
+    height: 1.6rem !important;
+    margin: 0;
+    transition: none;
+    width: 1.6rem !important;
+    outline: 0;
+} */
+
+/* :global(.venia-home-products .slick-slider .slick-dots .slick-active > button) {
+    background-color: hsl(205 004% 048%) !important;
+} */
+
+:global(.venia-img img) {
+    width: 100%;
+    padding: 10px;
+    margin: 0rem 0 !important;
+}
+
+:global(.venia-img-2 img) {
+    width: 100%;
+    padding: 10px;
+    margin: 0rem 0 !important;
+}
+
+:global(.item-catalog-wrapper a) {
+    text-decoration: none;
+}
+
+:global(.item-catalog-wrapper img) {
+    margin: 0 0 0.5rem 0;
+}
+
+:global(.heading-2column) {
+    padding-right: 0.75rem !important;
+    padding-left: 0.75rem !important;
+    /* background-color: #FFEBD6 !important; */
+    /* border-top-left-radius: 12px;
+    border-top-right-radius: 12px; */
+}
+:global(.heading-2column table) {
+    background-color: unset !important;
+}
+:global(.heading-2column table tbody td) {
+    background-color: unset !important;
+    padding: 24px 0 16px 0!important
+}
+:global(.heading-2column table td:first-child span strong) {
+    font-weight: 700;
+    font-size: 24px !important;
+    color: #FF8200;
+    line-height: 1;
+}
+:global(.heading-2column table td:last-child span a) {
+    font-size: 14px !important;
+    color: #FF8200 !important;
+}
+:global(.heading-2column + .wrp-2) {
+    /* background-color: #FFEBD6; */
+    margin-top: 0px;
+    margin-bottom: 0 !important;
+    padding-bottom: 1rem;
+    /* border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px; */
+}
+
+/* TODO: 待删除 临时处理*/
+/* :global(.product-mark) {
+
+    background-color: #FFEBD6;
+    border-radius: 12px;
+} */
+
+@media (max-width: 820px) {
+    :global(.item-catalog-wrapper) {
+        margin-bottom: 0.75rem;
+    }
+    :global(.item-catalog-wrapper .item-catalog) {
+        width: unset;
+        height: unset;
+    }
+    :global(.wrapper-catalog-promotion .wrp) {
+        margin-top: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :global(.venia-home-slider) {
+        /* padding: 0.75rem; */
+        min-height: 10.5rem !important;
+    }
+
+    :global(.venia-home-slider .slick-slide > div > div > div) {
+        /* min-height: 10.5rem !important; */
+        padding: 0 0 0rem !important;
+    }
+
+    /* :global(.venia-home-slider .slick-slider .slick-dots) {
+        margin-top: -1.4rem;
+    }
+
+    :global(.venia-home-slider .slick-slider .slick-dots li > button) {
+        height: 0.875rem !important;
+        width: 0.875rem !important;
+        border-width: 0.25rem;
+    } */
+
+    :global(.venia-img-2 img) {
+        padding: 0px;
+        padding-top: 15px;
+    }
+
+    :global(.heading-2column) {
+        padding-right: 0.75rem !important;
+        padding-left: 0.75rem !important;
+        /* border-top-left-radius: 0px;
+        border-top-right-radius: 0px; */
+    }
+    :global(.heading-2column table) {
+        background-color: unset !important;
+    }
+    :global(.heading-2column table tbody td) {
+        background-color: unset !important;
+        padding: 0.75rem 0 !important
+    }
+    :global(.heading-2column table td:first-child span strong) {
+        font-weight: 700;
+        font-size: 1.125rem !important;
+        color: #FF8200;
+        line-height: 1;
+    }
+    :global(.heading-2column table td:last-child span a) {
+        color: #FF8200 !important;
+    }
+    :global(.heading-2column + .wrp-2) {
+        margin-top: 0px;
+        margin-bottom: 0 !important;
+        padding-bottom: 0.75rem;
+        /* border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; */
+    }
+    :global(.app-banner-image) {
+       padding: 0 0.75rem;
+    }
+
+    :global(.product-mark) {
+        background-color: #FFEBD6;
+        border-radius: 0px;
+    }
+
+    :global(.floorWrapper) {
+        background: linear-gradient(180deg, #FFEBD6 0%, #FFFFFF 100%);
+    }
+}
+
+
+/* @media (max-width: 425px) {
+    :global(.venia-home-slider .slick-slider .slick-dots) {
+        height: 0 !important;
+        padding: 0 0 2rem;
+    }
+} */
+
+:global(table tbody td) {
+    padding: 1rem;
+}
+
+.root img {
+    margin: 0.75rem 0;
+}
+
+:global div:has(> .brands-div) {
+    background: none !important;
+    background-color: none !important;
+}
+:global(.brands-div div){
+    background: rgb(245, 245, 245) !important;
+    border-radius:  0 0 32px 32px !important;
+    padding: 24px 70px !important;
+    height: 97.5%;
+}
+:global(.highlight-service-row){
+    overflow: hidden;
+    border-radius: 16px;
+}
+@media (min-width: 768px) {
+
+:global(.highlight-service-row > .highlight-service-row),
+:global(.highlight-service-row[style]) {
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    align-items: flex-start;
+   width: 100%;
+   padding: 40px 76px !important;
+   background: linear-gradient(180deg, #ffebd6 0%, #fff 100%);
+}
+:global(.highlight-service-img-container) {
+  position: relative;
+  width: 100%;
+  padding: 16px !important;
+  display: flex;
+  justify-content: center !important;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px 0 rgba(115, 100, 86, 0.08);
+  z-index: 2;
+}
+:global(.highlight-service-img-container figure){
+   border-radius: 12px;
+   background: #FCF1E7;
+}
+:global(.highlight-service-img-container figure picture>img) {
+     width: 200px !important;
+     height: 180px;
+     margin: 0 !important;
+     border-radius:0 !important;
+     padding-bottom: 0 !important;
+     object-fit: cover;
+}
+
+:global(.highlight-service-title) {
+  margin-bottom: 1em;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+:global(.highlight-service-img-container .main-img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+:global(.highlight-service-text-last),
+:global(.highlight-service-text-info){
+    margin-right: 100px;
+}
+:global(.highlight-service-text-last p){
+    margin-top: 16px !important;
+}
+:global(.highlight-service-text-last p span){
+    font-size: 18px;
+    line-height: 24px;
+    color: #212121 !important;
+}
+:global(.highlight-service-text-info p span){
+    font-size: 13px !important;
+    line-height: 20px;
+    color: #757575 !important;
+}
+:global(.highlight-service-text img) {
+  width: 86px !important;
+  height: auto;
+  display: block;
+  margin: 20px 3px !important;
+}
+:global(.highlight-service-text) {
+  position: absolute;
+  right: 1.3em;
+  bottom: 0;
+  width: 86px;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  pointer-events: auto;
+  background: none;
+}
+:global(.highlight-service-row div[class^="columnLine"] > div:nth-child(1)) p span {
+  font-size: 36px !important;
+}
+ :global(.highlight-service-row div div:nth-of-type(2)>figure >picture>img),
+ :global(.highlight-service-row div div:nth-of-type(3)>figure >picture>img),
+ :global(.highlight-service-row div div:nth-of-type(4)>figure >picture>img) {
+     width: 200px !important;
+     height: 180px;
+     padding-bottom: 10px !important;
+     margin: 0 !important;
+     object-fit: cover;
+ }
+}
+
+@media (max-width: 768px) {
+    :global(.highlight-service-row){
+        border-radius: 0px;
+    }
+    :global(.highlight-service-row > .highlight-service-row),
+    :global(.highlight-service-row[style]) {
+        width: 100%;
+        padding: 12px 16px !important;
+        border-radius: 0 !important;
+        background: linear-gradient(180deg, #ffebd6 0%, #fff 100%);
+    }
+
+    :global(.highlight-service-row div[class^='columnLine'] > div:nth-child(5)) {
+        height: 1px;
+        margin-top: -1px;
+    }
+
+    :global(.highlight-service-row div[class^="columnLine"] > div:nth-child(1)) p span {
+        font-size: calc(16 / 375 * 100vw) !important;
+        font-weight: 700 !important;
+    }
+    :global(.highlight-service-img-container) {
+        position: relative;
+        width: 100%;
+        padding: 12px !important;
+        display: flex;
+        justify-content: center !important;
+        background: #fff;
+        border-radius: 14px;
+        margin-top: 12px !important;
+        box-shadow: 0 4px 16px 0 rgba(115, 100, 86, 0.08);
+        z-index: 2;
+    }
+    :global(.highlight-service-img-container figure){
+        border-radius: 12px;
+        background: #FCF1E7;
+    }
+    :global(.highlight-service-img-container figure picture>img) {
+        width: 146px !important;
+        height: 132px;
+        margin: 0 !important;
+        border-radius:0 !important;
+        padding-bottom: 0 !important;
+        object-fit: cover;
+    }
+    :global(.highlight-service-text-last),
+    :global(.highlight-service-text-info){
+        margin-right: 86px;
+    }
+    :global(.highlight-service-text-last p){
+        margin-top: 8px !important;
+    }
+    :global(.highlight-service-text-info p span){
+        font-size: 13px !important;
+        color: #757575 !important;
+        display: inline-block;
+        line-height: 18px;
+    }
+    :global(.highlight-service-text-last p span){
+        font-size: 18px;
+        line-height: 24px;
+        color: #212121 !important;
+    }
+    :global(.highlight-service-text-info p span){
+        font-size: 13px !important;
+        line-height: 18px;
+        color: #757575 !important;
+    }
+    :global(.highlight-service-text) {
+        position: absolute;
+        right: 12px;
+        bottom: 0;
+        width: 86px;
+        z-index: 2;
+        display: flex;
+        align-items: flex-end;
+        pointer-events: auto;
+        background: none;
+    }
+}
+
+@media (min-width: 700px) {
+    :global(.highlight-service-row){
+        position: relative;
+    }
+    :global(.highlight-service-row > .highlight-service-row)::before,
+    :global(.highlight-service-row[style])::before {
+        content: '';
+        position: absolute;
+        left: 138px;
+        bottom: 200px;
+        width: 517px;
+        height: 517px;
+        border-radius: 517px;
+        background: linear-gradient(
+            316deg,
+            rgba(255, 166, 89, 0.29) -12.23%,
+            rgba(255, 217, 166, 0) 49.75%
+        );
+    }
+    :global(.highlight-service-row > .highlight-service-row)::after,
+    :global(.highlight-service-row[style])::after {
+        content: '';
+        position: absolute;
+        right: -270px;
+        bottom: -360px;
+        width: 517px;
+        height: 517px;
+        border-radius: 517px;
+        background: linear-gradient(
+            66deg,
+            rgba(255, 166, 89, 0.37) 10.2%,
+            rgba(255, 217, 166, 0) 70.82%
+        );
+    }
+    :global(.highlight-service-row div[class^="columnLine"] > div:nth-child(1)) p  {
+        padding-right: 74px !important;
+        margin-right: 70px !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    :global(.highlight-service-row .highlight-service-img-container) {
+        width: 540px !important;
+    }
+    :global(.highlight-service-row > .highlight-service-row)::after,
+    :global(.highlight-service-row[style])::after {
+        content: '';
+        position: absolute;
+        right: 53px;
+        bottom: -367px;
+        width: 600px;
+        height: 600px;
+        border-radius: 600px;
+        background: linear-gradient(
+            66deg,
+            rgba(255, 166, 89, 0.37) 10.2%,
+            rgba(255, 217, 166, 0) 70.82%
+        );
+    }
+    :global(.highlight-service-img-container figure){
+        overflow: hidden;
+    }
+    :global(.highlight-service-img-container figure picture > img) {
+        transform: scale(1.5);
+        transform-origin: top center;
+    }
+}
+
+:global(.health) {
+    width: 100%;
+    padding: 16px;
+    background-color: #757575;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    :global(.health) {
+        position: sticky;
+        top: 0;
+    width: 100%;
+    padding: 16px;
+    background-color: #FFA12E;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+}

@@ -1,0 +1,45 @@
+.sideNavTitle {
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: capitalize;
+    color: #4D4D4D;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #DFDFDF;
+    margin-bottom: 0;
+}
+
+.categoryWrapper {
+    margin: 0;
+    border-bottom: none !important;
+}
+
+.categoryLinkWrapper {
+    margin: 0 !important;
+    padding: 12px 0 !important;
+    border-bottom: 1px solid #DFDFDF !important;
+}
+
+.categoryLinkWrapper a{
+    text-decoration: none;
+    font-size: 12px;
+    color: #4D4D4D;
+}
+
+.recentTitle {
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #4D4D4D;
+    margin-bottom: 22px;
+    margin-top: 33px;
+}
+
+.recentLinkWrapper {
+    margin-bottom: 13px !important;
+}
+
+.recentLinkWrapper a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-size: 12px;
+}

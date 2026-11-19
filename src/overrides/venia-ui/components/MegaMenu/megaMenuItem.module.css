@@ -1,0 +1,44 @@
+.megaMenuItem {
+    /* padding: 0 7.5px; */
+}
+
+.megaMenuLink {
+    align-items: center;
+    /* display: inline-flex; */
+    min-height: 5rem;
+
+    display: inline-block;
+    text-align: center;
+}
+
+.megaMenuLinkActive {
+    composes: megaMenuLink;
+}
+
+.megaMenuLinkActive > a{
+    border-radius: 4px;
+    color: #FF8200 !important;
+    font-weight: bold;
+    padding: 7px 12px;
+    border: 1px solid #FF8200;
+}
+
+/* .megaMenuItem:hover > div,
+.megaMenuItem:focus > div {
+    display: flex;
+} */
+
+.megaMenuItem_active {
+    composes: megaMenuItem;
+    display: flex;
+}
+
+.arrowDown {
+    padding-left: 0.5rem;
+    line-height: 0;
+}
+
+.megaMenuItem:hover .megaMenuLink,
+.megaMenuItem:focus .megaMenuLink {
+    text-decoration: underline;
+}

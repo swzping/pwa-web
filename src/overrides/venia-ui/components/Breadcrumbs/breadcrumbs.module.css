@@ -1,0 +1,46 @@
+.root {
+    composes: my-[12px] from global;
+    font-size: 0.875rem;
+
+    height: 1.2rem;
+
+    /* Show ellipses when overflowing. */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    composes: ml-[12px] from global;
+    composes: 3xl_ml-0 from global;
+}
+
+.text {
+    padding: 0.25rem;
+}
+
+.text:first-child {
+    padding-left: 0;
+}
+
+.divider {
+    composes: text;
+}
+
+.link {
+    composes: text;
+    text-decoration: underline;
+}
+
+.currentCategory {
+    composes: text;
+}
+
+/* @media (max-width: 1024px) {
+    .root {
+        display: none;
+    }
+} */
+
+@media (max-width: 767px) {
+    .root {
+        display: block;
+    }
+}

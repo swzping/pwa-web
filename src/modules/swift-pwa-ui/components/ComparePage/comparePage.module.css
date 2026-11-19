@@ -1,0 +1,79 @@
+.container {
+    width: 100%;
+}
+.column {
+    min-width: 296px;
+}
+.column .column__title {
+    font-weight: bold;
+    margin-left: 0px;
+}
+.column .description_item img {
+    width: 100%;
+    height: auto;
+}
+.product_image {
+    height: auto;
+    position: relative;
+    width: 300px;
+}
+.product_image .clear_icon {
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 20px;
+    z-index: 2;
+}
+.sticky_column {
+    background: WHITE;
+    border-right: 1px solid rgba(224, 224, 224, 1);
+    left: 0px;
+    position: sticky;
+    z-index: 2;
+}
+.sku {
+    text-transform: uppercase;
+}
+.table_container {
+    width: 100%;
+    overflow-x: auto;
+}
+.table_container table {
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+.table_container table thead {
+    border-color: inherit;
+    vertical-align: middle;
+}
+.table_container table tr {
+    color: inherit;
+    outline: 0;
+    vertical-align: middle;
+}
+.table_container table tr th,
+.table_container table tr td {
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+    color: inherit;
+    font-size: 0.875rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.43rem;
+    letter-spacing: 0.01071em;
+    outline: 0;
+    padding: 16px;
+    text-align: left;
+    vertical-align: middle;
+}
+.table_container table tr th {
+    color: inherit;
+}
+.table_container table tr td {
+    color: rgba(0, 0, 0, 0.87);
+}
+.table_body {
+    border-top: 1px solid rgba(224, 224, 224, 1);
+}

@@ -1,0 +1,147 @@
+.couponPage {
+    display: flex;
+    justify-content: center;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.breadcrumb {
+    padding: 20px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.breadcrumbLink {
+    font-size: 14px;
+    color: var(--text-default-grey, #969696);
+    line-height: 100%;
+    letter-spacing: 0%;
+    cursor: pointer;
+}
+
+.breadcrumbSeparator {
+    margin: 0 4px;
+}
+
+.breadcrumbCurrent {
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--color-icon-primary, #212121);
+}
+.headerBtn {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.buttonContainer {
+    margin-bottom: 26px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actionButton {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    color: var(--color-icon-brand, #ff8200);
+}
+
+.myCouponBtnContainer {
+    position: fixed;
+    z-index: 10;
+    bottom: 60px;
+    padding: 12px;
+    display: flex;
+    background-color: #fff;
+    width: 100%;
+}
+
+.myCouponBtn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    border-radius: 8px;
+    background: var(--surface-primary, #ff8200);
+}
+
+.pagination {
+    position: relative;
+    bottom: 0;
+}
+.pagination > div[class*='root'] {
+    border: 0;
+}
+
+.loadingText {
+    color: #a4a4a4;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 3rem;
+}
+
+.hideLoadingText {
+    display: none;
+}
+
+.couponList {
+    width: 1380px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 30px; /* 行间距16px，列间距30px */
+    margin: 0 auto;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+.couponListMobile {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* 行间距16px */
+    padding: 12px; /* 容器内边距 */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.noData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.noDataText {
+    color: #212121;
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+@media (min-width: 768px) and (max-width: 1386px) {
+    .couponList {
+        width: fit-content;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 30px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+}

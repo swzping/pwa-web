@@ -1,0 +1,63 @@
+.root {
+    composes: gap-x-xs from global;
+    /* composes: gap-y-sm from global; */
+    composes: grid from global;
+    composes: grid-cols-2 from global;
+    composes: w-full from global;
+    padding-bottom: 80px;
+}
+
+.field {
+    composes: col-end-span2 from global;
+}
+
+.formMessage,
+.email,
+.country,
+.street0,
+.street1,
+.city,
+.region,
+.postcode,
+.telephone {
+    composes: field;
+}
+
+.defaultShipping {
+    composes: field;
+
+    composes: pt-xs from global;
+}
+
+.firstname,
+.lastname {
+    composes: col-end-span1 from global;
+}
+
+.buttons {
+    composes: field;
+    composes: gap-xs from global;
+    composes: grid from global;
+    composes: grid-flow-col from global;
+    composes: justify-self-center from global;
+    width: 100%;
+    position: absolute;
+    background-color: #fff;
+    bottom: 0;
+    padding: 12px;
+    border: 1px solid #E5E5E5;
+}
+
+.buttons button {
+    border-radius: 6px;
+}
+
+@media (max-width: 959px) {
+    .firstname {
+        grid-column: 1 / span 2;
+    }
+
+    .lastname {
+        grid-column: 1 / span 2;
+    }
+}

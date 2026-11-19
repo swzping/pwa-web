@@ -1,0 +1,4 @@
+# Consolidated list of product skus across all compare list
+extend type Query {
+    compareListProducts: [String!]!
+}

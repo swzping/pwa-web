@@ -1,0 +1,54 @@
+/* app parity: entry pill on a native button (venia Button
+   defaults leak min-width/hover chrome) — unselected =
+   gray bg + #212121 regular; applied = #FFE7BA bg + brand
+   border + bold brand text and icon */
+.filterButton {
+    display: flex;
+    align-items: center;
+    background-color: #F5F5F5;
+    border: 1px solid transparent;
+    border-radius: 18px;
+    padding: 6px 14px;
+    font-size: 14px;
+    color: #212121;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.filterButton:active {
+    opacity: 0.8;
+}
+
+.filterButtonApplied {
+    background-color: #FFE7BA;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.filterButton svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.filterButton:focus {
+    outline: none;
+}
+
+/* icon-to-label gap (app filterText marginLeft 4); the
+   count follows flush in bold brand color */
+.filterLabel {
+    margin-left: 4px;
+}
+
+.filterNumber {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+	.filterButton {
+		display: none;
+	}
+}

@@ -1,0 +1,150 @@
+.root {
+    background-color: #fff;
+}
+
+.heading {
+    font-family: var(--venia-global-fontFamily-serif);
+    font-weight: var(--venia-global-fontWeight-bold);
+    justify-self: center;
+    text-transform: capitalize;
+}
+
+.linkDetail {
+    text-decoration: none;
+}
+
+.emptyHistoryMessage {
+    text-align: center;
+}
+
+.orderHistoryTable {
+    display: grid;
+    row-gap: 1rem;
+}
+
+.filterRow {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pageInfo {
+    font-size: var(--venia-typography-body-S-fontSize);
+}
+
+.search {
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: column;
+    width: 22rem;
+}
+
+.searchButton {
+    width: 5rem;
+    height: 2rem;
+    min-width: 5rem;
+}
+
+.submitIcon {
+    color: white;
+}
+
+.loadMoreButton {
+    composes: root_lowPriority from '@magento/venia-ui/lib/components/Button/button.module.css';
+    justify-self: center;
+    background-color: var(--color-primary);
+    color: var(--bs-white);
+    border-radius: 10px;
+}
+
+.orderWrapper {
+    padding: 18px;
+    border-bottom: 1px solid #dedede;
+}
+.orderWrapper:last-child {
+    border-bottom: 0;
+}
+.orderTitleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.orderTabsWrapper{
+    position: relative;
+    margin-bottom: 20px;
+}
+.offlineSortWrapper{
+    padding: 8px 12px;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid #f5f5f5;
+}
+.orderStoreName {
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.orderNumber {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.orderStatus {
+    margin: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.orderDate {
+    margin-bottom: 9px;
+    font-size: 12px;
+}
+
+.orderItems {
+    position: relative;
+    font-size: 12px;
+}
+.orderItems .rightIcon {
+    position: absolute;
+    right: 0;
+    width: 14px;
+    height: 14px;
+}
+
+.orderTotalText {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.orderTotalSpace {
+    margin-right: 4px;
+}
+
+.loadingWrapper {
+    padding: 0 16px;
+}
+.loadMoreData {
+    margin: 0 0 10px 0;
+    height: 36px;
+    color: #757575;
+    text-align: center;
+    font-size: 12px;
+}
+
+.buttonLoading {
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    /* width: 100%; */
+    margin: 0 auto;
+    display: block;
+    background-color: var(--color-primary);
+    font-weight: normal;
+    border-radius: 10px;
+    text-transform: capitalize;
+    color: var(--bs-white);
+    padding: 6px 12px;
+    font-size: 12px;
+    margin-top: 12px;
+}

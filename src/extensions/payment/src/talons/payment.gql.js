@@ -1,0 +1,38 @@
+import { gql } from '@apollo/client';
+
+export const GET_PAYMENT_CONFIG_DATA = gql`
+    query storeConfigData {
+        storeConfig {
+            payment_cashondelivery_title
+            payment_cashondelivery_instructions
+            store_code
+        }
+    }
+`;
+
+export const SET_PAYMENT_METHOD_ON_CART = gql`
+    mutation setPaymentMethodOnCart(
+        $cartId: String!,
+        $selectedPaymentMethod: String!
+    ) {
+        setPaymentMethodOnCart(
+            input: {
+                cart_id: $cartId,
+                payment_method: { code: $selectedPaymentMethod } 
+            }
+        ) @connection(key: "setPaymentMethodOnCart") {
+            cart {
+                id
+                selected_payment_method {
+                    code
+                    title
+                }
+            }
+        }
+    }
+`;
+
+export default {
+    getPaymentConfigQuery: GET_PAYMENT_CONFIG_DATA,
+    setPaymentMethodOnCartMutation: SET_PAYMENT_METHOD_ON_CART
+};

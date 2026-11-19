@@ -1,0 +1,42 @@
+.root {
+    padding: 0 0.5rem;
+}
+.root a {
+    text-decoration: none;
+}
+
+.error {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.root [class^='swiper-button-prev'] {
+    transform: translate(-50%)!important;
+}
+.root [class^='swiper-button-next'] {
+    transform: translate(50%)!important;
+
+}
+.root [class^='swiper-wrapper'] {
+    padding: 6px;
+}
+
+.recommendHeader {
+    margin: 18px 0 16px;
+    font-size: 24px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.root :global .slick-track .slick-slide > div {
+    min-height: inherit;
+    margin: 0 0.25rem;
+    border-radius: 0.5rem;
+}
+
+.carousel {
+    composes: root;
+    composes: root from '~@magento/pagebuilder/lib/ContentTypes/Slider/slider.module.css';
+    margin: 0!important;
+    padding-bottom: 18px;
+}

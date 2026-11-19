@@ -1,0 +1,205 @@
+.root {
+    /* background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 16px; */
+}
+
+.errorText {
+    color: rgb(var(--venia-global-color-error));
+    line-height: var(--venia-global-lineHeight-300);
+}
+
+.discountTag {
+    justify-self: start;
+    padding: 2px 8px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 16px;
+    border-radius: 38px;
+    color: rgba(246, 131, 31, 1) !important;
+    background: rgba(254, 241, 230, 1);
+}
+
+.discountTagPrice {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: right;
+    color: rgba(246, 131, 31, 1) !important;
+}
+
+.lineItems {
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: 1fr auto;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    grid-gap: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.lineItems:empty {
+    display: none;
+}
+
+.lineItems > span:not(:nth-last-of-type(-n+2)) {
+    color: #808080;
+    font-size: 12px;
+}
+
+.lineItemLabel {
+    justify-self: start;
+    font-size: 14px;
+}
+
+
+.price {
+    justify-self: end;
+    font-size: 14px;
+}
+
+.totalLabel {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.totalPrice {
+    font-weight: 700;
+    font-size: 14px;
+    color: #FF8200;
+}
+
+.totalWrapper {
+    display: flex;
+    justify-content: space-between;
+    /* border-top: 1px solid #cecece; */
+    margin-top: 16px;
+}
+
+.priceUpdating {
+    composes: price;
+    opacity: 0;
+}
+
+.checkoutButton_container {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    /* margin-top: 1rem; */
+    width: 100%;
+}
+
+.buttonCheckout {
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    width: 100%;
+    background-color: var(--color-primary);
+    font-weight: bold;
+    border-radius: 10px;
+    /* text-transform: uppercase; */
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--bs-white);
+    /* padding: 12px; */
+    padding: 15px;
+    margin-top: 28px;
+}
+
+.buttonCheckout[disabled] {
+    background-color: #c3c3c3;
+    border-color: #c3c3c3;
+    cursor: not-allowed;
+    color: #777777;
+}
+
+.summaryTitle {
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.summaryTitle p {
+    margin: 0;
+    text-align: center;
+}
+
+.mobileRoot {
+    border-top: 1px solid #0000001a;
+    /* background-color: var(--bs-white); */
+    position: fixed;
+    z-index: 9999 !important;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.mobilePriceIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobilePriceIcon label {
+    font-size: 14px;
+    color: #000;
+    padding-right: 4px;
+}
+
+.mobilePriceIcon span {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+}
+
+.hideButton {
+    text-align: center;
+    /* width: 100%; */
+    margin-bottom: 0;
+}
+
+.mobilePriceSummary {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobilePriceSummary span:first-child {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.mobilePriceSummary span:nth-child(2) {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FF8200;
+}
+
+.wrapperMobile {
+    border-bottom: 1px solid #cecece;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 16px;
+    padding: 8px 0 16px;
+}
+
+@media (max-width: 1024px) {
+
+    .buttonCheckout {
+        font-size: 18px;
+        margin-top: 0px;
+    }
+}

@@ -1,0 +1,58 @@
+.root {
+    display: grid;
+    grid-template-columns: auto repeat(3, 1fr) auto;
+    grid-template-rows: auto 1fr;
+    row-gap: 0.375rem;
+    column-gap: 1rem;
+}
+
+.thumbnailContainer {
+    position: relative;
+    grid-row: 1 / -1;
+    width: 104px;
+}
+
+.thumbnailContainer img {
+    width: 100%;
+}
+
+.nameContainer {
+    grid-column: 2 / -1;
+    font-weight: var(--venia-global-fontWeight-bold);
+    text-decoration: none;
+}
+
+.nameContainer a {
+    text-decoration: none;
+}
+
+.buyAgainButton {
+    align-self: start;
+    grid-column-end: -1;
+    text-decoration: underline;
+    /** Hide until PWA-979 is completed */
+    visibility: hidden;
+}
+
+@media (max-width: 960px) {
+    .root {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: repeat(5, auto);
+        row-gap: 0.5rem;
+        column-gap: 1rem;
+    }
+
+    .buyAgainButton {
+        grid-column-end: auto;
+        justify-self: start;
+    }
+}
+
+.thumbnailContainer .flashSaleBadge {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 28px;
+    z-index: 1;
+}

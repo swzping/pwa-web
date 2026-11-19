@@ -1,0 +1,125 @@
+.root {
+    overflow: hidden;
+}
+
+.root [class^='quantity-root'] {
+    grid-column-gap: 0;
+    grid-template-columns: 1fr auto 1fr;
+    max-height: 32px;
+}
+
+.root [class^='quantity-root'] > button {
+    border-color: rgb(var(--venia-global-color-gray-400));
+    border-radius: unset;
+    height: 32px;
+    stroke: var(--color-primary);
+    padding: 0px 16px;
+    border-width: 1px;
+}
+.root [class^='quantity-root'] > button:hover svg {
+    stroke: var(--color-primary);
+}
+
+.root [class^='quantity-root'] input[class^='quantity-input'] {
+    border-color: rgb(var(--venia-global-color-gray-400));
+    border-radius: unset;
+    border-right: unset;
+    border-left: unset;
+    border-width: 1px;
+    height: 32px;
+    padding: 0;
+}
+
+.root [class^='fieldIcons-root'] {
+    height: 32px;
+}
+
+.root form button[type='submit'] {
+    width: 100%;
+    margin: auto;
+    min-width: unset;
+    text-transform: capitalize;
+    border-radius: 6px;
+    border-width: 0;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    height: 32px;
+}
+
+.root [class^='oos-field'] {
+    padding: 6px;
+    border: 1px solid #DFDFDF;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.root [class^='oos-text'] {
+    text-align: center;
+    margin: 0;
+    font-size: 12px;
+    color: #A4A4A4;
+    letter-spacing: 0.24px;
+}
+
+@media (min-width: 576px) {
+    .root [class^='oos-field'] {
+        display: none;
+    }
+    .root [class^='wrapper-oos-field'] {
+        display: none;
+    }
+}
+
+.root form button[type='submit']:focus {
+    box-shadow: unset;
+}
+
+.root form button[type='submit'][disabled] {
+    opacity: 0.6;
+}
+
+.root form button[type='submit'] img {
+    height: 16px;
+}
+
+.root form button[type='submit'] svg {
+    display: block;
+}
+
+.errorQty {
+    margin-top: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.errorQtyText {
+    color: red;
+    font-size: 12px;
+}
+
+.root [class^='addToCartButton-text'] {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+@media (max-width: 640px) {
+    .root form [class='col-6']:first-child {
+        display: none;
+    }
+    .root form [class='col-6']:last-child {
+        width: 100%;
+    }
+    .root [class^='addToCartButton-text'] {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .root [class^='addToCartButton-text'] {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,65 @@
+.root {
+    composes: flex from global;
+    composes: p-2 from global;
+    border-radius: 8px;
+    border: 1px solid #E5E5E5;
+    background-color: #FFFFFF;
+    align-items: center;
+}
+
+.deliveryIcon {
+    composes: flex from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+    composes: w-6 from global;
+    composes: h-6 from global;
+    composes: mr-2 from global;
+    font-size: 14px;
+    color: #FF8200;
+    border-radius: 50%;
+    background-color: #F5F5F5;
+}
+
+.tips {
+    flex: 1;
+}
+
+.text {
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+}
+
+.price {
+    color: #FF8200;
+    font-weight: 500;
+    padding-right: 2px;
+}
+
+.progressWrapper {
+    composes: mt-1 from global;
+    composes: w-full from global;
+    composes: h-1 from global;
+    background-color: #E5E5E5;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progressBar {
+    height: 100%;
+    border-radius: 4px;
+    background-color: #FF8200;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.freeRoot {
+    composes: root;
+}
+
+.freeRoot .deliveryIcon{
+    color: #46A147;
+}
+
+.freeRoot .progressBar{
+    background-color: #46A147;
+}

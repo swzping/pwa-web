@@ -1,0 +1,20 @@
+.subscribe_container {
+    background: #ff8200 0% 0% no-repeat padding-box;
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.title {
+    font: normal normal bold 20px/24px Barlow;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+.note {
+    font: normal normal normal 12px/14px Rubik;
+    letter-spacing: 0px;
+    color: #ffffff;
+    margin-bottom: 0;
+}

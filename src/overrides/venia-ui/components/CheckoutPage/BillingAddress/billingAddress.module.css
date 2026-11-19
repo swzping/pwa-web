@@ -1,0 +1,55 @@
+.billing_address_fields_root {
+    composes: gap-x-xs from global;
+    composes: gap-y-sm from global;
+    composes: grid from global;
+    composes: px-0 from global;
+    composes: py-xs from global;
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 24px;
+}
+
+.billing_address_fields_root_hidden {
+    composes: h-0 from global;
+    composes: invisible from global;
+    composes: opacity-0 from global;
+    composes: overflow-hidden from global;
+}
+
+.formErrorContainer {
+    composes: pt-sm from global;
+}
+
+.first_name,
+.last_name {
+    composes: col-end-span2 from global;
+
+    composes: lg_col-end-span1 from global;
+}
+
+.country,
+.street1,
+.street2,
+.address_check,
+.city,
+.region,
+.postal_code,
+.phone_number {
+    composes: col-end-span2 from global;
+}
+
+.address_check {
+    padding-bottom: 18.5px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.address_title {
+    font-weight: 700;
+    font-size: 16px;
+    color: #000;
+    margin-top: 16px;
+}
+
+.billing_address_fields_root [class^='field-label'] {
+    font-weight: 400;
+    font-size: 14px;
+}

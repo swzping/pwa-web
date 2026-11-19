@@ -1,0 +1,318 @@
+import React, { useEffect, useState } from 'react';
+import './couponSelector.css';
+import { useLazyQuery, useMutation } from '@apollo/client';
+import DEFAULT_OPERATIONS from '../../../../../../modules/swift-pwa-ui/components/MyCoupon/myCoupon.gql.js'
+import { formatDateRange } from "./timeValidForm.js";
+import CouponDetail from "../couponDeatial/coupouDeatial"
+import { canConfirmCouponSelection } from './couponSelection';
+//
+const CouponSelector = ({ onApply, setShowBack = () => {}, setChildOnBack = () => {}, onClose, isCheckout = false, isApplying = false, appliedCouponCodes = [] }) => {
+    const itemsPerPage = 6;
+    const [currentPage, setCurrentPage] = useState(1);
+    const [couponCache, setCouponCache] = useState({});
+    const [currentCoupons, setCurrentCoupons] = useState([]);
+    const [totalCount, setTotalCount] = useState(0);
+    const [selectedCouponCode, setSelectedCouponCode] = useState(() => [...new Set(appliedCouponCodes)]);
+    const [manualCouponCode, setManualCouponCode] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [isShowDeatils, setShowDeatils] = useState(false)
+    const [conpunDeatils, setCouponDeatils] = useState(null)
+    const [copiedIndex, setCopiedIndex] = useState(null);
+    const [isClick, setIsClick] = useState(true);
+    const [manualCouponError, setManualCouponError] = useState("");
+    const [isManualCouponSuccess, setIsManualCouponSuccess] = useState(false);
+    const getAppliedCouponCode = items => items.find(coupon => appliedCouponCodes.includes(coupon.code))?.code || "";
+    const getCouponErrorMessage = error => (
+        error?.graphQLErrors?.[0]?.message ||
+        error?.networkError?.result?.errors?.[0]?.message ||
+        error?.message ||
+        'Voucher code is not valid'
+    );
+    const applySearchResults = data => {
+        const coupons = data && data.customerCoupons ? data.customerCoupons : {};
+        const items = coupons.items ? coupons.items : [];
+        const total = coupons.totalCount ? coupons.totalCount : 0;
+        const firstCouponCode = getAppliedCouponCode(items) || items[0]?.code || "";
+
+        setCurrentPage(1);
+        setCouponCache({ 1: items });
+        setCurrentCoupons(items);
+        setTotalCount(total);
+        setSelectedCouponCode(prev => [...new Set([...prev, firstCouponCode].filter(Boolean))]);
+        setLoading(false);
+    };
+    const [fetchCoupons] = useLazyQuery(DEFAULT_OPERATIONS.getCouponWallet, {
+        fetchPolicy: 'no-cache',
+        onCompleted: (data) => {
+            const coupons = data && data.customerCoupons ? data.customerCoupons : {};
+            const items = coupons.items ? coupons.items : [];
+            const total = coupons.totalCount ? coupons.totalCount : 0;
+            const page = coupons.currentPage || currentPage;
+            setCouponCache(prev => ({ ...prev, [page]: items }));
+            setCurrentCoupons(items);
+            setTotalCount(total);
+            setLoading(false);
+        },
+        onError: () => setLoading(false)
+    });
+    const [searchCoupons] = useLazyQuery(DEFAULT_OPERATIONS.searchCouponWallet, {
+        fetchPolicy: 'no-cache',
+        onCompleted: applySearchResults,
+        onError: () => {
+            setCurrentPage(1);
+            setCouponCache({ 1: [] });
+            setCurrentCoupons([]);
+            setTotalCount(0);
+            setLoading(false);
+        }
+    });
+    const [useCoupon, { loading: usingCoupon }] = useMutation(DEFAULT_OPERATIONS.useCoupon);
+
+    const goToPage = (page) => {
+        if (page === currentPage) return;
+        setCurrentPage(page);
+
+        if (couponCache[page]) {
+            setCurrentCoupons(couponCache[page]);
+        } else {
+            setLoading(true);
+            fetchCoupons({ variables: { currentPage: page, pageSize: itemsPerPage, status: 'valid' } });
+        }
+    };
+    useEffect(() => {
+        setChildOnBack(() => handleBack);
+    }, []);
+
+
+    const handleBack = () => {
+        setShowDeatils(false);
+        setShowBack(false)
+    };
+
+    const lookTheDetials = (couponData) => {
+        setShowDeatils(true);
+        setCouponDeatils(couponData);
+        setShowBack(true)
+    }
+
+    const copyCode = (couponCode, index, e) => {
+        if (!isClick) return;
+
+        e.stopPropagation();
+        navigator.clipboard
+            .writeText(couponCode)
+            .then(() => {
+                setCopiedIndex(index);
+                setTimeout(() => setCopiedIndex(null), 1000);
+            })
+            .catch((err) => console.log('coopon code error: ', err));
+    };
+
+    const totalPages = Math.ceil(totalCount / itemsPerPage);
+    const toggleCoupon = (couponCode) => setSelectedCouponCode(prev =>
+        prev.includes(couponCode) ? prev.filter(code => code !== couponCode) : [...prev, couponCode]
+    );
+    const handleApply = () => canConfirmCouponSelection({
+        isCheckout,
+        selectedCouponCode: selectedCouponCode.join(','),
+        appliedCouponCodes
+    }) ? onApply(isCheckout ? selectedCouponCode : selectedCouponCode.join(',')) : alert('please choose a coupon!');
+    const handleSearchCoupon = () => {
+        const keyword = manualCouponCode.trim();
+        if (!keyword) {
+            setManualCouponError("");
+            setIsManualCouponSuccess(false);
+            setCurrentPage(1);
+            setCouponCache({});
+            setLoading(true);
+            fetchCoupons({ variables: { currentPage: 1, pageSize: itemsPerPage, status: 'valid' } })
+                .then(result => {
+                    const coupons = result && result.data && result.data.customerCoupons ? result.data.customerCoupons : {};
+                    const items = coupons.items ? coupons.items : [];
+                    const total = coupons.totalCount ? coupons.totalCount : 0;
+                    setCouponCache({ 1: items });
+                    setCurrentCoupons(items);
+                    setTotalCount(total);
+                })
+                .catch(() => {
+                    setCouponCache({ 1: [] });
+                    setCurrentCoupons([]);
+                    setTotalCount(0);
+                })
+                .finally(() => setLoading(false));
+            return;
+        }
+
+        setManualCouponError("");
+        setIsManualCouponSuccess(false);
+        setLoading(true);
+        useCoupon({ variables: { coupon: keyword } })
+            .then(() => setIsManualCouponSuccess(true))
+            .catch(error => {
+                setIsManualCouponSuccess(false);
+                setManualCouponError(getCouponErrorMessage(error));
+            })
+            .finally(() => {
+                searchCoupons({
+                    variables: {
+                        currentPage: 1,
+                        pageSize: itemsPerPage,
+                        filter: {
+                            code: {
+                                like: `%${keyword}%`
+                            }
+                        }
+                    }
+                })
+                    .then(result => applySearchResults(result && result.data))
+                    .catch(() => {
+                        setCurrentPage(1);
+                        setCouponCache({ 1: [] });
+                        setCurrentCoupons([]);
+                        setTotalCount(0);
+                        setLoading(false);
+                    });
+            });
+    };
+    const handleCancel = () => onClose()
+    const goPrevious = () => { if (currentPage > 1) goToPage(currentPage - 1); };
+    const goNext = () => { if (currentPage < totalPages) goToPage(currentPage + 1); };
+    const goFirst = () => goToPage(1);
+    const goLast = () => goToPage(totalPages);
+
+    useEffect(() => {
+        if (!couponCache[1]) {
+            setLoading(true);
+            fetchCoupons({ variables: { currentPage: 1, pageSize: itemsPerPage, status: 'valid' } });
+        } else {
+            setCurrentCoupons(couponCache[1]);
+        }
+    }, []);
+
+    return (
+        <div className={`coupon-selector-container ${isCheckout ? 'checkout-coupon-selector' : ''}`}>
+            {isCheckout && !isShowDeatils && (
+                <div className="checkout-coupon-entry-container">
+                    <div className="checkout-coupon-entry">
+                        <div className="checkout-coupon-input-wrap">
+                            <input
+                                className="checkout-coupon-input"
+                                value={manualCouponCode}
+                                onChange={event => {
+                                    const nextCouponCode = event.target.value;
+                                    setManualCouponCode(nextCouponCode);
+                                    setIsManualCouponSuccess(false);
+                                    if (!nextCouponCode.trim()) {
+                                        setManualCouponError("");
+                                    }
+                                }}
+                                placeholder="Enter code"
+                            />
+                            {manualCouponCode && (
+                                <button
+                                    aria-label="Clear coupon code"
+                                    className="checkout-coupon-clear"
+                                    onClick={() => {
+                                        setManualCouponCode("");
+                                        setManualCouponError("");
+                                        setIsManualCouponSuccess(false);
+                                    }}
+                                    type="button"
+                                />
+                            )}
+                        </div>
+                        <button
+                            className="checkout-coupon-search"
+                            disabled={isApplying || loading || usingCoupon || !manualCouponCode.trim()}
+                            onClick={handleSearchCoupon}
+                            type="button"
+                        >
+                            Use
+                        </button>
+                    </div>
+                    {manualCouponError && (
+                        <div className="checkout-coupon-error" role="alert">
+                            <span className="checkout-coupon-error-icon" aria-hidden="true">i</span>
+                            {manualCouponError}
+                        </div>
+                    )}
+                    {isManualCouponSuccess && (
+                        <div className="checkout-coupon-success" role="alert">
+                            Congrats! You can use the voucher
+                        </div>
+                    )}
+                </div>
+            )}
+            {loading && <div className="coupon-loading">Loading...</div>}
+            {(!isShowDeatils && !loading) && <div className="coupon-grid">
+                {currentCoupons.map((coupon, index) => (
+                    <div key={coupon.code} className={`coupon-card ${coupon.status === 'valid' ? 'couponInfor' : 'coupon-disabled-select'}`}>
+                        <div className="coupon-icon">
+                            <div><img src={(coupon.image && coupon.image[0]) || '/venia-static-assets/css/coupon-icon.png'} alt="eCoupon" /></div>
+                            <div style={{ marginTop: "5px" }}>{coupon.group || 'eCoupon'}</div>
+                        </div>
+                        <div className="lineStyle" />
+                        <div className="coupon-info">
+                            <div className='button-div'>
+                                <button
+                                    className={`select-btn ${selectedCouponCode.includes(coupon.code) ? 'selected' : ''}`}
+                                    onClick={() => coupon.status === 'valid' && toggleCoupon(coupon.code)}
+                                    disabled={coupon.status !== 'valid'}
+                                />
+                            </div>
+                            <p className="coupon-title one-line-ellipsis-select">{coupon.name}</p>
+                            <p className="coupon-desc two-line-ellipsis-select">{coupon.description}</p>
+                            <div className="coupon-code">
+                                <div className='one-line-ell'>{coupon.code}</div>
+                                <span
+                                    className="copy-icon"
+                                    onClick={(e) => copyCode(coupon.code, index, e)}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M9.89632 4.85254H3.9394C3.57299 4.85254 3.22159 4.99809 2.9625 5.25718C2.70342 5.51627 2.55786 5.86767 2.55786 6.23408V12.1202C2.55786 12.4866 2.70342 12.838 2.9625 13.0971C3.22159 13.3562 3.57299 13.5018 3.9394 13.5018H9.89632C10.2627 13.5018 10.6141 13.3562 10.8732 13.0971C11.1323 12.838 11.2779 12.4866 11.2779 12.1202V6.23408C11.2779 5.86767 11.1323 5.51627 10.8732 5.25718C10.6141 4.99809 10.2627 4.85254 9.89632 4.85254ZM8.42555 9.76946H7.53325V10.6618C7.53325 10.825 7.46841 10.9815 7.353 11.0969C7.2376 11.2123 7.08107 11.2772 6.91786 11.2772C6.83697 11.2774 6.75682 11.2617 6.68203 11.2309C6.60724 11.2001 6.53928 11.1547 6.48208 11.0975C6.42488 11.0403 6.37957 10.9724 6.34874 10.8976C6.31792 10.8228 6.30219 10.7427 6.30248 10.6618V9.76946H5.41017C5.32928 9.76975 5.24913 9.75402 5.17434 9.7232C5.09955 9.69237 5.03159 9.64706 4.97439 9.58986C4.91719 9.53265 4.87187 9.4647 4.84105 9.38991C4.81022 9.31512 4.7945 9.23497 4.79478 9.15408C4.79478 8.99087 4.85962 8.83434 4.97503 8.71894C5.09043 8.60353 5.24696 8.53869 5.41017 8.53869H6.30248V7.64639C6.30219 7.56549 6.31792 7.48534 6.34874 7.41055C6.37957 7.33576 6.42488 7.26781 6.48208 7.21061C6.53928 7.15341 6.60724 7.10809 6.68203 7.07726C6.75682 7.04644 6.83697 7.03072 6.91786 7.031C7.08107 7.031 7.2376 7.09584 7.353 7.21124C7.46841 7.32665 7.53325 7.48318 7.53325 7.64639V8.53869H8.42555C8.58876 8.53869 8.74529 8.60353 8.8607 8.71894C8.9761 8.83434 9.04094 8.99087 9.04094 9.15408C9.04122 9.23497 9.0255 9.31512 8.99467 9.38991C8.96385 9.4647 8.91853 9.53265 8.86133 9.58986C8.80413 9.64706 8.73618 9.69237 8.66139 9.7232C8.5866 9.75402 8.50645 9.76975 8.42555 9.76946Z" fill="#FF8200" />
+                                        <path d="M12.2 2.49634H6.52798C6.44717 2.49634 6.36715 2.51226 6.29248 2.54318C6.21782 2.57411 6.14998 2.61944 6.09284 2.67658C6.0357 2.73372 5.99037 2.80156 5.95944 2.87622C5.92852 2.95089 5.9126 3.03091 5.9126 3.11172C5.9126 3.27493 5.97743 3.43146 6.09284 3.54687C6.20825 3.66227 6.36477 3.72711 6.52798 3.72711H12.2C12.2522 3.72719 12.3022 3.74796 12.3391 3.78487C12.3761 3.82179 12.3968 3.87183 12.3969 3.92403V9.65449C12.3969 9.73531 12.4128 9.81533 12.4437 9.88999C12.4747 9.96465 12.52 10.0325 12.5771 10.0896C12.6343 10.1468 12.7021 10.1921 12.7768 10.223C12.8515 10.254 12.9315 10.2699 13.0123 10.2699C13.0931 10.2699 13.1731 10.254 13.2478 10.223C13.3224 10.1921 13.3903 10.1468 13.4474 10.0896C13.5046 10.0325 13.5499 9.96465 13.5808 9.88999C13.6118 9.81533 13.6277 9.73531 13.6277 9.65449V3.92403C13.6273 3.54551 13.4767 3.18261 13.2091 2.91495C12.9414 2.64729 12.5785 2.49675 12.2 2.49634Z" fill="#FF8200" />
+                                    </svg>
+                                </span>
+
+                                {copiedIndex === index && (
+                                    <div className="copied-tooltip-selet">
+                                        <span>Code copied</span>
+                                        <div className="tooltip-arrow-selet"></div>
+                                    </div>
+                                )}
+                            </div>
+                            <div className='rowLineStyle'></div>
+                            <div className='bottomInfoGroup'>
+                                <p className="coupon-valid">Valid date: {formatDateRange(coupon.from_date, coupon.to_date)}</p>
+                                <a className="coupon-details" onClick={() => lookTheDetials(coupon)}>Details</a>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>}
+
+            {!isShowDeatils && <div className="pagination">
+                <button className="page-nav" onClick={goFirst} disabled={currentPage === 1}>&lt;&lt;</button>
+                <button className="page-nav" onClick={goPrevious} disabled={currentPage === 1}>&lt;</button>
+                {Array.from({ length: totalPages }).map((_, i) => (
+                    <button key={i} className={`page-btn ${currentPage === i + 1 ? 'active' : ''}`} onClick={() => goToPage(i + 1)}>
+                        {i + 1}
+                    </button>
+                ))}
+                <button className="page-nav" onClick={goNext} disabled={currentPage === totalPages}>&gt;</button>
+                <button className="page-nav" onClick={goLast} disabled={currentPage === totalPages}>&gt;&gt;</button>
+            </div>}
+
+            {!isShowDeatils && <div className="action-buttons">
+                <button className="cancel-btn" onClick={handleCancel}>Cancel</button>
+                <button className="apply-btn" disabled={isApplying} onClick={handleApply}>Confirm</button>
+            </div>}
+
+            <div>
+                {isShowDeatils && <CouponDetail coupon={conpunDeatils} />}
+            </div>
+        </div>
+    );
+};
+
+export default CouponSelector;

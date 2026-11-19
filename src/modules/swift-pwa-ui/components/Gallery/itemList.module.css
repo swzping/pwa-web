@@ -1,0 +1,99 @@
+.root {
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+.item {
+    align-items: start;
+    display: grid;
+    grid-gap: 0.5rem 1rem;
+    grid-template-areas: 'image details kebab';
+    grid-template-columns: 200px 1fr min-content;
+}
+
+.imageContainer {
+    grid-area: image;
+}
+
+.imageRoot {
+    height: 100%;
+}
+
+.image {
+    background-color: rgb(var(--venia-global-color-gray));
+    border: solid 1px rgb(var(--venia-global-color-border));
+    border-radius: 2px;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.details {
+    display: grid;
+    gap: 0.5rem;
+    grid-area: details;
+    grid-template-areas:
+        'name name'
+        'options quantity'
+        'price quantity'
+        'add_to_cart quantity';
+    grid-template-columns: 2fr 1fr;
+    line-height: 1.5;
+}
+
+.add_to_cart {
+    align-items: center;
+    display: flex;
+    grid-area: add_to_cart;
+}
+
+.actions {
+    grid-area: kebab;
+}
+.actions [class^="addToListButton-root"] {
+    min-height: 2rem;
+    justify-content: center;
+}
+
+.name {
+    grid-area: name;
+    font-weight: var(--venia-global-fontWeight-semibold);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.name a {
+    white-space: nowrap;
+    line-clamp: 2;
+}
+
+.price {
+    grid-area: price;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+@media (min-width: 320px) {
+    .imageContainer img {
+        width: 100%;
+    }
+    .details {
+        grid-template-areas:
+        'name name'
+        'options quantity'
+        'price quantity'
+        'add_to_cart add_to_cart';
+    }
+    .item {
+        grid-template-columns: 100px 1fr min-content;
+    }
+}
+@media (min-width: 640px) {
+    .imageContainer img {
+        width: 200px;
+    }
+    .item {
+        grid-template-columns: 200px 1fr min-content;
+    }
+}

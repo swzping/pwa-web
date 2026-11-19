@@ -1,0 +1,24 @@
+{
+  "name": "@icube/pwa-studio-custom-env",
+  "version": "0.0.1",
+  "description": "Provides Cash On Delivery Payment Method for PWA Studio.",
+  "author": "Asih<asih.priyatno@sirclo.com>",
+  "license": "MIT",
+  "main": "intercept.js",
+  "scripts": {
+    "clean": " "
+  },
+  "peerDependencies": {
+    "@magento/peregrine": "*",
+    "@magento/pwa-buildpack": "*",
+    "@magento/venia-ui": "*",
+    "react": "*",
+    "react-intl": "*",
+    "react-router-dom": "*"
+  },
+  "pwa-studio": {
+    "targets": {
+      "intercept": "./intercept.js"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.root {
+
+    padding: 12px !important;
+    list-style: none;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.root:last-child {
+    border-bottom: none;
+}

@@ -1,0 +1,10 @@
+.root {
+    display: inline-block;
+    padding: 2px !important;
+}
+
+.root ol,
+ul,
+li {
+    padding: 0px !important;
+}

@@ -1,0 +1,33 @@
+.megaMenu {
+    align-items: center;
+    align-self: center;
+    /* display: none; */
+    /* grid-column: 3 / 4; */
+    /* grid-row: 1 / 1; */
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: var(--venia-global-maxWidth);
+    display: flex;
+    height: 58px;
+    gap: 40px;
+}
+
+@media (max-width: 1440px) {
+    .megaMenu {
+        justify-content: space-around;
+        padding: 0 0.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .megaMenu {
+        overflow: auto;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 767px) {
+    .megaMenu {
+        display: none;
+    }
+}

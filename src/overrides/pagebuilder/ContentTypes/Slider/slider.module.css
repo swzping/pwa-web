@@ -1,0 +1,276 @@
+.root {
+    display: block;
+    position: relative;
+    touch-action: pan-y;
+    user-select: none;
+    composes: my-[12px] from global;
+    /* composes: px-[12px] from global; */
+    composes: md_my-[24px] from global;
+    composes: md_px-0 from global;
+    composes: min-h-[10.5rem] from global;
+    --leftViewportElement: -99999px;
+}
+.root [class^='swiper-button-prev'] {
+    transform: none!important;
+}
+.root [class^='swiper-button-next'] {
+    transform: none!important;
+}
+.root :global .slick-current {
+    --leftViewportElement: 0;
+}
+
+.bannerRoot {
+    composes: root from '~@magento/pagebuilder/lib/ContentTypes/Banner/banner.module.css';
+    min-height: inherit;
+    composes: rounded-xl from global;
+}
+.bannerLink {
+    composes: link from '~@magento/pagebuilder/lib/ContentTypes/Banner/banner.module.css';
+    min-height: inherit;
+}
+.bannerWrapper {
+    composes: wrapper from '~@magento/pagebuilder/lib/ContentTypes/Banner/banner.module.css';
+    min-height: inherit;
+    border-radius: 12px;
+}
+
+.root[class*='campaign-highlight'] .bannerWrapper {
+    border-radius: 0;
+}
+
+.bannerPosterOverlay {
+    composes: posterOverlay from '~@magento/pagebuilder/lib/ContentTypes/Banner/banner.module.css';
+    min-height: inherit;
+}
+
+.root :global .slick-slider {
+    min-height: inherit;
+}
+
+.root :global .slick-list {
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    min-height: inherit;
+}
+
+.root :global .slick-list:focus {
+    outline: none;
+}
+
+.root :global .slick-list.dragging {
+    cursor: pointer;
+}
+
+.root :global .slick-track {
+    display: block;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 0;
+    min-height: inherit;
+}
+
+.root :global .slick-track .slick-slide > div {
+    min-height: inherit;
+}
+
+.root :global .slick-track:before,
+.root :global .slick-track:after {
+    content: '';
+    display: table;
+}
+
+.root :global .slick-track:after {
+    clear: both;
+}
+
+:global .slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.root :global .slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: inherit;
+}
+
+[dir='rtl'] .root :global .slick-slide {
+    float: right;
+}
+
+.root :global .slick-slide img {
+    display: block;
+}
+.root :global .slick-slide.slick-loading img {
+    display: none;
+}
+
+.root :global .slick-slide.dragging img {
+    pointer-events: none;
+}
+
+:global .slick-initialized .slick-slide {
+    display: block;
+    visibility: hidden;
+}
+
+:global .slick-initialized .slick-slide.slick-active {
+    visibility: visible;
+}
+
+:global .slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.root :global .slick-vertical .slick-loading {
+    border: 1px solid transparent;
+    display: block;
+    height: auto;
+}
+
+.root :global .slick-slider .slick-track,
+.root :global .slick-slider .slick-list {
+    transform: translate3d(0, 0, 0);
+}
+
+.root :global .slick-arrow.slick-hidden {
+    display: none;
+}
+
+.root :global .slick-prev,
+.root :global .slick-next {
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.venia-home-slider .slick-prev {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.root:hover :global .slick-prev,
+.root:hover :global .slick-next {
+    opacity: 1;
+}
+
+.root :global .slick-prev {
+    left: 0;
+}
+
+.root :global .slick-next {
+    right: 0;
+}
+
+.root :global .slick-prev,
+.root :global .slick-next {
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 36px;
+    height: 36px;
+    z-index: 9;
+    opacity: 1 !important;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+.root :global .slick-prev:before {
+    content: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2212%22%20height%3D%2214%22%20viewBox%3D%220%200%2012%2014%22%20fill%3D%22none%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M1.46875%206.51294L7.46875%200.544189C7.75%200.231689%208.21875%200.231689%208.53125%200.544189C8.8125%200.825439%208.8125%201.29419%208.53125%201.57544L3.03125%207.04419L8.5%2012.5442C8.8125%2012.8254%208.8125%2013.2942%208.5%2013.5754C8.21875%2013.8879%207.75%2013.8879%207.46875%2013.5754L1.46875%207.57544C1.15625%207.29419%201.15625%206.82544%201.46875%206.51294Z%22%20fill%3D%22%23FF8200%22%2F%3E%3C%2Fsvg%3E");
+}
+
+.root :global .slick-next:before {
+    content: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2712%27%20height%3D%2714%27%20viewBox%3D%270%200%2012%2014%27%20fill%3D%27none%27%20xmlns%3D%27http://www.w3.org/2000/svg%27%3E%3Cpath%20d%3D%27M10.5312%206.51294C10.8125%206.82544%2010.8125%207.29419%2010.5312%207.57544L4.53125%2013.5754C4.21875%2013.8879%203.75%2013.8879%203.46875%2013.5754C3.15625%2013.2942%203.15625%2012.8254%203.46875%2012.5442L8.9375%207.07544L3.46875%201.57544C3.15625%201.29419%203.15625%200.825439%203.46875%200.544189C3.75%200.231689%204.21875%200.231689%204.5%200.544189L10.5312%206.51294Z%27%20fill%3D%27%23FF8200%27%2F%3E%3C%2Fsvg%3E");
+}
+
+.root :global .slick-dots {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0 18px 0;
+    text-align: center;
+    width: 100%;
+}
+.root :global .slick-dots li {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+    margin-bottom: 5px;
+}
+.root :global .slick-dots li button {
+    background: #fff;
+    opacity: 0.4;
+    border-radius: 10px;
+    box-shadow: none;
+    cursor: pointer;
+    display: block;
+    width: 6px;
+    height: 6px;
+    margin: 3px;
+    padding: 0;
+    text-indent: -99999px;
+    transition: 0.5s;
+    outline: none;
+}
+/* .root :global .slick-dots li button:hover {
+    filter: brightness(80%);
+} */
+
+.root :global .slick-dots li button:active,
+.root :global .slick-dots li button:focus,
+.root :global .slick-dots li button:not(.primary) {
+    box-shadow: none;
+}
+
+.root :global .slick-dots li.slick-active button {
+    background: #fff;
+    opacity: 1;
+}
+
+.root :global .slick-current {
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+
+    .root :global .slick-dots li {
+        margin-bottom: 10px;
+    }
+
+    .root :global .slick-dots li button {
+        width: 12px;
+        height: 12px;
+        margin: 6px;
+    }
+}
+
+
+@media (min-width: 1440px) {
+    .root :global .slick-prev {
+        left: -12px;
+    }
+    .root :global .slick-next {
+        right: -12px;
+    }
+
+    .root :global .slick-prev,
+    .root :global .slick-next {
+        width: 48px;
+        height: 48px;
+    }
+}

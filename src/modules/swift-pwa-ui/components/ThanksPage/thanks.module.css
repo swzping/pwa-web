@@ -1,0 +1,176 @@
+.root {
+    min-height: 100vh;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    background: #FFFFFF;
+    padding: 40px 20px;
+}
+
+.wrapper {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.iconWrapper {
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #212121;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+}
+
+.failedTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #E53935;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+}
+
+.description {
+    font-size: 14px;
+    color: #757575;
+    margin: 0 0 24px 0;
+    line-height: 20px
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 24px;
+}
+
+.viewOrderBtn {
+    flex: 1;
+    padding: 14px 24px;
+    border: 2px solid #FF8200;
+    background: #FFFFFF;
+    color: #FF8200;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.viewOrderBtn:hover {
+    background: #FFF8F0;
+}
+
+.homeBtn {
+    flex: 1;
+    padding: 14px 24px;
+    border: none;
+    background: #F28200;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.homeBtn:hover {
+    background: #E67A20;
+}
+
+.homeBtn:disabled {
+    background: #BDBDBD;
+    cursor: not-allowed;
+}
+
+.pointsCard {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 500px;
+    padding: 8px 12px;
+    background: #FFF8E8;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.pointsIconWrapper {
+    flex-shrink: 0;
+}
+
+.pointsContent {
+    flex: 1;
+}
+
+.pointsTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #212121;
+    margin: 0 0 8px 0;
+}
+
+.pointsDesc {
+    font-size: 12px;
+    color: #212121;
+    margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .root {
+        padding: 60px 20px;
+    }
+
+    .iconWrapper svg {
+        width: 100px;
+        height: 100px;
+    }
+
+    .title,
+    .failedTitle {
+        font-size: 22px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .buttonGroup {
+        /* flex-direction: column; */
+        gap: 12px;
+        max-width: 100%;
+    }
+
+    .viewOrderBtn,
+    .homeBtn {
+        width: 100%;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .pointsCard {
+        padding: 14px 16px;
+        gap: 8px;
+    }
+
+    .pointsIconWrapper svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .pointsTitle {
+        font-size: 15px;
+    }
+
+    .pointsDesc {
+        font-size: 13px;
+    }
+}

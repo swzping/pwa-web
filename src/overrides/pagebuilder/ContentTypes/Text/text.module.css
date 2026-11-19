@@ -1,0 +1,14 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+}
+
+:global(.guardian-pharmacist-list td) {
+    border-width: 1px;
+}
+
+:global(.guardian-pharmacist-list ol),
+:global(.guardian-pharmacist-list ul) {
+    padding-left: 32px !important;
+}

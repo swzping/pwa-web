@@ -1,0 +1,12 @@
+.root {
+    min-height: inherit;
+    padding: 0 80px 48px;
+    border-radius: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+    .root {
+        padding: 0 14px 16px;
+        border-radius: 12px;
+    }
+}

@@ -1,0 +1,22 @@
+.root {
+    /* border: 2px solid red; */
+    width: 490px;
+    margin: 0 auto;
+}
+
+.customInput {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid black;
+}
+
+.saveButton {
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    width: 100%;
+    border-radius: 10px;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: normal;
+    margin-top: 18px;
+}

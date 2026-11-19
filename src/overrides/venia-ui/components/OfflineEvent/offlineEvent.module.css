@@ -1,0 +1,317 @@
+.offlineEventPage {
+    position: relative;
+    margin: 0 auto;
+    min-height: 100vh;
+    height: 100%;
+    background: linear-gradient(117deg, #ffd38b 1.26%, #ffa12e 85.76%);
+}
+
+.pageWrapper {
+    position: relative;
+    font-family: Gilroy;
+    padding: 24px 16px 30px 16px;
+    z-index: 10;
+}
+
+.ticketWrapper {
+    width: 100%;
+    border-radius: 12px;
+    min-height: 152px;
+    padding: 16px 20px;
+    color: #ff8200;
+    background: #fff;
+}
+
+.ticketTop {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comTitle {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.ticketTop .viewMore {
+    font-size: 12px;
+    font-weight: 500;
+    user-select: none;
+}
+
+.noTicketData {
+    margin-top: 35px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 6px;
+}
+
+.contentWrapper {
+    position: relative;
+    margin-top: 24px;
+    width: 100%;
+    border-radius: 12px;
+    min-height: 445px;
+    padding: 16px 20px;
+    color: #ff8200;
+    background: #fff;
+}
+
+.eventIcon {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: -24px;
+    right: 4.6px;
+}
+
+.ticketContent {
+    margin-top: 8px;
+}
+
+.ticketContent .ticketList {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    margin-left: -7px;
+}
+
+.ticketList .itemTicket {
+    padding: 7px 14px;
+    width: 210px;
+    height: 90px;
+    background: url('/venia-static-assets/images/offlineBooking/event_ticket_bg.png') no-repeat center/cover;
+    flex-shrink: 0;
+    background-size: 100% 100%;
+}
+
+.ticketList .itemTop {
+    position: relative;
+    margin: 4px 7px;
+    padding: 7px 6px;
+    border-radius: 4px;
+    background: #fff8e8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.itemTop .leftBox {
+    color: #000;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.leftBox .eventName {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.leftBox .eventTime {
+    margin-top: 7px;
+    font-size: 8px;
+    color: #bdbdbd;
+}
+
+.itemTop .rightBox {
+    text-align: right;
+}
+
+.rightBox .guardianRun {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 100%;
+    max-width: 43px;
+    max-height: 40px;
+}
+
+.itemTicket .footCode {
+    display: flex;
+    justify-content: center;
+    margin: 0 7px;
+    border-top: 1px dashed #e0e0e0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #bdbdbd;
+}
+
+.footCode .code {
+    color: #ff8200;
+    margin-left: 4px;
+    max-width: 80px;
+    font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.cardListWrapper {
+    margin-top: 24px;
+}
+
+.cardListWrapper .cardList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.itemCardWrapper .itemCard {
+    display: flex;
+    flex-direction: column;
+    width: 138px;
+    height: 101px;
+    padding: 19px 13px 18px 13px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    border: 1px solid #ffc08a;
+    background: #fff;
+}
+.itemCardWrapper {
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+.itemCardWrapper .itemName {
+    margin-top: 8px;
+    text-align: center;
+    color: #ff8200;
+    font-size: 14px;
+    font-weight: 700;
+    width: 138px;
+}
+
+.itemCardWrapper .guardianCard {
+    width: 107.873px;
+    height: auto;
+    max-height: 76px;
+}
+
+.itemCardWrapper .guardianRunCard {
+    width: 112px;
+    height: 33px;
+    margin-top: 4px;
+}
+.mt4 {
+    margin-top: 4px;
+}
+.cardHeadTag {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 87px;
+    height: 44px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #212121;
+}
+
+@media (max-width: 768px) {
+    .offlineEventPage {
+        padding-bottom: 80px;
+    }
+    .cardListWrapper {
+        padding-bottom: 80px;
+    }
+    .cardListWrapper .cardList {
+        justify-content: space-between;
+    }
+    .leftBox .eventName {
+        width: 110px;
+    }
+    .ticketContent .ticketList::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .offlineEventPage {
+        min-height: 90vh;
+        width: 100vw;
+    }
+    .pageWrapper {
+        width: 800px;
+        margin: 26px auto 0 auto;
+    }
+
+    .contentWrapper {
+        position: relative;
+        width: 100%;
+        padding: 0;
+        border-radius: 12px;
+        background: url('/venia-static-assets/images/offlineBooking/offline_booking_web_bg.png') no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    .cardListWrapper {
+        padding: 0 20px 160px 20px;
+        border-radius: 16px;
+    }
+
+    .cardListWrapper .cardList {
+        column-gap: 25px;
+    }
+    .ticketList .itemTicket {
+        width: 334px;
+        height: 120px;
+    }
+    .comTitle {
+        color: #0f172a;
+        font-size: 20px;
+        height: 28px;
+    }
+    .itemTop .leftBox {
+        font-size: 16px;
+    }
+    .leftBox .eventName {
+        width: 210px;
+    }
+    .leftBox .eventTime {
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .itemTicket .footCode {
+        font-size: 14px;
+    }
+    .ticketList .itemTop {
+        margin: 7px;
+    }
+    .ticketTop .viewMore {
+        font-weight: 700;
+        cursor: pointer;
+        font-family: 'Noto Sans';
+        font-size: 14px;
+    }
+    .noTicketData {
+        font-size: 24px;
+        text-align: center;
+    }
+    /* 滚动条整体尺寸 */
+    .ticketContent .ticketList::-webkit-scrollbar {
+        height: 6px; /* 水平滚动条高度 */
+    }
+
+    /* 滚动轨道背景 */
+    .ticketContent .ticketList::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+
+    /* 拖动滑块 */
+    .ticketContent .ticketList::-webkit-scrollbar-thumb {
+        background: #c2c2c2;
+        border-radius: 3px;
+    }
+    .footCode .code {
+        max-width: 130px;
+    }
+    .rightBox .guardianRun {
+        min-width: 50px;
+        max-width: 65px;
+        max-height: 52px;
+    }
+}

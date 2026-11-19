@@ -1,0 +1,116 @@
+.submenu {
+    background-color: rgb(var(--venia-global-color-gray-50));
+    box-shadow: 0 3px rgb(var(--venia-global-color-gray-100));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    left: 0;
+    position: absolute;
+    padding: 0px 10px;
+    right: 0;
+    top: 100%;
+    overflow: hidden;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 0px 0px 16px 16px;
+    min-height: 300px;
+}
+
+@media (min-width: 1440px) {
+    .submenu {
+        max-width: 1440px;
+    }
+}
+
+.submenu::before {
+    box-shadow: inset 0 2px rgb(var(--venia-global-color-gray-100));
+    content: '';
+    height: 10px;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.submenu ul {
+    padding-left: 0;
+}
+
+.submenuItems {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--venia-global-maxWidth);
+    width: 100%;
+}
+.submenuItem {
+    /* margin-bottom: 16px; */
+}
+@media (max-width: 1024px) {
+    .submenuItem {
+        white-space: normal;
+    }
+}
+.subItem {
+    font-weight: 400;
+    letter-spacing: 0px;
+}
+
+.submenuItems img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* level 2 */
+.submenuItems :global(.level-2) {
+    padding: 24px;
+    /* background-color: #f3f3f3; */
+    background-color: white;
+}
+.submenuItems :global(.level-2 .active) {
+    color: var(--color-primary);
+}
+.submenuItems :global(.level-2 a) {
+    display: block;
+    padding-bottom: 17px;
+}
+.submenuItems :global(.level-2 a > *) {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+/* level 3 */
+.submenuItems :global(.level-3) {
+    display: flex;
+    flex-direction: row;
+}
+.submenuItems :global(.level-3 > div) {
+    max-width: unset;
+}
+.submenuItems :global(.level-3 [class^='submenuColumn-heading']) {
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.submenuItems :global(.level-3 [class^='submenuColumn-submenuChild']) {
+    margin: 12px 0;
+}
+.submenuItems :global(.level-3 [class^='submenuColumn-submenuChildItem']) {
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #757575;
+}
+
+.imageWrapper {
+    padding: 12px 14px;
+}

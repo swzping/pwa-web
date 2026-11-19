@@ -1,0 +1,53 @@
+.container {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 99;
+    display: block !important;
+}
+
+.floatingApotekerButton {
+    animation: bounce 5s;
+    animation-iteration-count: infinite;
+    animation-delay: 5s;
+    position: relative;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.floatingBannerImage {
+    width: 90px;
+    height: 130px;
+}
+
+.container :global [class^="richContent-root"] [class^="image-root"] , .container :global [class*="shimmer-root"] {
+    width: 90px;
+    height: 130px !important;
+}
+.container :global [class^="richContent-root"] [class^="image-root"] img{
+    margin: 0 !important;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(-20px);
+    }
+    20% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@media only screen and (max-width: 767px) {
+    .container {
+        bottom: 60px;
+    }
+}

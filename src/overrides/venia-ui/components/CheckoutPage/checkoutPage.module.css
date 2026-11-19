@@ -1,0 +1,468 @@
+.root {
+    /* padding: 2.5rem 3rem; */
+    /* max-width: 1140px; */
+    /* margin: 0 auto; */
+    background-color: #F2F0EC;
+}
+
+.root [class^='shippingMethod-done'] {
+    border: 0;
+    border-bottom: 1px solid rgb(var(--venia-global-color-border));
+    padding: 0rem 0;
+    padding-bottom: 2rem;
+}
+
+.root [class^='completedView-heading'] {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.root [class^='paymentInformation-payment_info_container'] {
+    /* border: 1px solid #dedede;
+    border-radius: 10px; */
+}
+
+.root [class^='itemsReview-items_review_container'] {
+    border: 1px solid #dedede;
+    border-radius: 10px;
+}
+
+.root [class^='priceSummary-mobilePriceSummary'] {
+    font-size: 20px;
+}
+
+.root [class^='shippingMethod-root'] {
+    border-bottom: 1px solid rgb(var(--venia-global-color-border));
+    padding: 0;
+    padding-bottom: 2rem;
+}
+
+.root [class^='shippingMethod-editingHeading'] {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.root [class^='shippingRadios-radioLabel'] {
+    display: flex;
+    justify-content: start;
+    /* border-bottom: 1px solid;
+    padding-bottom: 0.5rem; */
+}
+
+.root [class^='shippingRadio-price'] {
+    margin-left: 12px;
+}
+
+.root [class^='field-label'] {
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    min-height: fit-content;
+}
+
+.checkoutContent {
+    display: grid;
+    /* gap: 2rem; */
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 90px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+    max-width: 1340px;
+}
+
+.checkoutContent_hidden {
+    composes: checkoutContent;
+    display: none;
+}
+
+.heading_container {
+    /* display: grid;
+    row-gap: 1rem; */
+    padding: 24px 12px 32px 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.heading {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.cartLink {
+    composes: root from '~@magento/venia-ui/lib/components/LinkButton/linkButton.module.css';
+    font-size: inherit;
+}
+
+.stepper_heading {
+    border-bottom: 1px solid rgb(var(--venia-global-color-border));
+    padding-bottom: 2rem;
+}
+
+.shipping_method_heading {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.shipping_method_subtitle {
+    color: #858585;
+}
+
+.payment_information_heading {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.payment_information_subtitle {
+    color: #858585;
+}
+
+.signInContainer {
+    align-items: center;
+    border: 2px solid rgb(var(--venia-global-color-gray-400));
+    border-radius: 0.375rem;
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: column;
+    padding: 1rem;
+}
+
+.signInLabel {
+    font-weight: var(--venia-global-fontWeight-semibold);
+}
+
+.signInButton {
+    composes: root_normalPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    min-height: auto;
+    min-width: auto;
+    color: #000;
+    border: 1px solid #707070;
+    padding: 0.25rem 2rem;
+}
+
+.empty_cart_container {
+    margin-bottom: 1.5rem;
+}
+
+.store_pickup_container {
+    padding: 16px 12px 0 12px;
+    background-color: #fff;
+}
+
+.shipping_information_container {
+    grid-column: 1 / span 1;
+    /* position: relative; */
+    padding: 16px 12px 0;
+    background-color: #fff;
+}
+
+.shipping_redeem {
+    grid-column: 1 / span 1;
+    padding: 16px 10px;
+    background-color: #fff;
+}
+.redeem {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+.redeem_notice {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #CA695D;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 12px;
+}
+.redeem_notice_icon {
+    align-items: center;
+    border: 1px solid #CA695D;
+    border-radius: 50%;
+    display: inline-flex;
+    flex: 0 0 auto;
+    font-size: 11px;
+    font-weight: 700;
+    height: 16px;
+    justify-content: center;
+    line-height: 1;
+    width: 16px;
+}
+.redeem_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.redeem_text {
+    font-size: 14px;
+    font-weight: 400;
+}
+.shipping_apply {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FF8200;
+    cursor: pointer;
+}
+
+.shipping_method_container {
+    padding: 0 12px 0;
+    background-color: #fff;
+}
+
+.payment_information_container {
+    grid-column: 1 / span 1;
+    padding: 16px 10px;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.price_adjustments_container {
+    grid-column: 1 / span 1;
+    /* padding: 16px 10px; */
+    margin-top: 10px;
+}
+
+.items_review_container {
+    grid-column: 1 / span 1;
+}
+
+.summaryContainer {
+    grid-column: 1 / span 1;
+}
+
+.purchasedItemsContainer {
+    background-color: #fff;
+    margin-bottom: 10px;
+    grid-column: 1 / span 1;
+}
+
+.selectContainer {
+    background-color: #fff;
+    padding: 16px 12px;
+    margin-bottom: 10px;
+    grid-column: 1 / span 1;
+}
+
+.selectBox {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.selectText {
+    font-size: 14px;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.selectContainer > select {
+    min-width: 220px;
+    border-radius: 10px;
+    padding: 5px 13px;
+}
+.selectContainer > span {
+    font-size: 14px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 8px;
+}
+.selectContainer [class^='title'] {
+    font-weight: 700;
+	font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.formErrors {
+    border-color: rgb(var(--venia-global-color-error));
+    border-style: solid;
+    border-width: 0 0 0 5px;
+    padding: 1rem 0 1rem 1rem;
+    display: grid;
+    grid-column: 1 / span 1;
+}
+
+.root [class*='price_adjustments_container']  div[class*='section-root-vcS']{
+    border: 0;
+    border-bottom: 2px solid rgb(var(--venia-global-color-gray-400));
+}
+
+@media (min-width: 961px) {
+    .root {
+        --scrollBarWidth: var(--global-scrollbar-width, 0px);
+        width: calc(100vw - var(--scrollBarWidth)); 
+        transform: translateX(-50%);
+        margin-left: 50%;
+    }
+    .checkoutContent {
+        padding: 0 30px 40px;
+    }
+    .summaryContainer {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 3;
+        position: sticky;
+        top: 5.5rem;
+        height: min-content;
+        border: 1px solid #E5E5E5;
+        padding: 12px;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+    .purchasedItemsContainer {
+        border-radius: 12px;
+    }
+    .selectContainer {
+        border-radius: 12px;
+    }
+    .shipping_information_container {
+        border-radius: 12px 12px 0 0;
+    }
+    .shipping_redeem {
+       border-radius: 12px; 
+    }
+    .shipping_method_container {
+        border-radius: 0 0 12px 12px;
+    }
+    .payment_information_container {
+        border-radius: 12px;
+    }
+    .store_pickup_container  {
+        border-radius: 12px;
+        margin-bottom: 10px;
+    }
+}
+
+.review_order_button {
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    grid-column: 1 / span 1;
+    margin: auto;
+    background: #ff8200;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    padding: 1rem 0;
+    margin-top: 12px;
+}
+
+.place_order_button {
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    grid-column: 1 / span 1;
+    margin: auto;
+    background: #ff8200;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    padding: 1rem 0;
+}
+
+.checkoutButton_container {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    /* margin-top: 1rem; */
+    /* min-height: 5.5rem; */
+    width: 100%;
+}
+
+.buttonCheckout {
+    width: 100%;
+    background-color: var(--color-primary);
+    font-weight: bold;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: var(--bs-white);
+    padding: 12px;
+}
+
+.buttonCheckout:disabled {
+    opacity: 0.6;
+}
+
+/*
+ * Mobile-specific styles.
+ */
+
+@media (max-width: 960px) {
+    .root {
+        padding-bottom: 15rem;
+        padding-top: 0;
+    }
+
+    .root [class^='shippingRadios-radioLabel'] {
+        justify-content: space-between;
+    }
+
+    .checkoutContent {
+        /* Only one column in mobile view. */
+        grid-template-columns: 1fr;
+        gap: 0;
+        background-color: rgb(242, 240, 236);
+    }
+
+    .selectBox {
+        flex-direction: column;
+        align-items: start;
+        gap: 8px;
+    }
+
+    .signInContainer {
+        grid-row-start: 1;
+        grid-auto-flow: row;
+        justify-items: center;
+        margin-bottom: 1rem;
+        margin-top: 2.5rem;
+    }
+
+    .stepper_heading {
+        padding-bottom: 1rem;
+    }
+
+    .review_order_button {
+        display: none;
+    }
+
+    .place_order_button {
+        display: none;
+    }
+
+    /* .payment_information_heading {
+        composes: stepper_heading;
+       
+        border-bottom-width: 0;
+    } */
+
+    .heading_container {
+        display: none;
+    }
+    .shipping_redeem {
+        width: 100vw;
+    }
+}
+
+
+.payment_method_container {
+    background-color: #fff;
+    padding: 12px 0;
+}
+
+.payment_method_container [class^='payment-instructions']{
+    margin: 0;
+}
+
+.payment_method_container [class^='checkbox-label']{
+    color: #444444;
+    font-size: 14px;
+    font-weight: 400;
+    max-width: 63%;
+}
+
+.redeem {
+
+}

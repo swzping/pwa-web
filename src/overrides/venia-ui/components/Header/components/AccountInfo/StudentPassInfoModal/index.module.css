@@ -1,0 +1,148 @@
+.container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    pointer-events: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.card {
+    position: relative;
+    pointer-events: auto;
+    text-align: left;
+    width: 584px;
+    max-width: 92%;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.header {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.content {
+    padding: 8px 20px;
+    border: 1px solid #E5E5E3;
+    border-left-width: 0;
+    border-right-width: 0;
+    max-height: 356px;
+    overflow: auto;
+}
+
+.contentHeaderText {
+    padding: 10px 0;
+    font-weight: 500;
+    font-size: 14px;
+    color: #CC2B1E;
+}
+
+.contentText {
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: #545453;
+}
+
+.footer {
+    padding: 14px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmButton {
+    composes: root_highPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+    flex: 1;
+    /* background: #ff8a00; */
+    color: #fff;
+    padding: 13px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.confirmButtonDisabled {
+    composes: confirmButton;
+    background: #E0E0E0;
+    color: #757575;
+}
+
+.closeButton {
+    composes: confirmButton;
+    background-color: #fff;
+    color: #FF8200 !important;
+    border: 1px solid  #FF8200;
+}
+
+.hintTextStyle {
+    font-size: 10px;
+    color: #9E9E9E;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+/* 确保 parse 出来的 ol 显示前缀编号 */
+.content,
+.contentHeaderText {
+    /* 保留已有样式的同时恢复列表样式 */
+}
+
+.content ol,
+.contentHeaderText ol {
+    list-style-type: decimal;        /* 使用阿拉伯数字编号 */
+    list-style-position: outside;    /* 编号在外侧（或改为 inside） */
+    margin: 8px 0 16px 1.2em;        /* 适当缩进与间距 */
+    padding-left: 0;                 /* 避免重复缩进（根据需要调整） */
+}
+
+/* 如项目有强制全局去掉列表标记的规则，使用 !important 覆盖 */
+.content ol li,
+.contentHeaderText ol li {
+    display: list-item;
+    text-indent: 0;
+}
+
+@media (max-width: 767px) {
+    .container {
+        align-items: flex-end;
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        height: 80%;
+        border-radius: 14px 14px 0 0;
+    }
+    .close {
+        display: none;
+    }
+    .header  {
+        justify-content: center;
+    }
+    .content {
+        flex: 1;
+        max-height: 80%;
+    }
+    .footer {
+        padding-bottom: 27px;
+    }
+}

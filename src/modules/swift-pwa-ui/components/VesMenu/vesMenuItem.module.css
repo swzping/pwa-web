@@ -1,0 +1,51 @@
+.root {
+    display: flex;
+    align-items: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    height: 100%;
+    line-height: 18px;
+}
+
+.root:hover .link_container {
+    text-decoration: none;
+}
+
+.link_container {
+    min-height: 1rem;
+    position: relative;
+}
+
+.link_container span[class*="cat-label"] {
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-size: 12px;
+    top: 0;
+}
+
+.link_container span[class~="cat-label-v2"] {
+    top: -16px;
+    position: absolute;
+    background: red;
+    z-index: 2;
+    left: -4px;
+    height: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+

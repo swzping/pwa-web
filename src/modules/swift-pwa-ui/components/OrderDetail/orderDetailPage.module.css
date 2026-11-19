@@ -1,0 +1,132 @@
+.root {
+    display: grid;
+    /* padding: 2rem 3rem; */
+    padding-bottom: 5rem;
+    /* row-gap: 2rem; */
+}
+
+
+.heading {
+    font-family: var(--venia-global-fontFamily-serif);
+    font-weight: var(--venia-global-fontWeight-bold);
+    justify-self: center;
+    text-transform: capitalize;
+}
+
+.linkDetail {
+    text-decoration: none;
+}
+
+.emptyHistoryMessage {
+    text-align: center;
+}
+
+.orderHistoryTable {
+    display: grid;
+    row-gap: 1rem;
+}
+
+.filterRow {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pageInfo {
+    font-size: var(--venia-typography-body-S-fontSize);
+}
+
+.search {
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: column;
+    width: 22rem;
+}
+
+.searchButton {
+    /* composes: root_highPriority from '../Button/button.module.css'; */
+
+    width: 5rem;
+    height: 2rem;
+    min-width: 5rem;
+}
+
+.submitIcon {
+    color: white;
+}
+
+.loadMoreButton {
+    composes: root_lowPriority from '@magento/venia-ui/lib/components/Button/button.module.css';
+    justify-self: center;
+    background-color: var(--color-primary);
+    color: var(--bs-white);
+    border-radius: 10px;
+}
+
+.orderWrapper {
+    /* padding: 18px; */
+}
+
+.orderTitleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.orderNumber {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.orderStatus {
+    margin: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.orderDate {
+    margin-bottom: 9px;
+    font-size: 12px;
+}
+
+.orderItems {
+    font-size: 12px;
+}
+
+.orderTotalText {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.orderTotalSpace {
+    margin-right: 4px;
+}
+
+.loadingWrapper {
+    padding: 0 16px;
+}
+
+.orderItem {
+    font-size: 12px;
+}
+
+@media (max-width: 960px) {
+    .root {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .filterRow {
+        align-items: flex-start;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    .search {
+        gap: 0.5rem;
+        width: 100%;
+        justify-self: center;
+    }
+}

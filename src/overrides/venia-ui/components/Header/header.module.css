@@ -1,0 +1,210 @@
+.root {
+    background-color: rgb(var(--venia-global-color-gray-50));
+    display: grid;
+    grid-auto-columns: 100%;
+    justify-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    --header-height: 5rem;
+}
+
+.switchersContainer {
+    display: none;
+}
+
+.open {
+    composes: root;
+}
+
+.closed {
+    composes: root;
+    z-index: 99;
+}
+
+.toolbar {
+    z-index: 3;
+    align-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-areas: 'primary title secondary';
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 3rem;
+    height: 120px;
+    max-width: var(--venia-global-maxWidth);
+    padding: 0 0.75rem;
+    width: 100%;
+    composes: px-[16px] 3xl_px-0 from global;
+    composes: gap-x-8 from global;
+}
+
+@media (min-width: 641px) {
+    .switchers {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        justify-content: flex-end;
+        max-width: var(--venia-global-maxWidth);
+        width: 100%;
+        position: relative;
+        z-index: 11;
+        margin: 0 auto;
+    }
+
+    .switchersContainer {
+        display: block;
+        width: 100%;
+        background-color: rgb(var(--venia-global-color-gray-100));
+    }
+
+    .toolbar {
+        height: unset;
+        grid-template-areas: 'primary title secondary';
+        grid-template-columns: auto minmax(auto, 677px) 1fr;
+        padding: 0;
+    }
+}
+
+.logo {
+    grid-area: title;
+}
+
+.primaryActions {
+    grid-area: primary;
+    justify-self: start;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+.secondaryActions {
+   display: flex;
+   flex-direction: column;
+}
+
+@media (min-width: 641px) {
+    .logoContainer {
+        grid-column: 2/ 3;
+        grid-row: 1 / 1;
+    }
+
+    .secondaryActions {
+        column-gap: 1rem;
+    }
+}
+.container {
+    padding: 12px;
+}
+
+@media (min-width: 961px) {
+    .container {
+        padding: 20px 30px 20px;
+        max-width: 1340px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .toolbar {
+       height: 56px;
+    }
+}
+
+.searchFallback {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    padding: 0 1rem;
+}
+
+.input {
+    composes: input from '@magento/venia-ui/lib/components/TextInput/textInput.module.css';
+    max-width: 24rem;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+    --dot-size: 2em;
+    --dot-font-size: 6px;
+    --dot-shadow-offset: calc(-1 * var(--dot-size) + var(--dot-font-size));
+    border-radius: 50%;
+    width: var(--dot-size);
+    height: var(--dot-size);
+    animation: pulse 1.8s infinite ease-in-out;
+    animation-fill-mode: both;
+}
+
+.loader {
+    color: rgb(var(--venia-global-color-gray-dark));
+    font-size: var(--dot-font-size);
+    margin: var(--dot-shadow-offset) auto 0;
+    position: relative;
+    transform: translateZ(0);
+    animation-delay: -0.16s;
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+}
+
+.loader:before {
+    color: rgb(var(--venia-global-color-gray));
+    left: -3.5em;
+    animation-delay: -0.32s;
+}
+
+.loader:after {
+    color: rgb(var(--venia-global-color-gray-darker));
+    left: 3.5em;
+}
+
+.bannerWrapper [class^='cmsBlock-root'] {
+    margin: 0!important;
+}
+
+.bannerWrapper [class^='image-img'] {
+    margin: 0!important;
+}
+
+.bannerWrapper img {
+    border-radius: 0!important;
+}
+
+@media (min-width: 1024px) {
+    .logoContainer {
+        grid-column: 1 / 2;
+        grid-row: 1 / 1;
+    }
+
+    .secondaryActions {
+        grid-column: 4 / 5;
+        grid-row: 1 / 1;
+    }
+
+    .toolbar {
+        height: 120px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .toolbar {
+        grid-template-columns: 134px minmax(auto, 677px) 1fr;
+    }
+}
+
+@keyframes pulse {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 var(--dot-size) 0 -1.3em;
+    }
+    40% {
+        box-shadow: 0 var(--dot-size) 0 0;
+    }
+}

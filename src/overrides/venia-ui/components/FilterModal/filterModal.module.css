@@ -1,0 +1,102 @@
+.root {
+    --borderColor: var(--venia-global-color-border);
+    background-color: white;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 1fr 7rem;
+    height: 100%;
+    left: 0;
+    /* max-width: 360px; */
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    transform: translate3d(-100%, 0, 0);
+    /* transform: translate3d(0, -100%, 0); */
+    transition-duration: 192ms;
+    transition-timing-function: var(--venia-global-anim-out);
+    transition-property: opacity, transform, visibility;
+    visibility: hidden;
+    width: 100%;
+    z-index: 3;
+}
+
+.root_open {
+    composes: root;
+    box-shadow: 1px 0 rgb(var(--borderColor));
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-duration: 224ms;
+    transition-timing-function: var(--venia-global-anim-in);
+    visibility: visible;
+}
+
+.body {
+    border-bottom: 1px solid rgb(var(--borderColor));
+    overflow: auto;
+    flex: 1;
+}
+
+.body > *:not(:last-child) {
+    /* background: #F3F3F3; */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bs-white);
+    padding-bottom: 1.25rem;
+}
+
+.headerTitle {
+    display: flex;
+    align-items: center;
+    font-size: var(--venia-global-typography-heading-L-fontSize);
+    line-height: 0.875rem;
+    font-weight: bold;
+}
+
+.action {
+}
+
+.action button {
+    font-size: var(--venia-typography-body-S-fontSize);
+    text-decoration: none;
+    color: var(--color-primary) !important;
+}
+
+.blocks {
+    border-top: 1px solid #e6e6e6;
+    padding: 0 0 32px;
+    margin: 0;
+    background-color: #F5F5F5;
+}
+
+/* app parity: white cards on a gray sheet, 12px gaps */
+.blocks > li {
+   /* padding: 0 16px !important; */
+   background-color: #fff;
+   border-bottom: none;
+}
+.blocks > li::after {
+   display: none;
+}
+
+.blocks > li:not(:last-child) {
+    margin-bottom: 12px;
+ }
+
+/* header row sits 4px deeper than the card body and gets
+   the app's header divider (modal-scoped: the desktop
+   sidebar keeps its own separator scheme) */
+.blocks > li > button {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.closeButton {
+    outline: none;
+}
+
+.closeButton:focus {
+    outline: none;
+}

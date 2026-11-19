@@ -1,0 +1,43 @@
+.eventBgBottomBox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+}
+.eventBgBottomIcon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+}
+.eventBgOneIcon {
+    opacity: 0.56;
+}
+.eventGuardianIcon {
+    position: absolute;
+    bottom: 16px;
+    right: 15px;
+    width: 103px;
+}
+
+@media (min-width: 768px) {
+    .eventBgBottomBox {
+        height: 130px;
+        border-radius: 0 0 12px 12px;
+    }
+    .eventBgBottomIcon {
+        bottom: 0;
+        height: 121px;
+    }
+    .eventBgOneIcon {
+        height: 133px;
+        opacity: 1;
+    }
+    .eventGuardianIcon {
+        bottom: 36px;
+    }
+}

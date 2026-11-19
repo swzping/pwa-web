@@ -1,0 +1,131 @@
+.root {
+    align-content: flex-start;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    position: relative;
+}
+
+.root_updated {
+    composes: root;
+    animation: flash var(--venia-global-anim-bounce) 640ms 2;
+}
+
+.confirmDeleteContainer {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    height: 100%;
+    justify-items: center;
+    left: 0;
+    padding: 1.25rem 2rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.confirmDeleteButton {
+    composes: root_normalPriorityNegative from '~@magento/venia-ui/lib/components/Button/button.module.css';
+
+    background-color: white;
+    order: 1;
+}
+.cancelDeleteButton {
+    composes: root_lowPriority from '~@magento/venia-ui/lib/components/Button/button.module.css';
+
+    background-color: white;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.addressContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.actionContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.defaultBadge {
+    width: max-content;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    min-height: 20px;
+}
+
+.linkButton {
+    composes: root from '~@magento/venia-ui/lib/components/LinkButton/linkButton.module.css';
+    text-decoration: none;
+}
+
+.editButton {
+    composes: linkButton;
+}
+
+.deleteButton {
+    composes: linkButton;
+}
+
+.actionLabel {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.name, .telephone, .country, .additionalAddress, .streetRow {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+@media (max-width: 640px) {
+
+    .confirmDeleteContainer {
+        padding: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .confirmDeleteButton {
+        order: 0;
+    }
+
+    .defaultBadge {
+        font-size: 12px;
+    }
+
+    .name, .telephone, .country, .additionalAddress, .streetRow {
+        font-size: 12px;
+    }
+
+    .actionLabel {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .root {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

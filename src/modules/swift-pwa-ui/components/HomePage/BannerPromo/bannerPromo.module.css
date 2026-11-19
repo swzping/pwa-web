@@ -1,0 +1,185 @@
+.root {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* 共用 Swiper 默认 padding: 0 12px，本模块贴齐内容区左右 */
+.root > div {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.root :global(.swiper-container) {
+    height: auto !important;
+    min-height: unset !important;
+    overflow: hidden !important;
+}
+
+.root :global(.swiper-wrapper) {
+    height: auto !important;
+    min-height: unset !important;
+}
+
+.root :global(.swiper-slide) {
+    width: auto !important;
+    height: auto !important;
+}
+
+/* 桌面端：CMS 原始像素；H5：按 2.2 张/屏等比缩小（随视窗 media query 自动切换） */
+.root :global(.banner-highlight-slot) {
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    margin: 0 !important;
+    flex-shrink: 0;
+    width: var(--banner-cms-w);
+    height: var(--banner-cms-h);
+    border-radius: 8px;
+}
+
+.root :global(.swiper-slide) img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: fill !important;
+    border-radius: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    vertical-align: top;
+}
+
+@media (min-width: 768px) {
+    /*
+     * 相对视口/contained 最大宽算单卡，勿在 .swiper-slide 上用 100%（会相对 wrapper 全轨宽度）
+     * 32px = 3 张之间 spaceBetween(16) × 2
+     */
+    .root :global(.banner-highlight-slot) {
+        --banner-dweb-slot-w: calc((min(100vw, 1280px) - 32px) / 3);
+        width: min(var(--banner-cms-w), var(--banner-dweb-slot-w));
+        height: calc(
+            min(var(--banner-cms-w), var(--banner-dweb-slot-w)) * var(--banner-cms-ratio)
+        );
+    }
+}
+
+@media (max-width: 767px) {
+    .root :global(.banner-highlight-slot) {
+        /* 8px 间距，一屏约 2.2 张（须用 100vw；组件本身无左右 padding） */
+        --banner-h5-slot-w: calc((100vw - 8px) / 2.2);
+        width: min(var(--banner-cms-w), var(--banner-h5-slot-w));
+        height: calc(
+            min(var(--banner-cms-w), var(--banner-h5-slot-w)) * var(--banner-cms-ratio)
+        );
+        border-radius: 12px;
+    }
+}
+
+.root [class^='swiper-button-prev'] {
+    transform: none;
+}
+.root [class^='swiper-button-next'] {
+    transform: none;
+}
+
+/* @media (max-width: 768px) {
+    .root :global .swiper-container {
+        padding: 0 0.75rem;
+    }
+    .root :global .swiper-container img {
+        border-radius: 0.75rem;
+    }
+}
+
+.root :global .swiper-button-next::after {
+    content: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2712%27%20height%3D%2714%27%20viewBox%3D%270%200%2012%2014%27%20fill%3D%27none%27%20xmlns%3D%27http://www.w3.org/2000/svg%27%3E%3Cpath%20d%3D%27M10.5312%206.51294C10.8125%206.82544%2010.8125%207.29419%2010.5312%207.57544L4.53125%2013.5754C4.21875%2013.8879%203.75%2013.8879%203.46875%2013.5754C3.15625%2013.2942%203.15625%2012.8254%203.46875%2012.5442L8.9375%207.07544L3.46875%201.57544C3.15625%201.29419%203.15625%200.825439%203.46875%200.544189C3.75%200.231689%204.21875%200.231689%204.5%200.544189L10.5312%206.51294Z%27%20fill%3D%27%23FF8200%27%2F%3E%3C%2Fsvg%3E");
+    font-size: 0;
+}
+
+.root :global .swiper-button-prev::after {
+    content: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2212%22%20height%3D%2214%22%20viewBox%3D%220%200%2012%2014%22%20fill%3D%22none%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M1.46875%206.51294L7.46875%200.544189C7.75%200.231689%208.21875%200.231689%208.53125%200.544189C8.8125%200.825439%208.8125%201.29419%208.53125%201.57544L3.03125%207.04419L8.5%2012.5442C8.8125%2012.8254%208.8125%2013.2942%208.5%2013.5754C8.21875%2013.8879%207.75%2013.8879%207.46875%2013.5754L1.46875%207.57544C1.15625%207.29419%201.15625%206.82544%201.46875%206.51294Z%22%20fill%3D%22%23FF8200%22%2F%3E%3C%2Fsvg%3E");
+    font-size: 0;
+}
+
+.root :global .swiper-button-next, .root :global .swiper-button-prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.root :global .swiper-button-prev.swiper-button-disabled {
+    opacity: 0.5;
+}
+
+.root :global .swiper-button-next.swiper-button-disabled {
+    opacity: 0.5;
+}
+
+.root :global .swiper-button-next {
+    right: 4px;
+}
+
+.root :global .swiper-button-prev {
+    left: 4px;
+}
+
+.root :global .swiper-pagination {
+    bottom: -7px !important;
+}
+
+.root :global .swiper-pagination-bullet-active {
+    background-color: #ff8200 !important;
+}
+
+.root :global .slick-prev {
+    left: 1.6rem;
+}
+.root :global .slick-prev:before {
+    content: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2212%22%20height%3D%2214%22%20viewBox%3D%220%200%2012%2014%22%20fill%3D%22none%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M1.46875%206.51294L7.46875%200.544189C7.75%200.231689%208.21875%200.231689%208.53125%200.544189C8.8125%200.825439%208.8125%201.29419%208.53125%201.57544L3.03125%207.04419L8.5%2012.5442C8.8125%2012.8254%208.8125%2013.2942%208.5%2013.5754C8.21875%2013.8879%207.75%2013.8879%207.46875%2013.5754L1.46875%207.57544C1.15625%207.29419%201.15625%206.82544%201.46875%206.51294Z%22%20fill%3D%22%23FF8200%22%2F%3E%3C%2Fsvg%3E");
+}
+
+.root :global .slick-next {
+    right: 1.6rem;
+}
+.root :global .slick-next:before {
+    content: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2712%27%20height%3D%2714%27%20viewBox%3D%270%200%2012%2014%27%20fill%3D%27none%27%20xmlns%3D%27http://www.w3.org/2000/svg%27%3E%3Cpath%20d%3D%27M10.5312%206.51294C10.8125%206.82544%2010.8125%207.29419%2010.5312%207.57544L4.53125%2013.5754C4.21875%2013.8879%203.75%2013.8879%203.46875%2013.5754C3.15625%2013.2942%203.15625%2012.8254%203.46875%2012.5442L8.9375%207.07544L3.46875%201.57544C3.15625%201.29419%203.15625%200.825439%203.46875%200.544189C3.75%200.231689%204.21875%200.231689%204.5%200.544189L10.5312%206.51294Z%27%20fill%3D%27%23FF8200%27%2F%3E%3C%2Fsvg%3E");
+}
+
+.root :global .swiper-slide img {
+    width: 100%;
+}
+
+.shimmer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.shimmerItem {
+    padding: 0 5px;
+}
+
+@media (min-width: 1440px) {
+
+    .root :global .swiper-button-next, .root :global .swiper-button-prev {
+        width: 48px;
+        height: 48px;
+    }
+
+    .root :global .swiper-button-next {
+        right: -12px;
+    }
+
+    .root :global .swiper-button-prev {
+        left: -12px;
+    }
+} */

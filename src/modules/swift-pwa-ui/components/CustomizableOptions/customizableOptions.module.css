@@ -1,0 +1,30 @@
+.root {
+    padding: 1rem 1.5rem;
+}
+
+.titleWrapper {
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-weight: 600;
+}
+
+.required {
+    color: red;
+}
+
+.requiredInfo {
+    color: red;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.titleCheckbox {
+    padding-left: 1rem;
+}

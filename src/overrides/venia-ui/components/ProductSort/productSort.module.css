@@ -1,0 +1,130 @@
+.root {
+    position: relative;
+    margin-left: 0.5rem;
+}
+
+.menu {
+    position: absolute;
+    z-index: 9;
+    top: 110%;
+    right: 0;
+    min-width: 10rem;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: black;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgb(var(--venia-global-color-gray-dark));
+    border-radius: 0.25rem;
+}
+
+.menu ul {
+    margin: 0;
+}
+
+.popupBody ul {
+    margin: 0;
+}
+
+.popupBody ul span{
+    height: 48px !important;
+    line-height: 48px !important;
+}
+
+.menuItem {
+    border-bottom: 1px solid rgb(var(--venia-global-color-gray-dark));
+}
+
+.menuItem:last-child {
+    border-bottom: none;
+}
+
+.menuItem:hover {
+    background-color: rgb(var(--venia-global-color-gray));
+}
+
+.sortButton {
+    /* composes: root_lowPriority from '@magento/venia-ui/lib/components/Button/button.module.css'; */
+    min-width: 6.25rem;
+    color: var(--color-text);
+    padding: 3px 10px !important;
+    border-color: #c8c8c8 !important;
+}
+
+.desktopText {
+    display: none;
+    /* display: inline-flex; */
+}
+
+.sortText {
+    line-height: 24px;
+    /* font-size: var(--venia-global-fontSize-200); */
+    font-size: 14px;
+}
+
+.desktopIconWrapper {
+    composes: root from '@magento/venia-ui/lib/components/Icon/icon.module.css';
+    transform: translateX(10px);
+}
+
+.desktopIcon {
+    font-size: 16px;
+    margin-left: 2px;
+}
+
+.customSortButton {
+    /* border: 2px solid red; */
+    /* min-width: 6.25rem; */
+    composes: text-xs from global;
+    color: var(--color-text);
+    padding: 0 12px;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    display: flex;
+    composes: h-8 from global;
+    composes: leading-8 from global;
+    composes: rounded-[16px] from global;
+}
+
+.customSortButton:focus {
+    outline: none;
+}
+
+/* app-parity leading sort glyph (SortAlignCenter, 20px,
+   follows the button text color) */
+.sortIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.mobileText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+    .sortButton {
+        border-width: 2px;
+        border-color: rgb(var(--venia-global-color-gray-500));
+        border-radius: 6px;
+        font-weight: var(--venia-global-fontWeight-normal);
+        text-transform: none;
+    }
+
+    .mobileText {
+        display: none;
+    }
+
+    .desktopText {
+        display: inline-flex;
+        align-items: center;
+        color: #000;
+    }
+}
+
+
